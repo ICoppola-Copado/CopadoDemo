@@ -21,7 +21,7 @@ public class AccountOperations {
         return a;
     }
     public static Account setDefaultURL(Account a) {//DEV2
-    	a.Website = 'www.copa.do';//DEV2
+        a.Website = 'www.copado.com';//DEV2
         return a;
     }
 }
