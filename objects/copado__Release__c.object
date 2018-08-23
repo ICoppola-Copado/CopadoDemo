@@ -41,7 +41,16 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>Test</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Test</fullName>
+        <fields>copado__Version__c</fields>
+        <fields>copado__Status__c</fields>
+        <fields>copado__Planned_Date__c</fields>
+        <fields>copado__Project__c</fields>
+        <fields>copado__Base_Branch__c</fields>
+        <label>Test</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>

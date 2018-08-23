@@ -4489,6 +4489,7 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
     <listViews>
         <fullName>copado__All</fullName>
         <columns>NAME</columns>
+        <columns>copado__Promote_Change__c</columns>
         <columns>copado__User_Story_Title__c</columns>
         <columns>copado__userStory_Role__c</columns>
         <columns>copado__userStory_need__c</columns>

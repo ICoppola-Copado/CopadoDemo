@@ -530,11 +530,12 @@
         <columns>copado__Frequency__c</columns>
         <columns>copado__Git_Repository__c</columns>
         <columns>copado__Org__c</columns>
+        <columns>copado__View_in_Git__c</columns>
+        <columns>copado__Git_Snapshot_Permissions__c</columns>
         <columns>LAST_UPDATE</columns>
         <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
-        <language>en_US</language>
     </listViews>
     <nameField>
         <label>Git Snapshot Name</label>
