@@ -435,10 +435,13 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
-        <fields>CREATED_DATE</fields>
+        <fields>copado__Details__c</fields>
         <fields>copado__Score_v11__c</fields>
         <fields>copado__Number_of_Violations__c</fields>
+        <fields>CREATEDBY_USER</fields>
         <relatedList>copado__Static_Code_Analysis_Result__c.copado__User_Story__c</relatedList>
+        <sortField>CREATEDBY_USER</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
@@ -606,7 +609,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y000000UiJj</masterLabel>
+        <masterLabel>00h1t000000WDvS</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

@@ -244,9 +244,9 @@
         <columns>copado__Org_ID__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>LAST_UPDATE</columns>
+        <columns>copado__Compliance_Rule_Group__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
-        <language>en_US</language>
     </listViews>
     <nameField>
         <label>Environment Name</label>
