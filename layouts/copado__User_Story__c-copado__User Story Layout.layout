@@ -435,22 +435,54 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
-        <fields>copado__Details__c</fields>
-        <fields>copado__Score_v11__c</fields>
-        <fields>copado__Number_of_Violations__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <relatedList>copado__Static_Code_Analysis_Result__c.copado__User_Story__c</relatedList>
-        <sortField>CREATEDBY_USER</sortField>
+        <fields>copado__Status__c</fields>
+        <fields>copado__Status_Icon__c</fields>
+        <fields>copado__Metadata_API_Name__c</fields>
+        <relatedList>copado__User_Story_Metadata__c.copado__User_Story__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__Git_Org_Commit__c.NAME</fields>
+        <fields>copado__Git_Org_Commit__c.copado__Commit_Date__c</fields>
+        <fields>copado__Git_Org_Commit__c.copado__Commit_Message__c</fields>
+        <fields>copado__Git_Org_Commit__c.copado__Status__c</fields>
+        <fields>copado__View_in_Git__c</fields>
+        <relatedList>copado__User_Story_Commit__c.copado__User_Story__c</relatedList>
+        <sortField>copado__Git_Org_Commit__c.copado__Commit_Date__c</sortField>
         <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__Promotion__c.NAME</fields>
+        <fields>copado__Promotion__c.copado__Status__c</fields>
+        <fields>copado__Promotion__c.copado__Source_Environment__c</fields>
+        <fields>copado__Promotion__c.copado__Source_Org_Credential__c</fields>
+        <fields>copado__Promotion__c.copado__Destination_Environment__c</fields>
+        <fields>copado__Promotion__c.copado__Destination_Org_Credential__c</fields>
+        <relatedList>copado__Promoted_User_Story__c.copado__User_Story__c</relatedList>
     </relatedLists>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
-        <fields>copado__Selenium_Test_Group__c.NAME</fields>
-        <fields>copado__Selenium_Test_Group__c.copado__Environment__c</fields>
-        <fields>copado__Selenium_Test_Group__c.copado__Status__c</fields>
-        <fields>copado__Selenium_Test_Group__c.copado__Status_Icon__c</fields>
-        <relatedList>copado__User_Story_Selenium_Test__c.copado__User_Story__c</relatedList>
+        <fields>CREATED_DATE</fields>
+        <fields>copado__Request_Number__c</fields>
+        <fields>copado__User_Avatar__c</fields>
+        <fields>copado__State__c</fields>
+        <fields>copado__Merged__c</fields>
+        <fields>copado__Url__c</fields>
+        <relatedList>copado__Pull_Request__c.copado__User_Story__c</relatedList>
+        <sortField>CREATED_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__Perform_Manual_Task__c</fields>
+        <fields>copado__Order__c</fields>
+        <fields>copado__Type__c</fields>
+        <fields>copado__Status__c</fields>
+        <relatedList>copado__Deployment_Task__c.copado__User_Story__c</relatedList>
+        <sortField>copado__Order__c</sortField>
+        <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -473,65 +505,37 @@
         <relatedList>copado__Test_Run__c.copado__User_Story__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
-        <relatedList>copado__User_Story_Task__c.copado__User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__Promotion__c.NAME</fields>
-        <fields>copado__Promotion__c.copado__Status__c</fields>
-        <fields>copado__Promotion__c.copado__Source_Environment__c</fields>
-        <fields>copado__Promotion__c.copado__Source_Org_Credential__c</fields>
-        <fields>copado__Promotion__c.copado__Destination_Environment__c</fields>
-        <fields>copado__Promotion__c.copado__Destination_Org_Credential__c</fields>
-        <relatedList>copado__Promoted_User_Story__c.copado__User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>TASK.SUBJECT</fields>
-        <fields>TASK.WHO_NAME</fields>
-        <fields>ACTIVITY.TASK</fields>
-        <fields>TASK.DUE_DATE</fields>
-        <fields>TASK.STATUS</fields>
-        <fields>TASK.PRIORITY</fields>
-        <fields>CORE.USERS.FULL_NAME</fields>
-        <relatedList>RelatedActivityList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>TASK.SUBJECT</fields>
-        <fields>TASK.WHO_NAME</fields>
-        <fields>ACTIVITY.TASK</fields>
-        <fields>TASK.DUE_DATE</fields>
-        <fields>CORE.USERS.FULL_NAME</fields>
-        <fields>TASK.LAST_UPDATE</fields>
-        <relatedList>RelatedHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__Order__c</fields>
-        <fields>copado__Type__c</fields>
-        <fields>copado__Status__c</fields>
-        <relatedList>copado__Deployment_Task__c.copado__User_Story__c</relatedList>
-        <sortField>copado__Order__c</sortField>
-        <sortOrder>Asc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__Git_Org_Commit__c.NAME</fields>
-        <fields>copado__Git_Org_Commit__c.copado__Commit_Date__c</fields>
-        <fields>copado__Git_Org_Commit__c.copado__Commit_Message__c</fields>
-        <fields>copado__Git_Org_Commit__c.copado__Status__c</fields>
-        <fields>copado__View_in_Git__c</fields>
-        <relatedList>copado__User_Story_Commit__c.copado__User_Story__c</relatedList>
-        <sortField>copado__Git_Org_Commit__c.copado__Commit_Date__c</sortField>
+        <fields>copado__Details__c</fields>
+        <fields>copado__Score_v11__c</fields>
+        <fields>copado__Number_of_Violations__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <relatedList>copado__Static_Code_Analysis_Result__c.copado__User_Story__c</relatedList>
+        <sortField>CREATEDBY_USER</sortField>
         <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>copado__Selenium_Test_Group__c.NAME</fields>
+        <fields>copado__Selenium_Test_Group__c.copado__Environment__c</fields>
+        <fields>copado__Selenium_Test_Group__c.copado__Status__c</fields>
+        <fields>copado__Selenium_Test_Group__c.copado__Status_Icon__c</fields>
+        <relatedList>copado__User_Story_Selenium_Test__c.copado__User_Story__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>copado__Environment__c</fields>
+        <fields>CREATED_DATE</fields>
         <fields>copado__Status__c</fields>
-        <fields>copado__Status_Icon__c</fields>
-        <fields>copado__Metadata_API_Name__c</fields>
-        <relatedList>copado__User_Story_Metadata__c.copado__User_Story__c</relatedList>
+        <fields>copado__Findings__c</fields>
+        <fields>copado__Highest_Severity__c</fields>
+        <fields>copado__Highest_Rule_Action__c</fields>
+        <relatedList>copado__Compliance_Scan_Result__c.copado__User_Story__c</relatedList>
+        <sortField>CREATED_DATE</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -557,32 +561,6 @@
         <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
-        <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>CREATED_DATE</fields>
-        <fields>copado__Request_Number__c</fields>
-        <fields>copado__User_Avatar__c</fields>
-        <fields>copado__State__c</fields>
-        <fields>copado__Merged__c</fields>
-        <fields>copado__Url__c</fields>
-        <relatedList>copado__Pull_Request__c.copado__User_Story__c</relatedList>
-        <sortField>CREATED_DATE</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>copado__Environment__c</fields>
-        <fields>CREATED_DATE</fields>
-        <fields>copado__Status__c</fields>
-        <fields>copado__Findings__c</fields>
-        <fields>copado__Highest_Severity__c</fields>
-        <fields>copado__Highest_Rule_Action__c</fields>
-        <relatedList>copado__Compliance_Scan_Result__c.copado__User_Story__c</relatedList>
-        <sortField>CREATED_DATE</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
         <fields>copado__Deliverable__c</fields>
         <fields>copado__Dependency_Status__c</fields>
@@ -599,9 +577,6 @@
         <fields>copado__Provider_Team__c</fields>
         <fields>copado__Dependent_User_Story__c</fields>
         <relatedList>copado__Team_Dependency__c.copado__Provider_User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
