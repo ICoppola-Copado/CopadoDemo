@@ -41,9 +41,10 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>Test</compactLayoutAssignment>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <compactLayouts>
         <fullName>Test</fullName>
+        <fields>Name</fields>
         <fields>copado__Active__c</fields>
         <fields>copado__Main_Branch__c</fields>
         <label>Test</label>
