@@ -4489,18 +4489,11 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
     <listViews>
         <fullName>copado__All</fullName>
         <columns>NAME</columns>
-        <columns>copado__Promote_Change__c</columns>
         <columns>copado__User_Story_Title__c</columns>
-        <columns>copado__userStory_Role__c</columns>
-        <columns>copado__userStory_need__c</columns>
-        <columns>copado__userStory_reason__c</columns>
-        <columns>copado__Story_Points_SFDC__c</columns>
-        <columns>copado__Story_Points_Other__c</columns>
-        <columns>copado__Status__c</columns>
         <columns>copado__Project__c</columns>
-        <columns>copado__Epic__c</columns>
-        <columns>copado__Sprint__c</columns>
-        <columns>copado__Release__c</columns>
+        <columns>copado__Promote_Change__c</columns>
+        <columns>copado__Environment__c</columns>
+        <columns>copado__Status__c</columns>
         <columns>LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
