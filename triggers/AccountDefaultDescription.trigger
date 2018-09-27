@@ -4,6 +4,5 @@ trigger AccountDefaultDescription on Account (before insert) {
         a = AccountOperations.setDefaultPhone(a);
         a = AccountOperations.setDefaultURL(a);
         a = AccountOtherOperations.setSite(a);
-
     }   
 }
