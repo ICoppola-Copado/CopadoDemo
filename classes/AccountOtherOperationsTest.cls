@@ -9,7 +9,7 @@ public class AccountOtherOperationsTest {
         // Verify
         Account savedAcc = [SELECT Description, Site FROM Account WHERE Id = :result.getId()];
         System.assertEquals('Default Description', savedAcc.Description);
-        System.assertEquals('Barcelona', savedAcc.Site);
+        System.assertEquals('Madrid', savedAcc.Site);
 
     }
 }
