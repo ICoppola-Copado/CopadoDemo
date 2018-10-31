@@ -1,0 +1,227 @@
+[
+    [
+        "/app/dxProject/force-app",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/force-app",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980107308,
+            "changeTime": 1540980107308,
+            "contentHash": "b28b7af69320201d1cf206ebf28373980add1451",
+            "isWorkspace": false,
+            "isArtifactRoot": true
+        }
+    ],
+    [
+        "/app/dxProject/force-app/main",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/force-app/main",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980107308,
+            "changeTime": 1540980107308,
+            "contentHash": "7505d64a54e061b7acd54ccd58b49dc43500b635",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/force-app/main/default",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/force-app/main/default",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980107432,
+            "changeTime": 1540980107432,
+            "contentHash": "d1783acf47fcb7ec23f15dbf710dcc85a0c3e0b5",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/force-app/main/default/aura",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/force-app/main/default/aura",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980107308,
+            "changeTime": 1540980107308,
+            "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980110716,
+            "changeTime": 1540980110900,
+            "contentHash": "b28b7af69320201d1cf206ebf28373980add1451",
+            "isWorkspace": false,
+            "isArtifactRoot": true
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact/main",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact/main",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980110716,
+            "changeTime": 1540980110716,
+            "contentHash": "7505d64a54e061b7acd54ccd58b49dc43500b635",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact/main/default",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact/main/default",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980110728,
+            "changeTime": 1540980110728,
+            "contentHash": "4015a9474a8f4a60ac7a46165910ca2c23a9bb72",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact/main/default/layouts",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact/main/default/layouts",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980110728,
+            "changeTime": 1540980110728,
+            "contentHash": "64ed5e888113816bdf2048df59ce7bd33cb951b7",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact/main/default/layouts/Artifact_Custom_Object__c-Artifact Custom Object Layout.layout-meta.xml",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact/main/default/layouts/Artifact_Custom_Object__c-Artifact Custom Object Layout.layout-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 2805,
+            "modifiedTime": 1540980110728,
+            "changeTime": 1540980110728,
+            "contentHash": "3d09909a006175a8342900ac76797fd91301867d",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact/main/default/objects",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact/main/default/objects",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980110728,
+            "changeTime": 1540980110728,
+            "contentHash": "4511927fc167a829dc8b5f634511500fdc63df48",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact/main/default/objects/Artifact_Custom_Object__c",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact/main/default/objects/Artifact_Custom_Object__c",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980110728,
+            "changeTime": 1540980110728,
+            "contentHash": "7c0bdd96825ed72c2366a634da02e35bda813b8b",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact/main/default/objects/Artifact_Custom_Object__c/Artifact_Custom_Object__c.object-meta.xml",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact/main/default/objects/Artifact_Custom_Object__c/Artifact_Custom_Object__c.object-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 2212,
+            "modifiedTime": 1540980110728,
+            "changeTime": 1540980110728,
+            "contentHash": "33a0632ac82e3f752fa29bf82641b778b016935a",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact/main/default/objects/Artifact_Custom_Object__c/fields",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact/main/default/objects/Artifact_Custom_Object__c/fields",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980110728,
+            "changeTime": 1540980110728,
+            "contentHash": "4484ff435b231129c570e35430e6a7dd491b0d8b",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/Sales_Artifact/main/default/objects/Artifact_Custom_Object__c/fields/Custom_Artifact_Field__c.field-meta.xml",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject/Sales_Artifact/main/default/objects/Artifact_Custom_Object__c/fields/Custom_Artifact_Field__c.field-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 387,
+            "modifiedTime": 1540980110728,
+            "changeTime": 1540980110728,
+            "contentHash": "1134da900c07ec944201ce171ce3d6bf5cd79a75",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject",
+        {
+            "state": "u",
+            "sourcePath": "/app/dxProject",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1540980116028,
+            "changeTime": 1540980116028,
+            "contentHash": "25e350f72fb8bd7fed72fba78f42e44082f271fa",
+            "isWorkspace": true,
+            "isArtifactRoot": false
+        }
+    ]
+]
