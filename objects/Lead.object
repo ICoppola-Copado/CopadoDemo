@@ -235,6 +235,11 @@
                     <default>false</default>
                     <label>GC3000 series</label>
                 </value>
+                <value>
+                    <fullName>New Product</fullName>
+                    <default>false</default>
+                    <label>New Product</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
