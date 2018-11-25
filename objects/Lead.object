@@ -207,6 +207,11 @@
                     <default>false</default>
                     <label>Yes</label>
                 </value>
+                <value>
+                    <fullName>new value</fullName>
+                    <default>false</default>
+                    <label>new value</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
