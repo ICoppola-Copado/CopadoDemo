@@ -5,7 +5,6 @@
     <customButtons>copado__Run_Static_Code_Analysis</customButtons>
     <customButtons>copado__Run_Compliance_Scan</customButtons>
     <customButtons>copado__Manage_Selenium_Tests</customButtons>
-    <customButtons>copado__Add_Metadata</customButtons>
     <customButtons>copado__Commit_Files</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -28,22 +27,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>copado__Team__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Epic__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Theme__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>copado__Parent_Epic_Title__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>copado__Release__c</field>
             </layoutItems>
             <layoutItems>
@@ -57,10 +40,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Org_Credential__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Backlog_Rank__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -86,10 +65,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>copado__Close_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>copado__Cancellation_Reason__c</field>
             </layoutItems>
             <layoutItems>
@@ -101,24 +76,8 @@
                 <field>copado__Progress_Status__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Stop_Indexing_Metadata__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Exclude_From_CBM__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>copado__View_in_Git__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Base_Branch__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Git_Merge_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -127,7 +86,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Agile content</label>
+        <label>Additional Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -135,15 +94,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>copado__userStory_Role__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__userStory_need__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__userStory_reason__c</field>
+                <field>copado__Technical_Specifications__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -177,42 +128,6 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Acceptance</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Acceptance_Criteria__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Acceptance_Criteria_Status__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>Additional Information</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Functional_Specifications__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Technical_Specifications__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>OneColumn</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
         <label>Compliance</label>
         <layoutColumns>
             <layoutItems>
@@ -224,29 +139,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>copado__Last_Compliance_Scan_Date__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>Resourcing</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Business_Analyst__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Developer__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Test_Script_Owner__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -270,29 +162,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>copado__Last_Validation_Deployment_Status__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>Valuation</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Story_Points_SFDC__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Story_Points_Other__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>copado__Total_Story_Points__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -349,7 +218,7 @@
                 <width>100%</width>
             </layoutItems>
             <layoutItems>
-                <height>500</height>
+                <height>400</height>
                 <page>copado__UserStorySelectedMetadata</page>
                 <showLabel>false</showLabel>
                 <showScrollbars>false</showScrollbars>
@@ -373,29 +242,6 @@
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>User Story Promotion Settings</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Promotion_Test_Level__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Validate_Only__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Promote_as_Single_Step__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -462,6 +308,7 @@
         <relatedList>copado__Promoted_User_Story__c.copado__User_Story__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>CREATED_DATE</fields>
@@ -475,6 +322,7 @@
         <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <fields>NAME</fields>
         <fields>copado__Perform_Manual_Task__c</fields>
         <fields>copado__Order__c</fields>
@@ -485,6 +333,7 @@
         <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <fields>NAME</fields>
         <fields>copado__Test_Description__c</fields>
         <fields>copado__Peer_Reviewer__c</fields>
@@ -494,6 +343,7 @@
         <relatedList>copado__Test_Script__c.copado__User_Story__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>copado__Tester__c</fields>
@@ -505,6 +355,7 @@
         <relatedList>copado__Test_Run__c.copado__User_Story__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>copado__Details__c</fields>
@@ -516,6 +367,7 @@
         <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>copado__Selenium_Test_Group__c.NAME</fields>
@@ -525,6 +377,7 @@
         <relatedList>copado__User_Story_Selenium_Test__c.copado__User_Story__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>copado__Environment__c</fields>
@@ -536,50 +389,6 @@
         <relatedList>copado__Compliance_Scan_Result__c.copado__User_Story__c</relatedList>
         <sortField>CREATED_DATE</sortField>
         <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__External_CI_Setting__c</fields>
-        <fields>copado__Invoke_on__c</fields>
-        <fields>copado__Job_Api_Name__c</fields>
-        <fields>copado__Order__c</fields>
-        <fields>copado__Timeout_in_minutes__c</fields>
-        <relatedList>copado__External_CI_Job__c.copado__User_Story__c</relatedList>
-        <sortField>copado__Order__c</sortField>
-        <sortOrder>Asc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>copado__Start_Time__c</fields>
-        <fields>copado__End_Time__c</fields>
-        <fields>copado__Duration__c</fields>
-        <fields>copado__Status__c</fields>
-        <fields>copado__Job_URL_Link__c</fields>
-        <relatedList>copado__External_CI_Job_Result__c.copado__User_Story__c</relatedList>
-        <sortField>copado__Start_Time__c</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__Deliverable__c</fields>
-        <fields>copado__Dependency_Status__c</fields>
-        <fields>copado__Dependent_Team__c</fields>
-        <fields>copado__Provider_Team__c</fields>
-        <fields>copado__Provider_User_Story__c</fields>
-        <relatedList>copado__Team_Dependency__c.copado__Dependent_User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__Deliverable__c</fields>
-        <fields>copado__Dependency_Status__c</fields>
-        <fields>copado__Dependent_Team__c</fields>
-        <fields>copado__Provider_Team__c</fields>
-        <fields>copado__Dependent_User_Story__c</fields>
-        <relatedList>copado__Team_Dependency__c.copado__Provider_User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
