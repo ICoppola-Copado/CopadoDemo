@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom%3A Support Profile</fullName>
     <applicationVisibilities>
         <application>TEST</application>
         <default>false</default>
@@ -259,6 +260,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.YearStarted</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Artifact__c.Artifact_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4584,6 +4590,15 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Artifact__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -4843,6 +4858,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ActivitiesAccess</name>
+    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>AllowViewKnowledge</name>
