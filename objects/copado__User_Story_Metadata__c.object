@@ -163,7 +163,12 @@ TEXT(copado__Status__c)
         <type>Text</type>
     </nameField>
     <pluralLabel>User Story Metadata</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <searchResultsAdditionalFields>copado__User_Story__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Status_Icon__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
