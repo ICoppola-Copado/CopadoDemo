@@ -8,7 +8,6 @@ console.log('step type ==>',dw.qb.type);
 dw.qb.preQuery = '';
 
 dw.qb.createCacheDeleteButton = function(date){
-    
     if(!date){
          $copado('[id*=removeCacheContainer]').hide();
     }else{
@@ -407,9 +406,11 @@ function init(force){
             dw.qb.createCacheDeleteButton(date);
             console.warn('rest',res);
             dw.qb.startQueryBuilder(res);
+            unlock();
        },
        error: function(r){
          console.log('Error init: ',r);
+         unlock();
        }
    });
 }

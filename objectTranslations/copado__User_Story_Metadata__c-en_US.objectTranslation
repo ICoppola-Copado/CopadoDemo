@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Copado User Story Metadata Columns --></label>
+        <name>Copado_User_Story_Metadata_Columns</name>
+    </fieldSets>
     <fields>
         <label><!-- Metadata API Name --></label>
         <name>copado__Metadata_API_Name__c</name>

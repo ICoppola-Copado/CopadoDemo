@@ -340,7 +340,6 @@
     </fieldSets>
     <fields>
         <fullName>copado__Branch__c</fullName>
-        <defaultValue>&quot;master&quot;</defaultValue>
         <deprecated>false</deprecated>
         <description>Branch of the selected Git Repository (e.g. master). Snapshots and Commits done in the Git Snapshot will affect the specified branch.</description>
         <externalId>false</externalId>
@@ -553,4 +552,15 @@
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
+    <webLinks>
+        <fullName>copado__Select_Branch</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Select Branch</masterLabel>
+        <openType>sidebar</openType>
+        <page>copado__SnapshotBranchSelection</page>
+        <protected>false</protected>
+    </webLinks>
 </CustomObject>

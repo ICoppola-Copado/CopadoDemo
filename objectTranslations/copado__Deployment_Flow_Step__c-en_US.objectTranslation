@@ -155,4 +155,8 @@
             <translation><!-- Run Specified Tests --></translation>
         </picklistValues>
     </fields>
+    <webLinks>
+        <label><!-- Select_Branch --></label>
+        <name>copado__Select_Branch</name>
+    </webLinks>
 </CustomObjectTranslation>

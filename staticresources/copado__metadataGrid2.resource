@@ -5,13 +5,13 @@ function setWithoutRebinding(list, newList) {
         Array.prototype.push.apply(list, newList.splice(0,10000));
 }
 
-function MetadataGrid2(conf) {
-    this._initGrid(conf);
+function MetadataGrid2(conf, cb) {
+    this._initGrid(conf,cb);
     // Save the HTML for use in resetGrid
     this._initialHTML = this.eltMain.html();
 }
 
-MetadataGrid2.prototype._initGrid = function(conf) {
+MetadataGrid2.prototype._initGrid = function(conf, cb) {
     this.conf = conf;
 
     this.conf.gridMode = this.conf.gridMode || "orgMetadata"; // grid mode affects the behavior of the loading, rendering columns, and saving.
@@ -39,6 +39,7 @@ MetadataGrid2.prototype._initGrid = function(conf) {
     this.eltGrid = null;
     this.eltMetaDataTypeFilter = null;
     this.eltTabs = null;
+    this.dependencyRetrieveArray = [];
 
     this.conf.eltMainId = this.conf.eltMainId || 'metadataGrid2'; // overridable main ID
     this.eltMain = $copado('#'+this.conf.eltMainId);
@@ -56,6 +57,8 @@ MetadataGrid2.prototype._initGrid = function(conf) {
         this.eltMain.find('.mg2_scaleFilterFrame').hide();
     }
 
+    cb && cb();
+
 };
 
 // Resets the grid
@@ -67,8 +70,6 @@ MetadataGrid2.prototype.resetGrid = function(conf) {
 
 // selects/deselects a bunch of elements.
 MetadataGrid2.prototype._setSelectionState = function(selected, elts, calledFromSelectAll, rowdata) {
-    console.debug("MetadataGrid2._setSelectionState", selected, elts.length);
-
     // NR: we need to translate the elts list to the real elts for (un)selectAll
     var i, e, t, idx_allItems = null;
     if(calledFromSelectAll) {
@@ -80,6 +81,7 @@ MetadataGrid2.prototype._setSelectionState = function(selected, elts, calledFrom
     }
 
     // locate each elt in the
+    var tipTypes = [];
     for(i=0 ; i < elts.length ; i++) {
         e = elts[i];
         if(idx_allItems) {
@@ -88,9 +90,10 @@ MetadataGrid2.prototype._setSelectionState = function(selected, elts, calledFrom
                 continue; // the element selected might not be in allMetaData, just ignore it.
         }
         e.s = selected;
-        if (typeof showTip !== 'undefined' && showTip && selected) {
-            showTip(e.t);
-         }
+        if (typeof showTip !== 'undefined' && showTip && selected && tipTypes.indexOf(e.t) < 0) {
+           showTip(e.t);
+           tipTypes.push(e.t);
+        }
 
         var existsInSelected = this.selectedMetadata.indexOf(e);
         if(selected && existsInSelected===-1) {
@@ -106,12 +109,15 @@ MetadataGrid2.prototype._setSelectionState = function(selected, elts, calledFrom
                 e.r = false;
         }
     }
-    // visual feedback, flashing the tab
-    var elt = this.eltMain.find('.mg2_tabs li').get(1);
-    elt.style.animation = '';
-    setTimeout(function() {
-        elt.style.animation = 'flash 2s 1';
-    }, 5);
+    var currentTab = metadataGrid2.eltTabs.jqxTabs('selectedItem');
+    if(currentTab && currentTab !== 2) {
+        // visual feedback, flashing the tab
+        var elt = this.eltMain.find('.mg2_tabs li').get(1);
+        elt.style.animation = '';
+        setTimeout(function() {
+            elt.style.animation = 'flash 2s 1';
+        }, 5);
+    }
     // fire a custom event telling the selection changed.
     var event = new CustomEvent("copadoMetadataGrid2Changed", { detail: { metadataGrid2: this } });
     document.dispatchEvent(event);
@@ -135,7 +141,6 @@ MetadataGrid2.prototype._setGridFiltersByType = function() {
         that.eltGrid.jqxGrid('applyfilters');
     }
 };
-
 MetadataGrid2.prototype._reapplyFilters = function(tabIndex) {
     var that = this;
     if(tabIndex===undefined && this.eltTabs)
@@ -157,8 +162,14 @@ MetadataGrid2.prototype._reapplyFilters = function(tabIndex) {
         that.eltGrid.jqxGrid('setcolumnproperty', 's', 'filterable', false);
         that.eltGrid.jqxGrid('addfilter', 's', that.jqxFilterBySelection);
         that.eltGrid.jqxGrid('applyfilters');
-    }else{
+    }else if(tabIndex === 2 && that.conf.dxGridType == "dxartifact") {
+         that.savedFilters = that.eltGrid.jqxGrid('getstate');
+         // Filter by SELECTION, regardless of the type
+         that.eltGrid.jqxGrid('clearfilters');
+         that.eltGrid.jqxGrid('setcolumnproperty', 'rd', 'filterable', false);
+     }else{
         console.warn("uknown tab!");
+        that.eltGrid.jqxTabs('select', 0);
     }
 };
 
@@ -168,58 +179,61 @@ MetadataGrid2.prototype._getColumnsByGridMode = function() {
     var columns;
 
     if (type == 'metadataselector') {
+
         columns = [{
-                text: copadoLabels.selected,
-                columntype: 'checkbox',
-                filtertype: 'bool',
-                datafield: 's',
-                width: 60
-            },
-            {
-                text: copadoLabels.name,
-                filtertype: 'textbox',
-                filtercondition: 'contains',
-                editable: false,
-                datafield: 'n',
-                width: 400
-            },
-            {
-                text: copadoLabels.type,
-                datafield: 't',
-                filterable: !this.isTypeFilterable,
-                filtertype: this.TypeFilterType,
-                editable: false,
-                columntype: 'textbox'
-            },
-            {
-                text: copadoLabels.LASTMODIFIEDBY,
-                filtertype: 'textbox',
-                editable: false,
-                datafield: 'b',
-                width: 220
-            },
-            {
-                text: copadoLabels.LastModifiedDate,
-                filtertype: 'textbox',
-                editable: false,
-                datafield: 'd',
-                width: 120
-            },
-            {
-                text: copadoLabels.CREATEDBY,
-                filtertype: 'textbox',
-                editable: false,
-                datafield: 'cb',
-                width: 220
-            },
-            {
-                text: copadoLabels.CREATEDDATE,
-                filtertype: 'textbox',
-                editable: false,
-                datafield: 'cd',
-                width: 120
-            }
+            text: copadoLabels.selected,
+            columntype: 'checkbox',
+            filtertype: 'bool',
+            datafield: 's',
+            width: 60
+        },
+        {
+            text: copadoLabels.name,
+            filtertype: 'textbox',
+            filtercondition: 'contains',
+            editable: false,
+            datafield: 'n',
+            width: 400
+        },
+        {
+            text: copadoLabels.type,
+            datafield: 't',
+            filterable: !this.isTypeFilterable,
+            filtertype: this.TypeFilterType,
+            editable: false,
+            columntype: 'textbox'
+        },
+        {
+            text: copadoLabels.LASTMODIFIEDBY,
+            filtertype: 'textbox',
+            editable: false,
+            datafield: 'b',
+            width: 220
+        },
+        {
+            text: copadoLabels.LastModifiedDate,
+            filtertype: 'textbox',
+            editable: false,
+            datafield: 'd',
+            width: 120
+        },
+        {
+            text: copadoLabels.CREATEDBY,
+            filtertype: 'textbox',
+            editable: false,
+            datafield: 'cb',
+            width: 220
+        },
+        {
+            text: copadoLabels.CREATEDDATE,
+            filtertype: 'textbox',
+            editable: false,
+            datafield: 'cd',
+            width: 120
+        }
         ];
+
+
     } else if(type == 'testClasses'){
         columns = [
             {
@@ -621,10 +635,8 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
             }
         }
     };
-
     //adapter wrapper
     var dataAdapter = new $copado.jqx.dataAdapter(source);
-
     //keep jquery pointer for performance query
     this.eltGrid = this.eltMain.find('.mg2_jqxgrid');
     console.assert(this.eltGrid.length);
@@ -735,12 +747,12 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
                 that.render();
         };
         // Initialize the select all/unselect all buttons
-        var $unselectAll = $copado('<button>Unselect All</button>').on('click', function(e) {
+        var $unselectAll = $copado('<button id="unselectAll">Unselect All</button>').on('click', function(e) {
                 e.preventDefault();
                 selectAll(false);
             });
 
-        var $selectAll = $copado('<button>Select All</button>').on('click', function(e) {
+        var $selectAll = $copado('<button id="selectAll">Select All</button>').on('click', function(e) {
             e.preventDefault();
             selectAll(true);
         });
@@ -830,16 +842,17 @@ MetadataGrid2.prototype.loadSelectedMetaData = function(callbackFinished) {
 };
 
 MetadataGrid2.prototype.loadSelectedMetaDataJSON = function(jsonData, callbackFinished) {
+    var that = this;
     var selectedMetadata = jsonData;
     if( selectedMetadata.length === false ) {
-        setWithoutRebinding(this.selectedMetadata, []);
+        setWithoutRebinding(that.selectedMetadata, []);
         if(callbackFinished)
             callbackFinished();
         return;
     }
-    setWithoutRebinding(this.allMetaData, selectedMetadata);
-    setWithoutRebinding(this.selectedMetadata, selectedMetadata);
-    this.render();
+    //setWithoutRebinding(this.allMetaData, selectedMetadata);
+    setWithoutRebinding(that.selectedMetadata, selectedMetadata);
+    that.render();
     if(callbackFinished)
         callbackFinished();
 };
@@ -848,6 +861,7 @@ MetadataGrid2.prototype.loadSelectedMetaDataJSON = function(jsonData, callbackFi
 MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) {
     var that = this;
     var conf = this.conf;
+    var deletedMetadataItems = '';
 
     if(this.isTypeFilterable && !this.filterByType) {
         console.debug('MetadataGrid2.loadMetaData: not loading metadata');
@@ -865,7 +879,6 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
         url = rock.config.metadata_url;
     }
     console.debug('MetadataGrid2.loadMetaData', "force?"+forceRefresh, conf.data.orgId, this.filterByType, url);
-
     dw.u.getCachedRemote({
        url: url,
        name: this.filterByType || conf.attachmentName,
@@ -874,6 +887,20 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
        synchronous: false,
        success: function(allMetaData, cachedDate){
             console.debug('MetadataGrid2.loadMetaData done', '#'+allMetaData.length, cachedDate, that.selectedMetadata.length, that.filterByType);
+            var existingFlag = false;
+            for(var j=0; j<that.selectedMetadata.length; j++){
+                for(var i=0; i<allMetaData.length; i++){
+                    if(allMetaData[i].n == that.selectedMetadata[j].n) existingFlag = true;
+                }
+                if(existingFlag == false){
+                    deletedMetadataItems += that.selectedMetadata[j].n + ', ';
+                }
+                existingFlag = false;
+            }
+            if(deletedMetadataItems.length > 0){
+                deletedMetadataItems = deletedMetadataItems.slice(0,deletedMetadataItems.length - 2);
+                alert('Previously selected ' + deletedMetadataItems + ' metadata item' + (deletedMetadataItems.indexOf(',') > -1 ? 's are' : ' is') + ' deleted from the source environment.\n\nPlease ignore this pop-up if you are already aware of this.');
+            }
             that._setGridData(allMetaData);
 
             that.allMetaData_cachedDate  = cachedDate;
@@ -884,7 +911,7 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
                 that.eltGrid.jqxGrid('updatebounddata');
 
             if(callbackFinished)
-                callbackFinished();
+                callbackFinished(cachedDate);
        },
        error: function(r){
            console.error('MetadataGrid2.Error: ',r);
@@ -917,12 +944,12 @@ MetadataGrid2.prototype.loadData = function(callbackFinished) {
 MetadataGrid2.prototype.refreshCache = function(callbackFinished) {
     var that = this;
     lockScreen();
-    this.loadMetaData(function() {
+    this.loadMetaData(function(cachedDate) {
         console.info("MetadataGrid2.refreshCache() grid data refreshed");
         that.render();
         unlockScreen();
         if(callbackFinished)
-            callbackFinished();
+            callbackFinished(cachedDate);
     }, true);
  };
 
@@ -988,15 +1015,12 @@ MetadataGrid2.prototype._setGridData = function(allMetaData) {
 
 // append the items to .allMetaData and selectedMetadata (if the items are selected)
 MetadataGrid2.prototype.addItemsIfMissing = function(items) {
-    //console.debug("MetadataGrid2.prototype.addItemsIfMissing items", items);
     // create a map of the existing metadata items
     var e, idx_allItems = {};
     for(i=0 ; i < this.allMetaData.length ; i++ ) {
         e = this.allMetaData[i];
         idx_allItems[e.t+' '+e.n] = e;
     }
-    //console.debug("MetadataGrid2.prototype.addItemsIfMissing e", e);
-    //console.debug("MetadataGrid2.prototype.addItemsIfMissing idx_allItems", idx_allItems);
     // now see if each item in items exists or needs to be added and/or selected.
     for(var i=0 ; i < items.length ; i++) {
         e = items[i];
@@ -1005,7 +1029,6 @@ MetadataGrid2.prototype.addItemsIfMissing = function(items) {
             idx_allItems[key].s = e.s;
             // if the element is selected, ensure it is in the .selectedMetadata array
             if(e.s && this.selectedMetadata.indexOf(e)===-1) {
-                //console.debug('pushing e', e);
                 e.s = true;
                 //this.selectedMetadata.push(e);
             }
@@ -1014,7 +1037,6 @@ MetadataGrid2.prototype.addItemsIfMissing = function(items) {
             idx_allItems[key] = e;
             // if the element is selected, ensure it is in the .selectedMetadata array
             if(e.s) {
-                //console.debug('pushing e if there is no key', e);
                 e.s = true;//this.selectedMetadata.push(e);
             }
         }
@@ -1034,6 +1056,21 @@ MetadataGrid2.prototype.reloadSelections = function(tabNumber) {
         unlockScreen();
     });
 };
+
+// fetches the selected data again. Useful for the "cancel" action
+MetadataGrid2.prototype.reloadSelectionsJSON = function(json, tabNumber) {
+    var that = this;
+    lockScreen();
+    that.loadSelectedMetaDataJSON(json, function() {
+        that._matchSelectedItemsWithAllMetaData(that.allMetaData);
+        // NR: workaround because the selection show all the data, for some reason.
+        if(that.eltTabs)
+            that.eltTabs.jqxTabs('select', tabNumber || 0);
+        that.render();
+        unlockScreen();
+    });
+};
+
 
 MetadataGrid2.prototype.refreshMetadataTypes = function() {
     var that = this;

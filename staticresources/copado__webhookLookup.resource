@@ -7,8 +7,6 @@ webhookLookup.config = webhookLookup.config || {};
 webhookLookup.hookUrl = webhookLookup.hookUrl || {};
 webhookLookup.webhookLookup = webhookLookup.webhookLookup || {};
 
-var $copado = $copado || jQuery.noConflict();
-
 //Properties
 webhookLookup.config.ns = '';
 webhookLookup.config.herokuServer = '';

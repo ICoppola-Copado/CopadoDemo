@@ -152,6 +152,46 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Severity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CodeScan Severity</description>
+        <externalId>false</externalId>
+        <label>Severity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Info</fullName>
+                    <default>false</default>
+                    <label>Info</label>
+                </value>
+                <value>
+                    <fullName>Minor</fullName>
+                    <default>false</default>
+                    <label>Minor</label>
+                </value>
+                <value>
+                    <fullName>Major</fullName>
+                    <default>false</default>
+                    <label>Major</label>
+                </value>
+                <value>
+                    <fullName>Critical</fullName>
+                    <default>false</default>
+                    <label>Critical</label>
+                </value>
+                <value>
+                    <fullName>Blocker</fullName>
+                    <default>false</default>
+                    <label>Blocker</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Static_Code_Analysis_Result__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -165,6 +205,35 @@
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
+    <fields>
+        <fullName>copado__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bug</fullName>
+                    <default>false</default>
+                    <label>Bug</label>
+                </value>
+                <value>
+                    <fullName>Vulnerability</fullName>
+                    <default>false</default>
+                    <label>Vulnerability</label>
+                </value>
+                <value>
+                    <fullName>Code Smell</fullName>
+                    <default>false</default>
+                    <label>Code Smell</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <label>Static Code Analysis Violation</label>
     <nameField>
         <displayFormat>SCV-{000000}</displayFormat>
@@ -172,6 +241,70 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Static Code Analysis Violations</pluralLabel>
+    <recordTypes>
+        <fullName>copado__CodeScan</fullName>
+        <active>true</active>
+        <description>Record Type for CodeScan integration. Requires CodeScan licensing.</description>
+        <label>CodeScan</label>
+        <picklistValues>
+            <picklist>copado__Severity__c</picklist>
+            <values>
+                <fullName>Blocker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>copado__Type__c</picklist>
+            <values>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Code Smell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vulnerability</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>copado__PMD</fullName>
+        <active>true</active>
+        <description>Record Type for free of charge PMD integration</description>
+        <label>PMD</label>
+        <picklistValues>
+            <picklist>copado__Severity__c</picklist>
+            <values>
+                <fullName>Info</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>copado__Type__c</picklist>
+            <values>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

@@ -39,6 +39,22 @@ Usage exp: issueType=Story and resolution=Duplicate --></help>
         <name>copado__End_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Exclude Tabs from Promotion Page --></label>
+        <name>copado__Exclude_Tabs_from_Promotion_Page__c</name>
+        <picklistValues>
+            <masterLabel>Promotion User Story Metadata</masterLabel>
+            <translation><!-- Promotion User Story Metadata --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selenium Test</masterLabel>
+            <translation><!-- Selenium Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Static Code Analysis Summary</masterLabel>
+            <translation><!-- Static Code Analysis Summary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <help><!-- When this field is checked, Copado will index the metadata selected against the user stories into the User Story Metadata custom object. Indexed metadata can be used for reporting and compliance, and it&apos;s also used by Copado overlap awareness feature. --></help>
         <label><!-- Index Metadata --></label>
         <name>copado__Index_Metadata__c</name>

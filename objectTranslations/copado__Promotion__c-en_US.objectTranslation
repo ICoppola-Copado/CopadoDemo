@@ -39,6 +39,11 @@
         <name>copado__Exclude_From_Auto_Resolve__c</name>
     </fields>
     <fields>
+        <help><!-- Fill this field only if you want to change the selected user stories order on deployment. (usage exp: name asc, copado__backlog_rank__c desc) --></help>
+        <label><!-- Order User Stories by --></label>
+        <name>copado__Order_by__c</name>
+    </fields>
+    <fields>
         <help><!-- The selected Project should be linked to an active Deployment Flow --></help>
         <label><!-- Project --></label>
         <name>copado__Project__c</name>
