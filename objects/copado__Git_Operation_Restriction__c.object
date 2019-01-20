@@ -28,5 +28,18 @@
         <unique>false</unique>
     </fields>
     <label>Git Operation Restriction</label>
+    <listViews>
+        <fullName>All_Fields</fullName>
+        <columns>SETUP_OWNER_NAME</columns>
+        <columns>SETUP_TYPE</columns>
+        <columns>NAME</columns>
+        <columns>copado__Active__c</columns>
+        <columns>copado__Git_Operation_Name__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Fields</label>
+    </listViews>
     <visibility>Public</visibility>
 </CustomObject>
