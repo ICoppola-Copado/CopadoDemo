@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"
+      xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
     <customSettingsType>List</customSettingsType>
+    <description n1:nil="true" />
     <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Active_Value__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active Value</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
     <label>ListCs</label>
+    <nameField n1:nil="true" />
+    <searchLayouts n1:nil="true" />
     <visibility>Public</visibility>
 </CustomObject>
