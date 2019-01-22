@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"
+      xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">
     <customSettingsType>List</customSettingsType>
+    <description n1:nil="true" />
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Server_URL__c</fullName>
@@ -10,6 +12,16 @@
         <trackTrending>false</trackTrending>
         <type>Url</type>
     </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
     <label>SAP URL</label>
+    <nameField n1:nil="true" />
+    <searchLayouts n1:nil="true" />
     <visibility>Public</visibility>
 </CustomObject>
