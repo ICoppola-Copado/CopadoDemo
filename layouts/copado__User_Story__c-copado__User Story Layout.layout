@@ -10,7 +10,6 @@
     <customButtons>copado__Perform_Validation</customButtons>
     <customButtons>copado__Apex_Test</customButtons>
     <customButtons>copado__Commit_Files</customButtons>
-    <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
@@ -285,6 +284,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
@@ -364,11 +368,6 @@
             <actionType>StandardButton</actionType>
             <sortOrder>16</sortOrder>
         </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
     </platformActionList>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
@@ -380,11 +379,10 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>copado__Git_Org_Commit__c.NAME</fields>
         <fields>copado__Git_Org_Commit__c.copado__Commit_Date__c</fields>
-        <fields>copado__Git_Org_Commit__c.copado__Commit_Message__c</fields>
         <fields>copado__Git_Org_Commit__c.copado__Status__c</fields>
         <fields>copado__View_in_Git__c</fields>
+        <fields>copado__Git_Org_Commit__c.copado__Commit_Message__c</fields>
         <relatedList>copado__User_Story_Commit__c.copado__User_Story__c</relatedList>
         <sortField>copado__Git_Org_Commit__c.copado__Commit_Date__c</sortField>
         <sortOrder>Desc</sortOrder>
@@ -481,6 +479,14 @@
         <relatedList>copado__Compliance_Scan_Result__c.copado__User_Story__c</relatedList>
         <sortField>CREATED_DATE</sortField>
         <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>CreatedDate</fields>
+        <fields>StepStatus</fields>
+        <fields>OriginalActor</fields>
+        <fields>Actor</fields>
+        <fields>Comments</fields>
+        <relatedList>RelatedProcessHistoryList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
