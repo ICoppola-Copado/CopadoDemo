@@ -3,4 +3,6 @@
   <h2>Actually, I changed the title</h2>
   This is your new Page
   <!-- End Default Content REMOVE THIS -->
+  <h2>And added a few others</h2>
+  <h2>Another one!</h2>
 </apex:page>
