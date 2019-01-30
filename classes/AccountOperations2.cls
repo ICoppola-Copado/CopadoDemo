@@ -4,19 +4,11 @@ public class AccountOperations2 {
         return a;
     }
     public static Account setDefaultPhone(Account a) {
-        a.Phone = '987654321';
+        a.Phone = '123456789';
         return a;
     }
     public static Account setDefaultURL(Account a) {
-        a.Website = 'www.copa.do.com';
-        return a;
-    }
-    public static Account setDefaultName(Account a) {
-        a.name = 'Test Account';
-        return a;
-    }
-    public static Account setDefaultAnnualRevenue (Account a) {
-        a.AnnualRevenue = 100000;
+        a.Website = 'www.copa.do';
         return a;
     }
 }
