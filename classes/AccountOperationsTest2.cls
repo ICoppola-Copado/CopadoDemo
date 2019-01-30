@@ -1,6 +1,6 @@
 @isTest
 public class AccountOperationsTest2 {
-    @isTest static void testAccountHasDefaultDescription() {       
+    @isTest static void testAccountHasDefaultDescription2() {       
         // Perform test
         Test.startTest();
         Account acc = new Account(Name='Test Account');
@@ -10,7 +10,7 @@ public class AccountOperationsTest2 {
         Account savedAcc = [SELECT Description FROM Account WHERE Id = :result.getId()];
         System.assertEquals('Default Description', savedAcc.Description); 
     }
-    @isTest static void testAccountHasDefaultPhone() {       
+    @isTest static void testAccountHasDefaultPhone2() {       
         // Perform test
         Test.startTest();
         Account acc = new Account(Name='Test Account');
