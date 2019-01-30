@@ -4,11 +4,11 @@ public class AccountOperations2 {
         return a;
     }
     public static Account setDefaultPhone(Account a) {
-        a.Phone = '123456789';
+        a.Phone = '987654321';
         return a;
     }
     public static Account setDefaultURL(Account a) {
-        a.Website = 'www.copa.do.';
+        a.Website = 'www.copa.do.com';
         return a;
     }
     public static Account setDefaultName(Account a) {
