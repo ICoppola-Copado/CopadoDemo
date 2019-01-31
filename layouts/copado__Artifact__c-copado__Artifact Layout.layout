@@ -80,7 +80,23 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>copado__Branch__c</fields>
+        <fields>copado__Is_released__c</fields>
         <relatedList>copado__Artifact_Version__c.copado__Artifact__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__Depending_Artifact__c</fields>
+        <fields>copado__Depending_Artifact_Version__c</fields>
+        <fields>copado__Depends_on_the_latest_version__c</fields>
+        <relatedList>copado__Artifact_Dependency__c.copado__Dependent_Artifact__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__Dependent_Artifact__c</fields>
+        <fields>copado__Depending_Artifact_Version__c</fields>
+        <fields>copado__Depends_on_the_latest_version__c</fields>
+        <relatedList>copado__Artifact_Dependency__c.copado__Depending_Artifact__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -88,7 +104,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y000004KrAQ</masterLabel>
+        <masterLabel>00h1t000000WDuA</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
