@@ -19,7 +19,7 @@
         <componentInstances>
             <componentName>force:detailPanel</componentName>
         </componentInstances>
-        <name>Facet-0f0c4ce4-9aab-4376-85ff-61be95e3f094</name>
+        <name>Facet-d31e3b10-f681-4f07-84bc-4670a55c948c</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -30,7 +30,7 @@
             </componentInstanceProperties>
             <componentName>force:relatedListContainer</componentName>
         </componentInstances>
-        <name>Facet-d31e3b10-f681-4f07-84bc-4670a55c948c</name>
+        <name>Facet-0f0c4ce4-9aab-4376-85ff-61be95e3f094</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -41,22 +41,26 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>body</name>
-                <value>Facet-0f0c4ce4-9aab-4376-85ff-61be95e3f094</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>title</name>
-                <value>Standard.Tab.relatedLists</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tab</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>body</name>
                 <value>Facet-d31e3b10-f681-4f07-84bc-4670a55c948c</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
                 <value>Standard.Tab.detail</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>active</name>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>Facet-0f0c4ce4-9aab-4376-85ff-61be95e3f094</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Standard.Tab.relatedLists</value>
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
