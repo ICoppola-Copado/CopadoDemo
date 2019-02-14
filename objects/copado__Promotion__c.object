@@ -508,6 +508,7 @@
     <listViews>
         <fullName>copado__All</fullName>
         <columns>NAME</columns>
+        <columns>copado__Status__c</columns>
         <columns>copado__Project__c</columns>
         <columns>copado__Release__c</columns>
         <columns>copado__Source_Environment__c</columns>

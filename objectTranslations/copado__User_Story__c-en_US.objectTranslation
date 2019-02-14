@@ -45,6 +45,10 @@
         <name>JIRA_key__c</name>
     </fields>
     <fields>
+        <label><!-- Jira type --></label>
+        <name>Jira_type__c</name>
+    </fields>
+    <fields>
         <label><!-- Acceptance Criteria Status --></label>
         <name>copado__Acceptance_Criteria_Status__c</name>
         <picklistValues>
