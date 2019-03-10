@@ -1,0 +1,13 @@
+{
+  "packageAliases" : [ ],
+  "namespace" : "",
+  "packageDirectories" : [ {
+    "path" : "force-app",
+    "default" : true
+  }, {
+    "path" : "TravelersTestArtifact",
+    "default" : false
+  } ],
+  "sourceApiVersion" : "44.0",
+  "sfdcLoginUrl" : "https://login.salesforce.com"
+}

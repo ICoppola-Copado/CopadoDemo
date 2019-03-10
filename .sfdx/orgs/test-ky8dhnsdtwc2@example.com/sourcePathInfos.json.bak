@@ -1,0 +1,362 @@
+[
+    [
+        "/app/dxProject/force-app",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/force-app",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244428757,
+            "changeTime": 1552244428757,
+            "contentHash": "b28b7af69320201d1cf206ebf28373980add1451",
+            "isWorkspace": false,
+            "isArtifactRoot": true
+        }
+    ],
+    [
+        "/app/dxProject/force-app/main",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/force-app/main",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244428757,
+            "changeTime": 1552244428757,
+            "contentHash": "7505d64a54e061b7acd54ccd58b49dc43500b635",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/force-app/main/default",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/force-app/main/default",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244428825,
+            "changeTime": 1552244428825,
+            "contentHash": "d1783acf47fcb7ec23f15dbf710dcc85a0c3e0b5",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/force-app/main/default/aura",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/force-app/main/default/aura",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244428757,
+            "changeTime": 1552244428757,
+            "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431377,
+            "contentHash": "b28b7af69320201d1cf206ebf28373980add1451",
+            "isWorkspace": false,
+            "isArtifactRoot": true
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "7505d64a54e061b7acd54ccd58b49dc43500b635",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "0fc7aeead397cd3f48cce3cb2def0f2aa60e33f7",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "bc7d6b9a1ea40a4a37a7b5486b2fa3edecd37128",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Account",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Account",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "70f132fe13e692866a539996a6b9a05b46076a07",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Account/fields",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Account/fields",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "3f5edaea432c43e333dd4c1e518aab35506ae8e0",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Account/fields/External_ID__c.field-meta.xml",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Account/fields/External_ID__c.field-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 372,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "c8983353f220903aa21adf722ac4c14383bda3e3",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Contact",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Contact",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "70f132fe13e692866a539996a6b9a05b46076a07",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Contact/fields",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Contact/fields",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "3f5edaea432c43e333dd4c1e518aab35506ae8e0",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Contact/fields/External_ID__c.field-meta.xml",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Contact/fields/External_ID__c.field-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 372,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "c8983353f220903aa21adf722ac4c14383bda3e3",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Opportunity",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Opportunity",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "70f132fe13e692866a539996a6b9a05b46076a07",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Opportunity/fields",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Opportunity/fields",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "3f5edaea432c43e333dd4c1e518aab35506ae8e0",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Opportunity/fields/External_ID__c.field-meta.xml",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Opportunity/fields/External_ID__c.field-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 413,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "081f02e33ec0cb914d97b71dc0a5645c67d3a491",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Support_Object__c",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Support_Object__c",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "f124e515a94ff7e49585c2d67a1e36f8d050a51c",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Support_Object__c/Support_Object__c.object-meta.xml",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Support_Object__c/Support_Object__c.object-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 2036,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "33e5c89bc6387d77b1a8f40bd38f04115674f45d",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Support_Object__c/fields",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Support_Object__c/fields",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "e2357409e988b169601033b5c715246582bd5102",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/objects/Support_Object__c/fields/Test_field__c.field-meta.xml",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/objects/Support_Object__c/fields/Test_field__c.field-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 289,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "9be02acb1e685ee5b8117312e48d5912fad59098",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/profiles",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/profiles",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "dd4bc5d00d5b87ac9dcfa94ec543d354d095c25c",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject/TravelersTestArtifact/main/default/profiles/Admin.profile-meta.xml",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject/TravelersTestArtifact/main/default/profiles/Admin.profile-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 19851,
+            "modifiedTime": 1552244431313,
+            "changeTime": 1552244431313,
+            "contentHash": "437b55b34e0aa6d0b2574c94a7e1b4dc4627d62a",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "/app/dxProject",
+        {
+            "state": "n",
+            "sourcePath": "/app/dxProject",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 4096,
+            "modifiedTime": 1552244434513,
+            "changeTime": 1552244434513,
+            "contentHash": "9eb2efda26e04ff9d61e0a1b1d3dbe5822db59b7",
+            "isWorkspace": true,
+            "isArtifactRoot": false
+        }
+    ]
+]
