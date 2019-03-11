@@ -155,7 +155,9 @@
     </fields>
     <fields>
         <fullName>External_ID__c</fullName>
+        <description>This is an account external ID field</description>
         <externalId>true</externalId>
+        <inlineHelpText>Adding a help test</inlineHelpText>
         <label>External ID</label>
         <length>80</length>
         <required>false</required>
