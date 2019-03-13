@@ -38,7 +38,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>copado__User_Story_Title__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>copado__Project__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Org_Credential__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -47,18 +55,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Release__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Priority__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Environment__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Org_Credential__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -73,6 +69,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Promote_Change__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Environment__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -107,10 +107,6 @@
         <editHeading>true</editHeading>
         <label>Additional Information</label>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__User_Story_Title__c</field>
-            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Technical_Specifications__c</field>
@@ -349,6 +345,11 @@
             <sortOrder>12</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>ChangeRecordType</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>16</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>copado__Run_Compliance_Scan</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>13</sortOrder>
@@ -362,11 +363,6 @@
             <actionName>copado__Run_Static_Code_Analysis</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>15</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>ChangeRecordType</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>16</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
