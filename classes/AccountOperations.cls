@@ -8,7 +8,11 @@ public class AccountOperations {
         return a;
     }
     public static Account setDefaultURL(Account a) {//DEV2
-    	a.Website = 'www.copa.do';//DEV2
+        a.Website = 'www.copa.do.com';//DEV2
+        return a;
+    }
+    public static Account setDefaultName(Account a) {
+        a.name = 'Test Account';
         return a;
     }
 }
