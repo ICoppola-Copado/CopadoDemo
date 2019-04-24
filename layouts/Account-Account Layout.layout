@@ -43,6 +43,10 @@
                 <behavior>Edit</behavior>
                 <field>Ownership</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Is_ERP_Account__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
