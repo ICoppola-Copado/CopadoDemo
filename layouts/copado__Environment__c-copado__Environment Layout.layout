@@ -221,6 +221,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>copado__Value__c</fields>
         <relatedList>copado__Environmental_Variable__c.copado__Environment__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -260,7 +261,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y0000012Ie5</masterLabel>
+        <masterLabel>00h1t000000WDuX</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
