@@ -160,6 +160,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
+    <description>Admin profile</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.AccountNumber</field>
