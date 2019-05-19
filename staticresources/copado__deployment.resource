@@ -5503,9 +5503,10 @@ dw.qb.testQuery = function(e) {
         .attr('disabled', 'disabled')
         .html(copadoLabels.TESTING);
 
+    copadoApp.lock();
     dw.u.getRemote(rock.config.testquery_url, function(r) {
-        console.log('testquery response:');
-        if (r && r.done) {
+        copadoApp.unlock();
+        if(r && r.done) {
             dw.qb.queryTested = true;
             copadoApp.showMessage('CONFIRM', copadoLabels.QUERY_TEST_SUCCESSFUL);
         } else {
@@ -5517,9 +5518,9 @@ dw.qb.testQuery = function(e) {
             .removeAttr('disabled')
             .html(copadoLabels.TEST_QUERY);
 
-    }, dw.qb.query, true, function(r) {
+    }, dw.qb.query, false, function(r) {
         //TODO: unify this code and response error
-        console.log('testquery response error:', r);
+        copadoApp.unlock();
         dw.qb.queryTested = false;
         copadoApp.showMessage('ERROR', (r.error || r));
 
@@ -5527,7 +5528,7 @@ dw.qb.testQuery = function(e) {
             .removeAttr('disabled')
             .html(copadoLabels.TEST_QUERY);
     });
-    return false;
+    return false; 
 };
 
 dw.qb.getDataJson = function() {

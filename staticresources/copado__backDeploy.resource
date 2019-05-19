@@ -973,7 +973,7 @@ backDeploy.environmentboxOnCanvas = function(envId) {
     if ($copado('#box_' + envId).length) return true;
     return false;
 };
-
+backDeploy.calloutCounter = 0;
 backDeploy.setBoxStates = function() {
     var calBase = $copado('[id$="calbase"]').attr('id').slice(0,1);
     //there are two inputHiddens each ends with calbase(calculation base) but starts with u or b
@@ -982,23 +982,37 @@ backDeploy.setBoxStates = function() {
     var core = ns ? window[ns.split('__')[0]] : window;
     console.log('calbase==> ',calBase);
     if(calBase!='b' && !backDeploy.resultMapforU){
-        var calloutCounter = 0;
+        var jIter;
+        console.time();
+
         //it supports up to 200 parallel async callouts which means 199 different deployment flow step under 1 deployment flow.
         //https://help.salesforce.com/articleView?id=000187436&type=1
-        $copado('.jsEnvBoxWrapper').each(function(){
-            //UCU - used to send flowId instead but changed it to flowStepId based on too many soql query promlem
-            if($copado('.jsEnvBoxWrapper').length != calloutCounter){
+        //UCU - used to send flowId instead but changed it to flowStepId based on too many soql query promlem
+        var returnColor4perOrg = function(j) {
+            console.log('backDeploy.calloutCounter===> ',backDeploy.calloutCounter);
+            if(document.querySelectorAll('.jsEnvBoxWrapper').length != backDeploy.calloutCounter){
                 (core).BranchManagementExtension.returnOrgColors(
-                $copado(this).data('flowstepid'),
+                document.querySelectorAll('.jsEnvBoxWrapper')[j].getAttribute('data-flowstepid'),
                 function( result, event ) {
-                    backDeploy.resultMapforU = backDeploy.resultMapforU ? $copado.extend(backDeploy.resultMapforU ,result) : result;
-                    calloutCounter++;
-                    if($copado('.jsEnvBoxWrapper').length == calloutCounter)
-                        backDeploy.setStates(backDeploy.resultMapforU,calBase);
+                    if(event.status){
+                        backDeploy.resultMapforU = backDeploy.resultMapforU ? $copado.extend(backDeploy.resultMapforU ,result) : result;
+                        backDeploy.calloutCounter++;
+                        console.log('remaining cpu ===> ',parseInt(backDeploy.resultMapforU.cpuTime.color));
+                        if(document.querySelectorAll('.jsEnvBoxWrapper').length  == backDeploy.calloutCounter){
+                            backDeploy.setStates(backDeploy.resultMapforU,calBase);
+                        } else{
+                            setLockScreenMessage('Loaded '+(j+1)+' of '+document.querySelectorAll('.jsEnvBoxWrapper').length+' deployment flow steps.');
+                            returnColor4perOrg(++j);
+                        }
+                    }
                 });
+            } else if(document.querySelectorAll('.jsEnvBoxWrapper').length  == backDeploy.calloutCounter){
+                backDeploy.setStates(backDeploy.resultMapforU,calBase);
             }
-        });
+        }
+        returnColor4perOrg(0);
     }
+
     else if(calBase=='b'){
         backDeploy.setStates(null,calBase);
     }
@@ -1065,7 +1079,7 @@ backDeploy.setStates = function(resultMapforU,calBase){
             var color = '';
             //below control is to prevent showing US's available for back promotion to same org
             var key = (isMergeOrPull == false ? usRelatedData.fromEnvId : '') + usRelatedData.envId + isMergeOrPull.toString();
-            color = resultMapforU[key].color;
+            color = (resultMapforU[key] ? resultMapforU[key].color : 'transparent');
             if(color != 'transparent' && color != 'yellow'){
                 buttonElt.addClass('btnAheadOrBehind');
             }
@@ -1073,6 +1087,7 @@ backDeploy.setStates = function(resultMapforU,calBase){
             buttonElt.attr('title', (isMergeOrPull?'Promote...':'Back Promote...'));
         }
     });
+    console.timeEnd();
     setLockScreenMessage('');
 };
 backDeploy.counter = 0;

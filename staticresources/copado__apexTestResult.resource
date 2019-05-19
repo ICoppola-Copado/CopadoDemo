@@ -778,8 +778,11 @@ apexTestResult.init =  function(){
         $copado('#summaryUserStory').show();
     }
     else{
-        if(!isNaN(apexTestResult.userStoryCoverage)){
+        if(!isNaN(apexTestResult.orgCoverage)){
             $copado('.jstxt_Coverage').text(Math.floor(apexTestResult.orgCoverage)+'%');
+            $copado('#summaryOrg').show();
+        } else {
+            $copado('.jstxt_Coverage').text('0%');
             $copado('#summaryOrg').show();
         }
     }
