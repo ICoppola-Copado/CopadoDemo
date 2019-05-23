@@ -17,6 +17,10 @@
                 <behavior>Required</behavior>
                 <field>copado__Artifact__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>copado__View_In_Git__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
