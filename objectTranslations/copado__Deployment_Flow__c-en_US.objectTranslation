@@ -75,7 +75,7 @@
         <help><!-- Git Repository linked to the Deployment Flow. All branches of the Deployment Flow Steps must exist in this Git Repository. --></help>
         <label><!-- Git Repository --></label>
         <name>copado__Git_Repository__c</name>
-        <relationshipLabel><!-- Deployment Flows --></relationshipLabel>
+        <relationshipLabel><!-- Pipelines --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- Tabs to hide in Branch Management detail window --></help>
@@ -147,7 +147,7 @@ This value will prefill the order by field on related Promotion record creation 
         <help><!-- Static Code Analysis settings used whenever the analysis is run in Environments or User Stories linked to the Deployment Flow. --></help>
         <label><!-- Static Code Analysis Settings --></label>
         <name>copado__Static_Code_Analysis_Settings__c</name>
-        <relationshipLabel><!-- Deployment Flows --></relationshipLabel>
+        <relationshipLabel><!-- Pipelines --></relationshipLabel>
     </fields>
     <webLinks>
         <label><!-- Find_Replace_Rule_Editor --></label>

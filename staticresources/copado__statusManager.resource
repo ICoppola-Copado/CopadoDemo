@@ -152,7 +152,7 @@ var statusManager = statusManager || {
 
     /**
      * basic callback
-     * @return {[type]} [description] 
+     * @return {[type]} [description]
      */
     handleStatusComplete: function(msg) {
         console.log('### Job completed... Deleting attachment and notification. ###', msg);

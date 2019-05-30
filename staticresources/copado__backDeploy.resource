@@ -975,6 +975,7 @@ backDeploy.environmentboxOnCanvas = function(envId) {
 };
 backDeploy.calloutCounter = 0;
 backDeploy.setBoxStates = function() {
+    console.log('here we are again!');
     var calBase = $copado('[id$="calbase"]').attr('id').slice(0,1);
     //there are two inputHiddens each ends with calbase(calculation base) but starts with u or b
     //if the first letter is U then, User panel is rendered, if not then, Branch panel is rendered
@@ -982,11 +983,13 @@ backDeploy.setBoxStates = function() {
     var core = ns ? window[ns.split('__')[0]] : window;
     console.log('calbase==> ',calBase);
     if(calBase!='b' && !backDeploy.resultMapforU){
+        console.log('selam...');
         var jIter;
         console.time();
-
         //it supports up to 200 parallel async callouts which means 199 different deployment flow step under 1 deployment flow.
         //https://help.salesforce.com/articleView?id=000187436&type=1
+
+
         //UCU - used to send flowId instead but changed it to flowStepId based on too many soql query promlem
         var returnColor4perOrg = function(j) {
             console.log('backDeploy.calloutCounter===> ',backDeploy.calloutCounter);
@@ -1012,7 +1015,6 @@ backDeploy.setBoxStates = function() {
         }
         returnColor4perOrg(0);
     }
-
     else if(calBase=='b'){
         backDeploy.setStates(null,calBase);
     }
@@ -1045,7 +1047,7 @@ backDeploy.setStates = function(resultMapforU,calBase){
         var Sync_Pull_State = stepDetail[backDeploy.config.ns+'Sync_Pull_State__c'];
 
         var inSync = Sync_Merge_State=='In sync'&&Sync_Pull_State=='In sync';
-        console.log('calBase===> ',calBase);
+        //console.log('calBase===> ',calBase);
         if(calBase=='b'){
             if(inSync) {
                 if(!contentElt.text()) {
@@ -1079,7 +1081,8 @@ backDeploy.setStates = function(resultMapforU,calBase){
             var color = '';
             //below control is to prevent showing US's available for back promotion to same org
             var key = (isMergeOrPull == false ? usRelatedData.fromEnvId : '') + usRelatedData.envId + isMergeOrPull.toString();
-            color = (resultMapforU[key] ? resultMapforU[key].color : 'transparent');
+            //console.log('key===========> ',key);
+			color = (resultMapforU[key] ? resultMapforU[key].color : 'transparent');
             if(color != 'transparent' && color != 'yellow'){
                 buttonElt.addClass('btnAheadOrBehind');
             }

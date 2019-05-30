@@ -8,6 +8,7 @@ console.log('step type ==>',dw.qb.type);
 dw.qb.preQuery = '';
 
 dw.qb.createCacheDeleteButton = function(date){
+    
     if(!date){
          $copado('[id*=removeCacheContainer]').hide();
     }else{
@@ -369,7 +370,6 @@ dw.qb.testQuery = function(e){
 
     lockScreen();
     dw.u.getRemote(datasetup.config.testquery_url,function(r){
-        console.log('testquery response:',r);
         if(r && r.done){
             dw.qb.queryTested = true;
             showMessage('CONFIRM',labels.config.successful_testing);
@@ -385,6 +385,7 @@ dw.qb.testQuery = function(e){
         
     },dw.qb.query, false,function(r){
         //TODO: unify this code and response error
+
         dw.qb.queryTested = false;
         showMessage('ERROR',(r.error||r));
         unlockScreen();
@@ -428,3 +429,4 @@ function init(force){
     $copado('.infoM3').removeClass('infoM3');   
     $copado('.warningM3').removeClass('warningM3');  
 } */ 
+

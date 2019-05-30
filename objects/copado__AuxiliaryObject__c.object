@@ -72,7 +72,7 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Deployment Flow</label>
+        <label>Pipeline</label>
         <referenceTo>copado__Deployment_Flow__c</referenceTo>
         <relationshipLabel>AuxiliaryObjects</relationshipLabel>
         <relationshipName>AuxiliaryObjects</relationshipName>
@@ -217,6 +217,19 @@
         <externalId>false</externalId>
         <label>Snapshot Difference</label>
         <referenceTo>copado__Snapshot_Difference__c</referenceTo>
+        <relationshipLabel>AuxiliaryObjects</relationshipLabel>
+        <relationshipName>AuxiliaryObjects</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__User_Story__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>User Story</label>
+        <referenceTo>copado__User_Story__c</referenceTo>
         <relationshipLabel>AuxiliaryObjects</relationshipLabel>
         <relationshipName>AuxiliaryObjects</relationshipName>
         <required>false</required>

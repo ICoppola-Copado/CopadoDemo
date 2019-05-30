@@ -126,6 +126,45 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Resolution__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Resolution</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unresolved</fullName>
+                    <default>true</default>
+                    <label>Unresolved</label>
+                </value>
+                <value>
+                    <fullName>Fixed</fullName>
+                    <default>false</default>
+                    <label>Fixed</label>
+                </value>
+                <value>
+                    <fullName>False Positive</fullName>
+                    <default>false</default>
+                    <label>False Positive</label>
+                </value>
+                <value>
+                    <fullName>Won&apos;t fix</fullName>
+                    <default>false</default>
+                    <label>Won&apos;t fix</label>
+                </value>
+                <value>
+                    <fullName>Removed</fullName>
+                    <default>false</default>
+                    <label>Removed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Rule__c</fullName>
         <deprecated>false</deprecated>
         <description>Name of the rule violated.</description>
@@ -206,6 +245,45 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
+        <fullName>copado__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Resolved</fullName>
+                    <default>false</default>
+                    <label>Resolved</label>
+                </value>
+                <value>
+                    <fullName>Reopened</fullName>
+                    <default>false</default>
+                    <label>Reopened</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Type__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -247,6 +325,29 @@
         <description>Record Type for CodeScan integration. Requires CodeScan licensing.</description>
         <label>CodeScan</label>
         <picklistValues>
+            <picklist>copado__Resolution__c</picklist>
+            <values>
+                <fullName>False Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unresolved</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Won%27t fix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>copado__Severity__c</picklist>
             <values>
                 <fullName>Blocker</fullName>
@@ -266,6 +367,29 @@
             </values>
             <values>
                 <fullName>Minor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>copado__Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reopened</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -291,9 +415,55 @@
         <description>Record Type for free of charge PMD integration</description>
         <label>PMD</label>
         <picklistValues>
+            <picklist>copado__Resolution__c</picklist>
+            <values>
+                <fullName>False Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unresolved</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Won%27t fix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>copado__Severity__c</picklist>
             <values>
                 <fullName>Info</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>copado__Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reopened</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

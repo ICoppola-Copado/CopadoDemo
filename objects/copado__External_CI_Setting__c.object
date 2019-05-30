@@ -85,6 +85,11 @@
                     <default>false</default>
                     <label>Bamboo</label>
                 </value>
+                <value>
+                    <fullName>TeamCity</fullName>
+                    <default>false</default>
+                    <label>TeamCity</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

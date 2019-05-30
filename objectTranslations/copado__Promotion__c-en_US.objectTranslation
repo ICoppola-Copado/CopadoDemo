@@ -8,6 +8,14 @@
         <label><!-- Custom Fields --></label>
         <name>CustomFields</name>
     </fieldSets>
+    <fieldSets>
+        <label><!-- ManageBranchesDialog --></label>
+        <name>ManageBranchesDialog</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Pipeline Manager --></label>
+        <name>Pipeline_Manager</name>
+    </fieldSets>
     <fields>
         <label><!-- Back Promotion --></label>
         <name>copado__Back_Promotion__c</name>

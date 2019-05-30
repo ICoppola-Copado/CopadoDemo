@@ -379,6 +379,9 @@ dw.u.getCachedRemote = function(opt) {
             //decode the attach body
             console.log('attach==2=> ',attach);
             var res = Base64.decode(attach[0].Body);
+
+
+            //format date
             var date = Date.fromISOString(attach[0].LastModifiedDate);
             //parse json
             opt.success(preventXSSonJQXGrid($copado.parseJSON(res)), date.toLocaleString());
@@ -607,6 +610,7 @@ var coGridHelper = {
             //should never be undefined in the attachment that we create for backend to use
                 o.r = false;
             }
+
             if (typeof data[len].ns != 'undefined') {
                 o.ns = data[len].ns;
             } else {
@@ -672,7 +676,6 @@ var coGridHelper = {
             }
             return false;
         }
-
         var valid = !additionalValidation ? true : additionalValidation(me._selectedNames);
         valid && me.remoteSaveMeta(id, sel || me._selectedNames, type, callback);
 

@@ -619,7 +619,7 @@ var copadoApp = {
         if (confirm(copadoLabels.ARE_YOU_SURE)) {
             var stepId = me.getStepIdFromActionAttr($el);
             me.lock();
-
+            $el.closest('.dataRow').remove();
             me.mirrorBlockHeight();
 
             if (me.selectedStepId == stepId) {
@@ -630,18 +630,20 @@ var copadoApp = {
             if (me.isNewStepActive && !stepId) {
                 me.isNewStepActive = false;
             }
+
             //remove local
             me.data.steps = $copado.grep(me.data.steps, function(e) {
                 return e.Id != stepId;
             });
+
             //remote deletion
             var core = copadoApp.ns ? window[copadoApp.ns.split('__')[0]] : window;
             stepId && (core).DeploymentExt.deleteStep(stepId, function(result, event) {
                 // Check the event status before any action
                 if(event.status == true){
                     $el.closest('.dataRow').remove();
-                reloadHistory();
-            me.showMessage('CONFIRM', copadoLabels.STEP_DELETED);
+                    reloadHistory();
+                    me.showMessage('CONFIRM', copadoLabels.STEP_DELETED);
                 } else {
                     // Delete failed so throw and error to UI
                     me.showMessage('ERROR', event.message);
@@ -1070,21 +1072,21 @@ var copadoApp = {
 
     },
 
+
     renderSteps: function() {
-        var me = copadoApp,
-            len = me.data.steps.length;
+            var me = copadoApp,
+                len = me.data.steps.length;
 
-        //refresh destination headers
-        me.refreshDestinationHeaders();
+            //refresh destination headers
+            me.refreshDestinationHeaders();
 
-        //render steps
-        for (var i in me.data.steps) {
-            me.renderStep(me.data.steps[i]);
+            //render steps
+            for (var i=0; i<me.data.steps.length; i++ ) {
+                me.renderStep(me.data.steps[i]);
+            }
+            ga('send', 'event', 'Deployment', 'steps', 'render', len);
 
-        }
-        ga('send', 'event', 'Deployment', 'steps', 'render', len);
-
-    },
+        },
 
     createStepRow: function() {
         console.log('createStepRow ');
@@ -4805,6 +4807,10 @@ var copadoGitPromotionStep = {
                 copadoApp.unlock();
             }
         });
+
+        //filtering the grid to see only the components that are part of the user story when deploying.
+        copadoGrid.addSelectedFilter($grid2);
+
         if(me && rock.EditGitPromotion == "true") {
             $grid2.on('cellvaluechanged', function (event) {
                 console.log('event==gp==> ',event);
@@ -4835,7 +4841,6 @@ var copadoGitPromotionStep = {
         copadoApp.lock();
 
         var me = copadoGitPromotionStep;
-        console.log('getMetadata for:', me.data)
             //copadoApp.lock();
 
         //get from Attachment
@@ -5466,6 +5471,8 @@ dw.qb.init = function(force, orgId) {
 dw.qb.testQuery = function(e) {
     e.preventDefault();
 
+    console.log('dw.qb.query===> ',dw.qb.query);
+    console.log('dw.qb.type===> ',dw.qb.type);
     if (!dw.qb.query) {
         return false;
     }
@@ -5503,10 +5510,12 @@ dw.qb.testQuery = function(e) {
         .attr('disabled', 'disabled')
         .html(copadoLabels.TESTING);
 
+    console.log('rock.config.testquery_url======> ',rock.config.testquery_url);
     copadoApp.lock();
     dw.u.getRemote(rock.config.testquery_url, function(r) {
+        console.log('testquery response: ',r);
         copadoApp.unlock();
-        if(r && r.done) {
+        if (r && r.done) {
             dw.qb.queryTested = true;
             copadoApp.showMessage('CONFIRM', copadoLabels.QUERY_TEST_SUCCESSFUL);
         } else {
@@ -5521,6 +5530,7 @@ dw.qb.testQuery = function(e) {
     }, dw.qb.query, false, function(r) {
         //TODO: unify this code and response error
         copadoApp.unlock();
+        console.log('testquery response error:', r);
         dw.qb.queryTested = false;
         copadoApp.showMessage('ERROR', (r.error || r));
 
@@ -5528,7 +5538,7 @@ dw.qb.testQuery = function(e) {
             .removeAttr('disabled')
             .html(copadoLabels.TEST_QUERY);
     });
-    return false; 
+    return false;
 };
 
 dw.qb.getDataJson = function() {

@@ -108,9 +108,9 @@
         <fullName>copado__Deployment_Flow__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Deployment Flow</label>
+        <label>Pipeline</label>
         <referenceTo>copado__Deployment_Flow__c</referenceTo>
-        <relationshipLabel>Deployment Flow Steps</relationshipLabel>
+        <relationshipLabel>Pipeline Connections</relationshipLabel>
         <relationshipName>Deployment_Flow_Steps</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <reparentableMasterDetail>false</reparentableMasterDetail>
@@ -140,7 +140,6 @@
         <externalId>false</externalId>
         <label>Destination Environment</label>
         <referenceTo>copado__Environment__c</referenceTo>
-        <relationshipLabel>Deployment Flow Steps (Destination Environment)</relationshipLabel>
         <relationshipName>Deployment_Flow_Steps1</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -247,7 +246,6 @@
         <externalId>false</externalId>
         <label>Source Environment</label>
         <referenceTo>copado__Environment__c</referenceTo>
-        <relationshipLabel>Deployment Flow Steps</relationshipLabel>
         <relationshipName>Deployment_Flow_Steps</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -380,14 +378,14 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <label>Deployment Flow Step</label>
+    <label>Pipeline Connection</label>
     <nameField>
         <displayFormat>DFS-{000000}</displayFormat>
-        <label>Deployment Flow Step Reference</label>
+        <label>Pipeline Connection Reference</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Deployment Flow Steps</pluralLabel>
+    <pluralLabel>Pipeline Connections</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

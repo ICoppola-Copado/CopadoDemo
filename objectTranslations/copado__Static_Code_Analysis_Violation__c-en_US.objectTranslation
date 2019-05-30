@@ -25,6 +25,30 @@
         <name>copado__Priority__c</name>
     </fields>
     <fields>
+        <label><!-- Resolution --></label>
+        <name>copado__Resolution__c</name>
+        <picklistValues>
+            <masterLabel>False Positive</masterLabel>
+            <translation><!-- False Positive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed</masterLabel>
+            <translation><!-- Fixed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Removed</masterLabel>
+            <translation><!-- Removed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unresolved</masterLabel>
+            <translation><!-- Unresolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Won&apos;t fix</masterLabel>
+            <translation><!-- Won&apos;t fix --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Rule --></label>
         <name>copado__Rule__c</name>
     </fields>
@@ -60,6 +84,30 @@
         <label><!-- Static Code Analysis Result --></label>
         <name>copado__Static_Code_Analysis_Result__c</name>
         <relationshipLabel><!-- Static Code Analysis Violations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>copado__Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confirmed</masterLabel>
+            <translation><!-- Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reopened</masterLabel>
+            <translation><!-- Reopened --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved</masterLabel>
+            <translation><!-- Resolved --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Type --></label>

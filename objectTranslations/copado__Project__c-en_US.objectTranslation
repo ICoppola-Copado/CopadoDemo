@@ -26,7 +26,7 @@ Usage exp: issueType=Story and resolution=Duplicate --></help>
     </fields>
     <fields>
         <help><!-- If working with Copado Change Management, the Project must be linked to a Deployment Flow. --></help>
-        <label><!-- Deployment Flow --></label>
+        <label><!-- Pipeline --></label>
         <name>copado__Deployment_Flow__c</name>
         <relationshipLabel><!-- Projects --></relationshipLabel>
     </fields>

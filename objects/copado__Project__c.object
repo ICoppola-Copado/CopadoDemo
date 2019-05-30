@@ -118,7 +118,7 @@ Usage exp: issueType=Story and resolution=Duplicate</inlineHelpText>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>If working with Copado Change Management, the Project must be linked to a Deployment Flow.</inlineHelpText>
-        <label>Deployment Flow</label>
+        <label>Pipeline</label>
         <referenceTo>copado__Deployment_Flow__c</referenceTo>
         <relationshipLabel>Projects</relationshipLabel>
         <relationshipName>Projects</relationshipName>
