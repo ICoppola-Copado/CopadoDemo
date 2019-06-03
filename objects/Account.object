@@ -416,7 +416,7 @@
         <fullName>Billing_Validation</fullName>
         <active>true</active>
         <errorConditionFormula>OR(
-LEN(BillingCountry) = 1,
+LEN(BillingCountry) = 2,
 NOT(
 CONTAINS(
 &quot;AF:AX:AL:DZ:AS:AD:AO:AI:AQ:AG:AR:AM:&quot; &amp;
@@ -431,7 +431,7 @@ CONTAINS(
 &quot;MG:MW:MY:MV:ML:MT:MH:MQ:MR:MU:YT:MX:FM:MD:MC:&quot; &amp;
 &quot;MC:MN:ME:MS:MA:MZ:MM:MA:NR:NP:NL:AN:NC:NZ:NI:&quot; &amp;
 &quot;NE:NG:NU:NF:MP:NO:OM:PK:PW:PS:PA:PG:PY:PE:PH:&quot; &amp;
-&quot;PN:PL:PT:PR:QA:RE:RO:RU:RW:SH:KN:LC:PM:VC:WS:&quot; &amp;
+&quot;PN:PL:PT:PR:QA:RE:RO:RZ:RW:SH:KN:LC:PM:VC:WS:&quot; &amp;
 &quot;SM:ST:SA:SN:RS:SC:SL:SG:SK:SI:SB:SO:ZA:GS:ES:&quot; &amp;
 &quot;LK:SD:SR:SJ:SZ:SE:CH:SY:TW:TJ:TZ:TH:TL:TG:TK:&quot; &amp;
 &quot;TO:TT:TN:TR:TM:TC:TV:UG:UA:AE:GB:US:UM:UY:UZ:&quot; &amp;
