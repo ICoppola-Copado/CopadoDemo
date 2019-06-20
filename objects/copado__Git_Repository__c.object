@@ -347,6 +347,7 @@
         <columns>NAME</columns>
         <columns>copado__Username__c</columns>
         <columns>copado__URI__c</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
