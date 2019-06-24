@@ -429,13 +429,6 @@ BillingCountry)))</errorConditionFormula>
         <errorDisplayField>BillingCity</errorDisplayField>
         <errorMessage>Billing Country should be one of the specified values</errorMessage>
     </validationRules>
-    <validationRules>
-        <fullName>TESTVR</fullName>
-        <active>true</active>
-        <description>eteadasdasda</description>
-        <errorConditionFormula>True</errorConditionFormula>
-        <errorMessage>asdadas</errorMessage>
-    </validationRules>
     <webLinks>
         <fullName>Billing</fullName>
         <availability>online</availability>
