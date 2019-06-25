@@ -438,12 +438,6 @@ BillingCountry)))</errorConditionFormula>
         <errorDisplayField>BillingCity</errorDisplayField>
         <errorMessage>Billing Country should be one of the specified values</errorMessage>
     </validationRules>
-    <validationRules>
-        <fullName>Other_VR_Rollback</fullName>
-        <active>true</active>
-        <errorConditionFormula>IF(NOT(ISBLANK(Description)), false, false)</errorConditionFormula>
-        <errorMessage>false vr</errorMessage>
-    </validationRules>
     <webLinks>
         <fullName>Billing</fullName>
         <availability>online</availability>
