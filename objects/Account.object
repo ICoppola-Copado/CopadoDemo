@@ -344,13 +344,6 @@
     </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.SITE</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
-        <columns>ACCOUNT.PHONE1</columns>
-        <columns>ACCOUNT.TYPE</columns>
-        <columns>ACCOUNT.CREATED_DATE</columns>
-        <columns>ACCOUNT.LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <label>All Accounts</label>
     </listViews>
@@ -435,6 +428,13 @@ CONTAINS(
 BillingCountry)))</errorConditionFormula>
         <errorDisplayField>BillingCity</errorDisplayField>
         <errorMessage>Billing Country should be one of the specified values</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TESTVR</fullName>
+        <active>false</active>
+        <description>eteadasdasda</description>
+        <errorConditionFormula>True</errorConditionFormula>
+        <errorMessage>asdadas</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Billing</fullName>
