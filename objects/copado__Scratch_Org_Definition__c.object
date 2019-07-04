@@ -124,7 +124,6 @@
     <searchLayouts>
         <lookupDialogsAdditionalFields>copado__Developer_Hub_Org__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Duration_in_days__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>copado__Scratch_Org_Definition_JSON__c</lookupDialogsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
