@@ -396,6 +396,7 @@
         <columns>copado__Error_Message__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>LAST_UPDATE</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -573,7 +574,7 @@
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>copado__Required_Criteria_Fields</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>OR(
 ISPICKVAL(copado__Matching_Criteria__c ,&quot;&quot;),
 ISPICKVAL(copado__Record_Count_Criteria__c,&quot;&quot;),
