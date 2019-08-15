@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Market1</fullName>
+        <default>false</default>
+        <label>Market1</label>
+    </customValue>
+    <customValue>
+        <fullName>Market2</fullName>
+        <default>false</default>
+        <label>Market2</label>
+    </customValue>
+    <customValue>
+        <fullName>Market3</fullName>
+        <default>false</default>
+        <label>Market3</label>
+    </customValue>
+    <masterLabel>Market Values</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -6,8 +6,10 @@
         <callbackUrl>http://localhost:1717/OauthRedirect</callbackUrl>
         <certificate>MIIC5jCCAc4CCQCROnvhTks0/TANBgkqhkiG9w0BAQsFADA0MQswCQYDVQQGEwJVUzEPMA0GA1UECgwGQ29wYWRvMRQwEgYDVQQDDAt3d3cuY29wYS5kbzAgFw0xOTA1MTQxMDMwMzhaGA8yMTI4MTExODEwMzAzOFowNDELMAkGA1UEBhMCVVMxDzANBgNVBAoMBkNvcGFkbzEUMBIGA1UEAwwLd3d3LmNvcGEuZG8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCmKUe88OniiCJ64G7ZjZtcEhgm/XfqBJZQYfYQINfwNwhnQrVWf5lBVyIsA3ctvXuPhqq3s+lxpmNcCrzAk65GptM9+u+aC+whlqQfscvT7g5HUjBPjkGq34lfc5YoR5pwe0lojmB2Rh+F862HX2t3i0nLoW8OmpWjukKE47dmjC6rRFIK4dX0K45WgZOQ0xcOYldqg3/qE+P6mXpnbaZtJmVPOtEc/ZpwCYOSyFuIg+Pr2Gn9VVMwqHsdM6CPABeTuyn5jpHXoXCwFROozdHcuuG50XWEx70kZtbKK19Yt1fXmOHY9EPQPzZ00l362JzqTz2ceahg6NB2eJoTupC9AgMBAAEwDQYJKoZIhvcNAQELBQADggEBAEh6pOEL4ug/CAMpl4tS897RnM5xno0KFeVR0hZLtIRVzLkYrOYBBUH7tPsuMpS+tXUwPKWlHYSKgnmH2L75fEDZkke5pTVlaDXPQJFe1KoKn45N9a131Skiy20ZdCj8MPX+YGUAFu9NzagIAxJmSj4s3k2CDAk282YS+a53EYtGYilI1a/ZQ3LEZ4rdJ3eS3HNazWpBLCjXOf2XDJZgEgLOdkKvVizpocmPALkoInEUt+Rkfl5dGRFXQslc/eHttndnJwwn6C8avyB6giVQgSayM7Qtv+sPD7I3UkWx//2LVNDJdnr6LG5dxTPNX5ptMvUb9E9IjDcmywmRVW0AcH4=</certificate>
         <consumerKey>41f73913db724b9985c39ee40f179e4147c37a16a7b245a09c4556bad4179727</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
         <scopes>Api</scopes>
         <scopes>Web</scopes>
         <scopes>RefreshToken</scopes>
     </oauthConfig>
+    <profileName>System Administrator</profileName>
 </ConnectedApp>
