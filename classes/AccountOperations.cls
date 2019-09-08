@@ -15,4 +15,9 @@ public class AccountOperations {
         a.name = 'Test Account';
         return a;
     }
+
+    public static Account setDefaultName1(Account a) {
+    a.name = 'Test Account';
+    return a;
+    }
 }
