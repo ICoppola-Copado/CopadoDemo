@@ -12,7 +12,7 @@ public class AccountOperations {
         return a;
     }
     public static Account setDefaultName(Account a) {
-        a.name = 'Test Account';
+        a.name = 'Test Account CLI';
         return a;
     }
 }
