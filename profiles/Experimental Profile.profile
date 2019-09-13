@@ -1577,9 +1577,6 @@
         <layout>CaseClose-Close Case Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>CommitTest1__c-CommitTest1 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>CommunityMemberLayout-Community Member Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
