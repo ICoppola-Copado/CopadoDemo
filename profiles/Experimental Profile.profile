@@ -90,10 +90,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>PagedResult</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>ProductController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
