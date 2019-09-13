@@ -25,11 +25,6 @@
         <field>Account.Site</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.asd__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Experimental PS</label>
     <license>Salesforce</license>
