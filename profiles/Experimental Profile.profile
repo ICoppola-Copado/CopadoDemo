@@ -1687,9 +1687,6 @@
         <layout>Solution-Solution Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Speaker__c-Speaker Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Support_Object__c-Support Object Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
