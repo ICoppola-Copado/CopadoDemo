@@ -90,10 +90,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>AccountOperationsTest2</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>OrderController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
