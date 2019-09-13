@@ -3348,10 +3348,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
-        <name>PublishMultiforce</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
         <name>EditOppLineItemUnitPrice</name>
     </userPermissions>
     <userPermissions>
