@@ -2932,10 +2932,6 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
-        <tab>Product_Explorer</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>Product_Family__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
