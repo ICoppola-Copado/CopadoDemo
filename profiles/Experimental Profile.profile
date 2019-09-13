@@ -2932,10 +2932,6 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
-        <tab>Product__c</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>Speaker__c</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
