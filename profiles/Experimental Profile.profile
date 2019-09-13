@@ -90,10 +90,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TestProductController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>WrapperExampleController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
