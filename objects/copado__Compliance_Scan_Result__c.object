@@ -430,10 +430,10 @@
         <columns>copado__Environment__c</columns>
         <columns>copado__Highest_Severity__c</columns>
         <columns>copado__Highest_Rule_Action__c</columns>
+        <columns>copado__Scan_Start__c</columns>
         <columns>copado__Scan_Duration_in_Minutes__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
-        <language>en_US</language>
     </listViews>
     <nameField>
         <displayFormat>Scan Result - {000000000}</displayFormat>
