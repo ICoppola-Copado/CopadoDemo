@@ -5,6 +5,6 @@
     <license>Salesforce</license>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ApiEnabled</name>
+        <name>RunReports</name>
     </userPermissions>
 </PermissionSet>
