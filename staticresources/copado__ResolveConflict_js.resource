@@ -96,6 +96,10 @@ var conversionFunc = conversionFunc || {},
     };
 
     self.json2yaml = function(obj) {
+        if(obj==''){
+            return '';
+        }
+        //yaml parser error fix for empty files
         if (typeof obj == 'string') {
             obj = JSON.parse(obj);
         }
@@ -587,7 +591,8 @@ var conversionFunc = conversionFunc || {},
         return sXML.indexOf('parsererror') > -1;
     };
     parseOperations.convertXml2formattedJSON = function(param) {
-        return JSON.stringify(xmlToJson(new DOMParser().parseFromString(param, 'text/xml')), null, '\t');
+        //yaml parser error fix for empty files
+        return param.length != '' ? JSON.stringify(xmlToJson(new DOMParser().parseFromString(param, 'text/xml')), null, '\t') : '';
     };
     parseOperations.convertJSON2formattedXml = function(param) {
         return formatXml(json2Xml(JSON.parse(param)));
