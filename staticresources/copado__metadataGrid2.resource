@@ -458,9 +458,6 @@ MetadataGrid2.prototype._getColumnsByGridMode = function() {
                 if (!value || value == " ") {
                     return { result: false, message: "You must specify a value" };
                 }
-                if (value.indexOf(' ') >= 0) {
-                    return { result: false, message: "Remove all blank spaces" };
-                }
                 return true;
             }
         }, {

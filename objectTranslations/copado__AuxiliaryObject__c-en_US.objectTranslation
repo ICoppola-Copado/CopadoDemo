@@ -6,6 +6,11 @@
         <relationshipLabel><!-- AuxiliaryObjects --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Data Template --></label>
+        <name>copado__Data_Template__c</name>
+        <relationshipLabel><!-- AuxiliaryObjects --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Pipeline --></label>
         <name>copado__Deployment_Flow__c</name>
         <relationshipLabel><!-- AuxiliaryObjects --></relationshipLabel>
@@ -63,6 +68,11 @@
     <fields>
         <label><!-- Snapshot Difference --></label>
         <name>copado__Snapshot_Difference__c</name>
+        <relationshipLabel><!-- AuxiliaryObjects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Static Code Analysis Settings --></label>
+        <name>copado__Static_Code_Analysis_Settings__c</name>
         <relationshipLabel><!-- AuxiliaryObjects --></relationshipLabel>
     </fields>
     <fields>

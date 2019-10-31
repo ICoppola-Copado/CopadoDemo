@@ -16,6 +16,10 @@
         <label><!-- CustomFields --></label>
         <name>copado__CustomFields</name>
     </fieldSets>
+    <fieldSets>
+        <label><!-- Pipeline Deployment Modal --></label>
+        <name>copado__Pipeline_Deployment_Modal</name>
+    </fieldSets>
     <fields>
         <label><!-- Build Task --></label>
         <name>copado__Build_Task__c</name>
@@ -78,6 +82,11 @@
     <fields>
         <label><!-- Last Compliance Scan Date --></label>
         <name>copado__Last_Compliance_Scan_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is auto populated when a manual task is pending on deployment. --></help>
+        <label><!-- Paused --></label>
+        <name>copado__Paused__c</name>
     </fields>
     <fields>
         <label><!-- Promotion --></label>

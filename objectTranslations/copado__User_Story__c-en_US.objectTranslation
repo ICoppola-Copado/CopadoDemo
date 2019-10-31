@@ -259,6 +259,10 @@
         <name>copado__Legal__c</name>
     </fields>
     <fields>
+        <label><!-- Manual Step Required --></label>
+        <name>copado__Manual_Step_Required__c</name>
+    </fields>
+    <fields>
         <label><!-- Manual Tests Passed --></label>
         <name>copado__Manual_Tests_Passed__c</name>
     </fields>
@@ -850,6 +854,10 @@
     <webLinks>
         <label><!-- Pull_Request --></label>
         <name>copado__Pull_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Ready_for_Promotion --></label>
+        <name>copado__Ready_for_Promotion</name>
     </webLinks>
     <webLinks>
         <label><!-- Run_Compliance_Scan --></label>

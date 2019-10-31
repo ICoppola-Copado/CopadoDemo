@@ -169,6 +169,28 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>copado__Data_Template__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Data Template</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>copado__Data_Template__c.copado__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>copado__Data_Template__c</referenceTo>
+        <relationshipLabel>AuxiliaryObjects</relationshipLabel>
+        <relationshipName>AuxiliaryObjects</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Deployment_Flow__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
@@ -318,6 +340,19 @@
         <externalId>false</externalId>
         <label>Snapshot Difference</label>
         <referenceTo>copado__Snapshot_Difference__c</referenceTo>
+        <relationshipLabel>AuxiliaryObjects</relationshipLabel>
+        <relationshipName>AuxiliaryObjects</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Static_Code_Analysis_Settings__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Static Code Analysis Settings</label>
+        <referenceTo>copado__Static_Code_Analysis_Settings__c</referenceTo>
         <relationshipLabel>AuxiliaryObjects</relationshipLabel>
         <relationshipName>AuxiliaryObjects</relationshipName>
         <required>false</required>

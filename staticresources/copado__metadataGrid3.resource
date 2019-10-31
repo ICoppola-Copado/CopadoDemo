@@ -198,14 +198,26 @@ var MetadataGrid3 = (() => {
 
 
     MetadataGrid3.prototype.createColumnsConfig = function(type) {
-        var validationFn = (cell, value) => {
-            if (!value || value === ' ') {
-                return { result: false, message: 'You must specify a value' };
-            }
+        var validateBlankSpaces = (cell, value) => {
             if (value.indexOf(' ') >= 0) {
                 return { result: false, message: 'Remove all blank spaces' };
             }
             return true;
+        };
+        var validateSpecifyValue = (cell, value) => {
+            if (!value || value === ' ') {
+                return { result: false, message: 'You must specify a value' };
+            }
+            return true;
+        };
+        var validationFn = (cell, value) => {
+            if (validateSpecifyValue(cell, value) !== true) {
+                return validateSpecifyValue(cell, value);
+            } else if (validateBlankSpaces(cell, value) !== true) {
+                return validateBlankSpaces(cell, value);
+            } else {
+                return true;
+            }
         };
 
         var cellsrendererFn = () => {
@@ -244,105 +256,105 @@ var MetadataGrid3 = (() => {
         var columnsConfig = {
 
             /*******  Table configuration order  *******/
-            /*           text                     width           filtertype        datafield  columntype  filtercondition  editable     validation      cellsrenderer            filterable    cellsformat    */
+            /*           text                     width           filtertype        datafield  columntype  filtercondition  editable        validation      cellsrenderer            filterable    cellsformat    */
             'metadataselector': [
-                [ copadoLabels.selected,           '5%',               'bool',           'r',    'checkbox',        null,    null,          null,            null,                     null,         null ],
-                [ copadoLabels.name,              '30%',              'input',           'n',     'textbox',        null,   false,          null,            null,                     true,         null ],
-                [ copadoLabels.type,              '15%',  this.TypeFilterType,           't',     'textbox',        null,   false,          null,            null,                     null,         null ],
-                [ copadoLabels.LASTMODIFIEDBY,    '15%',              'input',           'b',     'textbox',        null,   false,          null,            null,                     null,         null ],
-                [ copadoLabels.LastModifiedDate,  '10%',              'range',           'd',          null,        null,   false,          null,            null,                     null, 'yyyy/MM/dd' ],
-                [ copadoLabels.CREATEDBY,         '15%',              'input',          'cb',     'textbox',        null,   false,          null,            null,                     null,         null ],
-                [ copadoLabels.CREATEDDATE,       '10%',              'range',          'cd',          null,        null,   false,          null,            null,                     null, 'yyyy/MM/dd' ]
+                [ copadoLabels.selected,           '5%',               'bool',           'r',    'checkbox',        null,    null,              null,            null,                     null,         null ],
+                [ copadoLabels.name,              '30%',              'input',           'n',     'textbox',        null,   false,              null,            null,                     true,         null ],
+                [ copadoLabels.type,              '15%',  this.TypeFilterType,           't',     'textbox',        null,   false,              null,            null,                     null,         null ],
+                [ copadoLabels.LASTMODIFIEDBY,    '15%',              'input',           'b',     'textbox',        null,   false,              null,            null,                     null,         null ],
+                [ copadoLabels.LastModifiedDate,  '10%',              'range',           'd',          null,        null,   false,              null,            null,                     null, 'yyyy/MM/dd' ],
+                [ copadoLabels.CREATEDBY,         '15%',              'input',          'cb',     'textbox',        null,   false,              null,            null,                     null,         null ],
+                [ copadoLabels.CREATEDDATE,       '10%',              'range',          'cd',          null,        null,   false,              null,            null,                     null, 'yyyy/MM/dd' ]
             ],
 
             'testClasses': [
-                [ copadoLabels.selected,         '10%',               'bool',           's',    'checkbox',        null,    null,          null,             null,                    null,        null ],
-                [ copadoLabels.name,             '70%',              'input',           'n',     'textbox',        null,   false,          null,             null,                    null,        null ],
-                [ copadoLabels.type,             '20%',                 null,          null,          null,        null,   false,          null,  cellsrendererFn,                    null,        null ]
+                [ copadoLabels.selected,         '10%',               'bool',           's',    'checkbox',        null,    null,               null,             null,                    null,        null ],
+                [ copadoLabels.name,             '70%',              'input',           'n',     'textbox',        null,   false,               null,             null,                    null,        null ],
+                [ copadoLabels.type,             '20%',                 null,          null,          null,        null,   false,               null,  cellsrendererFn,                    null,        null ]
             ],
 
             'orgMetadata-branches': [
-                [ copadoLabels.selected,          '5%',               'bool',      'select',          null,        null,   false,          null,             null,                   false,        null ],
-                [ copadoLabels.name,             '40%',              'input',        'name',     'textbox',        null,   false,          null,             null,                    true,          null ],
-                [ copadoLabels.type,             '30%',  this.TypeFilterType,        'type',     'textbox',        null,   false,          null,             null,  !this.isTypeFilterable,        null ],
-                [ copadoLabels.LastModifiedDate, '25%',              'range',  'lastUpdate',          null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ]
+                [ copadoLabels.selected,          '5%',               'bool',      'select',          null,        null,   false,               null,             null,                   false,        null ],
+                [ copadoLabels.name,             '40%',              'input',        'name',     'textbox',        null,   false,               null,             null,                    true,          null ],
+                [ copadoLabels.type,             '30%',  this.TypeFilterType,        'type',     'textbox',        null,   false,               null,             null,  !this.isTypeFilterable,        null ],
+                [ copadoLabels.LastModifiedDate, '25%',              'range',  'lastUpdate',          null,        null,   false,               null,             null,                    null,  'yyyy/MM/dd' ]
             ],
 
             'orgMetadata': [
-                [ copadoLabels.name,             '35%',            'input',           'n',       'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.type,             '15%',this.TypeFilterType,           't',       'textbox',        null,   false,          null,             null,  !this.isTypeFilterable,        null ],
-                [ copadoLabels.LastModifiedById, '15%',            'input',           'b',       'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.LastModifiedDate, '10%',            'range',           'd',            null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ],
-                [ copadoLabels.CREATEDBY,        '15%',            'input',          'cb',       'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.CREATEDDATE,      '10%',            'range',          'cd',            null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ]
+                [ copadoLabels.name,             '35%',            'input',           'n',       'textbox',        null,   false,               null,             null,                    null,          null ],
+                [ copadoLabels.type,             '15%',this.TypeFilterType,           't',       'textbox',        null,   false,               null,             null,  !this.isTypeFilterable,        null ],
+                [ copadoLabels.LastModifiedById, '15%',            'input',           'b',       'textbox',        null,   false,               null,             null,                    null,          null ],
+                [ copadoLabels.LastModifiedDate, '10%',            'range',           'd',            null,        null,   false,               null,             null,                    null,  'yyyy/MM/dd' ],
+                [ copadoLabels.CREATEDBY,        '15%',            'input',          'cb',       'textbox',        null,   false,               null,             null,                    null,          null ],
+                [ copadoLabels.CREATEDDATE,      '10%',            'range',          'cd',            null,        null,   false,               null,             null,                    null,  'yyyy/MM/dd' ]
 
             ],
 
             'gitCommit': [
-                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,          null,             null,                    null,        null ],
-                [ copadoLabels.RETRIEVE_ONLY,     '5%',                 null,           'r',    'checkbox',        null,    null,          null,             null,                   false,        null ],
-                [ copadoLabels.name,             '35%',              'input',           'n',     'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.type,             '10%',  this.TypeFilterType,           't',     'textbox',        null,   false,          null,             null,  !this.isTypeFilterable,        null ],
-                [ copadoLabels.LastModifiedById, '15%',              'input',           'b',     'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ],
-                [ copadoLabels.CREATEDBY,        '10%',              'input',          'cb',     'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.CREATEDDATE,      '10%',              'range',          'cd',          null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ]
+                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,                null,             null,                    null,        null ],
+                [ copadoLabels.RETRIEVE_ONLY,     '5%',                 null,           'r',    'checkbox',        null,    null,                null,             null,                   false,        null ],
+                [ copadoLabels.name,             '35%',              'input',           'n',     'textbox',        null,   false,                null,             null,                    null,          null ],
+                [ copadoLabels.type,             '10%',  this.TypeFilterType,           't',     'textbox',        null,   false,                null,             null,  !this.isTypeFilterable,        null ],
+                [ copadoLabels.LastModifiedById, '15%',              'input',           'b',     'textbox',        null,   false,                null,             null,                    null,          null ],
+                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,        null,   false,                null,             null,                    null,  'yyyy/MM/dd' ],
+                [ copadoLabels.CREATEDBY,        '10%',              'input',          'cb',     'textbox',        null,   false,                null,             null,                    null,          null ],
+                [ copadoLabels.CREATEDDATE,      '10%',              'range',          'cd',          null,        null,   false,                null,             null,                    null,  'yyyy/MM/dd' ]
 
             ],
 
             'dwOverviewGrid': [
-                [ copadoLabels.RETRIEVE_ONLY,     '5%',               'bool',           'r',    'checkbox',        null,   false,          null,             null,                   false,        null ],
-                [ copadoLabels.name,             '45%',              'input',           'n',     'textbox',  'contains',   false,          null,             null,                    null,          null ],
-                [ copadoLabels.type,             '20%',  this.TypeFilterType,           't',     'textbox',        null,   false,          null,             null,  !this.isTypeFilterable,        null ],
-                [ copadoLabels.LastModifiedById, '20%',              'input',           'b',     'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ]
+                [ copadoLabels.RETRIEVE_ONLY,     '5%',               'bool',           'r',    'checkbox',        null,   false,                null,             null,                   false,        null ],
+                [ copadoLabels.name,             '45%',              'input',           'n',     'textbox',  'contains',   false,                null,             null,                    null,          null ],
+                [ copadoLabels.type,             '20%',  this.TypeFilterType,           't',     'textbox',        null,   false,                null,             null,  !this.isTypeFilterable,        null ],
+                [ copadoLabels.LastModifiedById, '20%',              'input',           'b',     'textbox',        null,   false,                null,             null,                    null,          null ],
+                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,        null,   false,                null,             null,                    null,  'yyyy/MM/dd' ]
 
             ],
 
             'gitCommitCompare': [
-                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,          null,             null,                    null,        null ],
-                [ copadoLabels.RETRIEVE_ONLY,     '5%',                 null,           'r',    'checkbox',        null,    null,          null,             null,                   false,        null ],
-                [ copadoLabels.name,             '35%',              'input',           'n',     'textbox',  'contains',   false,          null,             null,                    null,        null ],
-                [ copadoLabels.type,             '15%',  this.TypeFilterType,           't',     'textbox',        null,   false,          null,             null,  !this.isTypeFilterable,        null ],
-                [ copadoLabels.LastModifiedById, '15%',              'input',           'b',          null,  'contains',   false,          null,             null,                    null,        null ],
-                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,  'contains',   false,          null,             null,                    null,        null ],
-                [ '',                            '15%',              'input',          'ch',          null,        null,   false,          null,             null,                    false,       null ]
+                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,                 null,             null,                    null,        null ],
+                [ copadoLabels.RETRIEVE_ONLY,     '5%',                 null,           'r',    'checkbox',        null,    null,                 null,             null,                   false,        null ],
+                [ copadoLabels.name,             '35%',              'input',           'n',     'textbox',  'contains',   false,                 null,             null,                    null,        null ],
+                [ copadoLabels.type,             '15%',  this.TypeFilterType,           't',     'textbox',        null,   false,                 null,             null,  !this.isTypeFilterable,        null ],
+                [ copadoLabels.LastModifiedById, '15%',              'input',           'b',          null,  'contains',   false,                 null,             null,                    null,        null ],
+                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,  'contains',   false,                 null,             null,                    null,        null ],
+                [ '',                            '15%',              'input',          'ch',          null,        null,   false,                 null,             null,                    false,       null ]
 
             ],
 
             'gitCommitLegacy': [
-                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,          null,             null,                    null,        null ],
-                [ copadoLabels.COMMIT_INFO,      '15%',              'input',         'cmm',     'textbox',  'contains',   false,          null, cellsrendererCmm,                    null,        null ],
-                [ copadoLabels.name,             '40%',              'input',           'n',     'textbox',  'contains',   false,          null,             null,                    null,        null ],
-                [ copadoLabels.type,             '40%',  this.TypeFilterType,           't',     'textbox',        null,   false,          null,             null,  !this.isTypeFilterable,        null ]
+                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,                 null,             null,                    null,        null ],
+                [ copadoLabels.COMMIT_INFO,      '15%',              'input',         'cmm',     'textbox',  'contains',   false,                 null, cellsrendererCmm,                    null,        null ],
+                [ copadoLabels.name,             '40%',              'input',           'n',     'textbox',  'contains',   false,                 null,             null,                    null,        null ],
+                [ copadoLabels.type,             '40%',  this.TypeFilterType,           't',     'textbox',        null,   false,                 null,             null,  !this.isTypeFilterable,        null ]
             ],
 
             'DXpermissionSet': [
-                [ copadoLabels.selected,         '10%',               'bool',           's',    'checkbox',        null,    null,          null,             null,                    null,        null ],
-                [ copadoLabels.name,             '45%',              'input',           'n',     'textbox',        null,   false,          null,             null,                    null,        null ],
-                [ copadoLabels.type,             '45%',                 null,           't',     'textbox',        null,   false,          null,             null,                    null,        null ]
+                [ copadoLabels.selected,         '10%',               'bool',           's',    'checkbox',        null,    null,                 null,             null,                    null,        null ],
+                [ copadoLabels.name,             '45%',              'input',           'n',     'textbox',        null,   false,                 null,             null,                    null,        null ],
+                [ copadoLabels.type,             '45%',                 null,           't',     'textbox',        null,   false,                 null,             null,                    null,        null ]
 
             ],
 
             'gitCommitEditable': [
-                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,          null,             null,                    null,        null ],
-                [ copadoLabels.name,             '30%',              'input',           'n',          null,        null,    true,  validationFn,             null,                    null,          null ],
-                [ copadoLabels.type,             '15%',  this.TypeFilterType,           't',     'textbox',        null,    true,  validationFn,             null,  !this.isTypeFilterable,        null ],
-                [ copadoLabels.LastModifiedById, '15%',              'input',           'b',          null,        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ],
-                [ copadoLabels.CREATEDBY,        '15%',              'input',          'cb',          null,        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.CREATEDDATE,      '10%',              'range',          'cd',          null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ]
+                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,                 null,             null,                    null,        null ],
+                [ copadoLabels.name,             '30%',              'input',           'n',          null,        null,    true,  validateBlankSpaces,             null,                    null,          null ],
+                [ copadoLabels.type,             '15%',  this.TypeFilterType,           't',     'textbox',        null,    true,         validationFn,             null,  !this.isTypeFilterable,        null ],
+                [ copadoLabels.LastModifiedById, '15%',              'input',           'b',          null,        null,   false,                 null,             null,                    null,          null ],
+                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,        null,   false,                 null,             null,                    null,  'yyyy/MM/dd' ],
+                [ copadoLabels.CREATEDBY,        '15%',              'input',          'cb',          null,        null,   false,                 null,             null,                    null,          null ],
+                [ copadoLabels.CREATEDDATE,      '10%',              'range',          'cd',          null,        null,   false,                 null,             null,                    null,  'yyyy/MM/dd' ]
 
             ],
 
             'default': [
-                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,          null,             null,                    null,        null ],
-                [ copadoLabels.name,             '30%',              'input',           'n',     'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.type,             '15%',  this.TypeFilterType,           't',     'textbox',        null,   false,          null,             null,  !this.isTypeFilterable,        null ],
-                [ copadoLabels.LastModifiedById, '15%',              'input',           'b',     'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ],
-                [ copadoLabels.CREATEDBY,        '15%',              'input',          'cb',     'textbox',        null,   false,          null,             null,                    null,          null ],
-                [ copadoLabels.CREATEDDATE,      '10%',              'range',          'cd',          null,        null,   false,          null,             null,                    null,  'yyyy/MM/dd' ]
+                [ copadoLabels.selected,          '5%',               'bool',           's',    'checkbox',        null,    null,                 null,             null,                    null,        null ],
+                [ copadoLabels.name,             '30%',              'input',           'n',     'textbox',        null,   false,                 null,             null,                    null,          null ],
+                [ copadoLabels.type,             '15%',  this.TypeFilterType,           't',     'textbox',        null,   false,                 null,             null,  !this.isTypeFilterable,        null ],
+                [ copadoLabels.LastModifiedById, '15%',              'input',           'b',     'textbox',        null,   false,                 null,             null,                    null,          null ],
+                [ copadoLabels.LastModifiedDate, '10%',              'range',           'd',          null,        null,   false,                 null,             null,                    null,  'yyyy/MM/dd' ],
+                [ copadoLabels.CREATEDBY,        '15%',              'input',          'cb',     'textbox',        null,   false,                 null,             null,                    null,          null ],
+                [ copadoLabels.CREATEDDATE,      '10%',              'range',          'cd',          null,        null,   false,                 null,             null,                    null,  'yyyy/MM/dd' ]
 
             ]
 

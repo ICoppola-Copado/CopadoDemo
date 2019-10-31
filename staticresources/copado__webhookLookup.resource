@@ -104,7 +104,8 @@ webhookLookup.applyMultiReferal = function(){
         for(var i = 0; i < webhookLookup.multiReferals.length; i++){
             templateUrl = templateUrl.replace('__RECORDID_'+i+'__', webhookLookup.referalMap[webhookLookup.multiReferals[i].toLowerCase().trim()]);
         }
-        url += templateUrl.replace('api_key=__APIKEY__', '');
+        //removed & after api key for multi referral
+        url += templateUrl.replace('api_key=__APIKEY__&', '');
         webhookLookup.setValue(url);
         webhookLookup.onSuccessCB();
         webhookLookup.hide(true);
