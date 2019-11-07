@@ -97,6 +97,13 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Dev2_Autonumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Dev2 Autonumber</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>Dev2_Field__c</fullName>
         <externalId>false</externalId>
         <label>Dev2 Field</label>
