@@ -1342,6 +1342,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Speaker__c.Dev2_Autonumber__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Speaker__c.Dev2_Field__c</field>
         <readable>true</readable>
