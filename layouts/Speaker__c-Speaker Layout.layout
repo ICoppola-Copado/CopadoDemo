@@ -37,6 +37,10 @@
                 <behavior>Edit</behavior>
                 <field>Dev2_Field__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Dev1_new_picklist__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
