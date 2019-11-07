@@ -73,6 +73,16 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Dev2_Field__c</fullName>
+        <externalId>false</externalId>
+        <label>Dev2 Field</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Email__c</fullName>
         <externalId>false</externalId>
         <label>Email</label>
