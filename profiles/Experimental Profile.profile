@@ -2992,14 +2992,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AllowUniversalSearch</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>AllowViewKnowledge</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ApexRestServices</name>
     </userPermissions>
     <userPermissions>
@@ -3013,10 +3005,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ChatterInternalUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterInviteExternalUsers</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -3060,10 +3048,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EmailMass</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EmailSingle</name>
     </userPermissions>
     <userPermissions>
@@ -3081,10 +3065,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>LightningExperienceUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ListEmailSend</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -3125,9 +3105,5 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewRoles</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewSetup</name>
     </userPermissions>
 </Profile>
