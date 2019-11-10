@@ -3906,6 +3906,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Speaker__c.Dev1_Field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Speaker__c.Dev2_Field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Speaker__c.Email__c</field>
         <readable>false</readable>
     </fieldPermissions>

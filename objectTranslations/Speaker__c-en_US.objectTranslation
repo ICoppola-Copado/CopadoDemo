@@ -13,6 +13,14 @@
         <name>Bio__c</name>
     </fields>
     <fields>
+        <label><!-- Dev1 Field --></label>
+        <name>Dev1_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dev2 Field --></label>
+        <name>Dev2_Field__c</name>
+    </fields>
+    <fields>
         <label><!-- Email --></label>
         <name>Email__c</name>
     </fields>
