@@ -393,7 +393,6 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         var innerChildRelationshipsList = [];
         var index = 0;
         // child object mapping
-        console.log('childRelationshipsResult: ',childRelationshipsResult);
         childRelationshipsResult.forEach((object) => {
             var isSelected = false;
             index = childObjetcsArray.findIndex((element) => {
@@ -410,33 +409,35 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             });
 
             var objectLabel = {};
-            objectLabel[object.childSObject] = objectLabelName.label;
+            if(objectLabelName) {
+                objectLabel[object.childSObject] = objectLabelName.label;
 
-            var childObjects = {
-                isSelected: isSelected,
-                childSObject: object.childSObject,
-                field: object.field,
-                relationshipName: object.relationshipName,
-                objectApiNameMap: objectLabel,
-                deploymentTemplateNameMap: {},
-                deploymentTemplate: 'Select Template'
-            };
+                var childObjects = {
+                    isSelected: isSelected,
+                    childSObject: object.childSObject,
+                    field: object.field,
+                    relationshipName: object.relationshipName,
+                    objectApiNameMap: objectLabel,
+                    deploymentTemplateNameMap: {},
+                    deploymentTemplate: 'Select Template'
+                };
 
-            var childRelationKey = object.field + '-' + object.relationshipName;
+                var childRelationKey = object.field + '-' + object.relationshipName;
 
-            updatedChildRelationshipResult[childRelationKey] = childObjects;
+                updatedChildRelationshipResult[childRelationKey] = childObjects;
 
-            var childDescribeResult = {
-                childSObject: object.childSObject,
-                field: object.field,
-                relationshipName: object.relationshipName,
-            };
+                var childDescribeResult = {
+                    childSObject: object.childSObject,
+                    field: object.field,
+                    relationshipName: object.relationshipName,
+                };
 
-            innerChildRelationshipsList.push(childDescribeResult);
+                innerChildRelationshipsList.push(childDescribeResult);
 
-            if (innerChildRelationshipsList.length === 1000) {
-                childRelationshipsList.push(innerChildRelationshipsList);
-                innerChildRelationshipsList = [];
+                if (innerChildRelationshipsList.length === 1000) {
+                    childRelationshipsList.push(innerChildRelationshipsList);
+                    innerChildRelationshipsList = [];
+                }
             }
         });
         childRelationshipsList.push(innerChildRelationshipsList);
@@ -501,7 +502,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             templateId: attachmentBodyData.parentId,
             templateDescription: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Description__c'],
             templateContinueOnError: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Continue_on_Error__c'],
-            templateActive: activeTemplate && activeTemplate === 'true' ? true : false,
+            templateActive: activeTemplate,
             templateQueryLimit: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Max_Record_Limit__c'],
             templateBatchSize: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Batch_Size__c'],
             templateFilterLogic: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Filter_Logic__c'],
@@ -596,7 +597,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         dataTemplate[creationData.namespace + 'Match_Owners__c'] = creationData.importedObj.dataTemplate.templateMatchOwners;
         dataTemplate[creationData.namespace + 'Match_Record_Type__c'] = creationData.importedObj.dataTemplate.templateMatchRecordTypes;
         dataTemplate[creationData.namespace + 'Continue_on_Error__c'] = creationData.importedObj.dataTemplate.templateContinueOnError;
-        dataTemplate[creationData.namespace + 'Active__c'] = activeTemplate && activeTemplate === 'true' ? true : false;
+        dataTemplate[creationData.namespace + 'Active__c'] = activeTemplate;
         dataTemplate[creationData.namespace + 'Name'] = creationData.importedObj.dataTemplate.templateName;
 
         var result = sforce.connection.create([dataTemplate]);

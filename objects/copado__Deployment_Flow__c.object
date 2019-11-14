@@ -419,7 +419,7 @@
         <formula>HYPERLINK(&apos;/apex/&apos;&amp;
 IF($Setup.copado__Settings__c.copado__Namespace__c=&apos;none&apos;,&apos;&apos;,
   IF(isblank($Setup.copado__Settings__c.copado__Namespace__c),&apos;copado__&apos;,$Setup.copado__Settings__c.copado__Namespace__c)
-)&amp;IF( ISPICKVAL(copado__Calculate_Based_on__c, &apos;User Story&apos;), IF( copado__Active__c,&apos;PipelineManager?mode=manager&amp;id=&apos;&amp;Id, &apos;PipelineManager?mode=diagram&amp;id=&apos;&amp;Id), &apos;BranchManagement?id=&apos;&amp;Id), &apos;Pipeline Manager&apos;, &apos;_blank&apos;)</formula>
+)&amp;IF( ISPICKVAL(copado__Calculate_Based_on__c, &apos;User Story&apos;), IF( copado__Active__c,&apos;PipelineManager?mode=manager&amp;id=&apos;&amp;Id, &apos;PipelineManager?mode=diagram&amp;id=&apos;&amp;Id), &apos;BranchManagement?id=&apos;&amp;Id), &apos;Pipeline Manager&apos;, IF($User.UIThemeDisplayed != &quot;Theme4d&quot;,&apos;_blank&apos;,&apos;_self&apos;))</formula>
         <inlineHelpText>Link to open the Branch Management application for the Deployment Flow.</inlineHelpText>
         <label>Manage Releases</label>
         <required>false</required>

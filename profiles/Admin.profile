@@ -589,6 +589,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__DataTemplateTaskComponentController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__DatabaseOperationType</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2070,6 +2074,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__Test_DataTemplateSetupExtension</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__Test_DataTemplateTaskComponent</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -6073,6 +6081,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Quality_Gate__c.copado__Compliance_Rule_Group__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Quality_Gate__c.copado__DataJSON__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

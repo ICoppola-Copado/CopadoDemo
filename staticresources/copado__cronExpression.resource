@@ -1,99 +1,111 @@
 var cronBuilder = cronBuilder || {};
 
 ((builder) => {
+    const STARTS = 'starts';
     const EVERY = 'every';
+    const WEEKDAYS = 'weekdays';
+    const HOURLY = 'hourly';
+    const DAILY = 'daily';
+    const WEEKLY = 'weekly';
+    const SETTINGS = 'Settings';
 
     var builder = builder || {};
     var hourlySettings = hourlySettings || {};
     var dailySettings = dailySettings || {};
     var weeklySettings = weeklySettings || {};
-    var selectedTab = 'hourlySettings';
+    var selectedTab = HOURLY + SETTINGS;
 
     ((thisCron) => {
-        thisCron.EVERY_X_HOURS = 0;
-        thisCron.START_HOUR = 0;
-        thisCron.START_MINUTE = 0;
-        thisCron.RADIOGROUP = EVERY;
+        const EVERY_DAY_CRON = ' 1/1 * ? *';
+        var EVERY_X_HOURS = 0;
+        var START_HOUR = 0;
+        var START_MINUTE = 0;
+        thisCron.FREQUENCY = EVERY;
 
         thisCron.generateCronExpression = () => {
             var cronExpression = '';
             _getValues();
-            if(thisCron.RADIOGROUP == EVERY) {
-                cronExpression = '0 0 0/' + thisCron.EVERY_X_HOURS + ' 1/1 * ? *';
-            } else if(thisCron.RADIOGROUP == 'starts') {
-                cronExpression = '0 ' + thisCron.START_MINUTE + ' ' + thisCron.START_HOUR + ' 1/1 * ? *';
+            if(thisCron.FREQUENCY == EVERY) {
+                cronExpression = '0 0 0/' + EVERY_X_HOURS + EVERY_DAY_CRON;
+            } else if(thisCron.FREQUENCY == STARTS) {
+                cronExpression = '0 ' + START_MINUTE + ' ' + START_HOUR + EVERY_DAY_CRON;
             }
             return cronExpression;
         };
 
         var _getValues = () => {
-            thisCron.EVERY_X_HOURS = document.getElementById('every_x_hours_hourOptions').value;
-            thisCron.START_HOUR = document.getElementById('hourly_starts_at_hourOptions').value;
-            thisCron.START_MINUTE = document.getElementById('hourly_starts_at_minuteOptions').value;
+            var every_x_hours_hourOptions = document.getElementById('every_x_hours_hourOptions');
+            var hourly_starts_at_hourOptions = document.getElementById('hourly_starts_at_hourOptions');
+            var hourly_starts_at_minuteOptions = document.getElementById('hourly_starts_at_minuteOptions');
+            EVERY_X_HOURS = every_x_hours_hourOptions ? every_x_hours_hourOptions.value : 0;
+            START_HOUR = hourly_starts_at_hourOptions ? hourly_starts_at_hourOptions.value : 0;
+            START_MINUTE = hourly_starts_at_minuteOptions ? hourly_starts_at_minuteOptions.value : 0;
         };
     })(hourlySettings);
 
     ((thisCron) => {
-        thisCron.EVERY_X_DAYS = 0;
-        thisCron.START_HOUR = 0;
-        thisCron.START_MINUTE = 0;
-        thisCron.RADIOGROUP = EVERY;
+        var EVERY_X_DAYS = 0;
+        var START_HOUR = 0;
+        var START_MINUTE = 0;
+        thisCron.FREQUENCY = EVERY;
 
         thisCron.generateCronExpression = () => {
             var cronExpression = '';
             _getValues();
-            if(thisCron.RADIOGROUP == EVERY) {
-                cronExpression = '0 ' + thisCron.START_MINUTE + ' ' + thisCron.START_HOUR + ' 1/' + thisCron.EVERY_X_DAYS + ' * ? *';
-            } else if(thisCron.RADIOGROUP == 'weekdays') {
-                cronExpression = '0 ' + thisCron.START_MINUTE + ' ' + thisCron.START_HOUR + ' ? * MON-FRI *';
+            if(thisCron.FREQUENCY == EVERY) {
+                cronExpression = '0 ' + START_MINUTE + ' ' + START_HOUR + ' 1/' + EVERY_X_DAYS + ' * ? *';
+            } else if(thisCron.FREQUENCY == WEEKDAYS) {
+                cronExpression = '0 ' + START_MINUTE + ' ' + START_HOUR + ' ? * MON-FRI *';
             }
             return cronExpression;
         };
 
         var _getValues = () => {
-            thisCron.EVERY_X_DAYS = document.getElementById('every_x_daysInput').value;
-            thisCron.START_HOUR = document.getElementById('daily_starts_at_hourOptions').value;
-            thisCron.START_MINUTE = document.getElementById('daily_starts_at_minuteOptions').value;
+            var every_x_daysInput = document.getElementById('every_x_daysInput');
+            var daily_starts_at_hourOptions = document.getElementById('daily_starts_at_hourOptions');
+            var daily_starts_at_minuteOptions = document.getElementById('daily_starts_at_minuteOptions');
+            EVERY_X_DAYS = every_x_daysInput ? every_x_daysInput.value : 0;
+            START_HOUR = daily_starts_at_hourOptions ? daily_starts_at_hourOptions.value : 0;
+            START_MINUTE = daily_starts_at_minuteOptions ? daily_starts_at_minuteOptions.value : 0;
         };
     })(dailySettings);
 
     ((thisCron) => {
-        thisCron.START_HOUR = 0;
-        thisCron.START_MINUTE = 0;
-        thisCron.DAYS_OF_WEEK = '';
+        var START_HOUR = 0;
+        var START_MINUTE = 0;
+        var DAYS_OF_WEEK = '';
 
         thisCron.generateCronExpression = () => {
             var cronExpression = '';
             _getValues();
-            cronExpression = '0 ' + thisCron.START_MINUTE + ' ' + thisCron.START_HOUR + ' ? * ' + thisCron.DAYS_OF_WEEK + ' *';
+            cronExpression = '0 ' + START_MINUTE + ' ' + START_HOUR + ' ? * ' + DAYS_OF_WEEK + ' *';
             return cronExpression;
         };
 
         var _getValues = () => {
-            thisCron.START_HOUR = document.getElementById('weekly_starts_at_hourOptions').value;
-            thisCron.START_MINUTE = document.getElementById('weekly_starts_at_minuteOptions').value;
-            thisCron.DAYS_OF_WEEK = _getDaysOfWeek();
+            var weekly_starts_at_hourOptions = document.getElementById('weekly_starts_at_hourOptions');
+            var weekly_starts_at_minuteOptions = document.getElementById('weekly_starts_at_minuteOptions');
+            START_HOUR = weekly_starts_at_hourOptions ? weekly_starts_at_hourOptions.value : 0;
+            START_MINUTE = weekly_starts_at_minuteOptions ? weekly_starts_at_minuteOptions.value : 0;
+            DAYS_OF_WEEK = _getDaysOfWeek();
         };
 
         var _getDaysOfWeek = () => {
             var dayCheckboxes = [];
-            $copado(".dayCheckbox:checked").each(function() {
-                dayCheckboxes.push($copado(this).val());
+            var that = this;
+            $copado(".dayCheckbox:checked").each((index, checkbox) => {
+                dayCheckboxes.push($copado(checkbox).val());
             });
-            return dayCheckboxes.join(',');;
+            return dayCheckboxes.join(',');
         };
     })(weeklySettings);
 
-    var _isNotNull = (thisElement) => {
-        return thisElement != null && thisElement != undefined;
-    }
-
     var _getSelectedSetting = () => {
-        if(selectedTab == 'hourlySettings') {
+        if(selectedTab == HOURLY + SETTINGS) {
             return hourlySettings;
-        } else if(selectedTab == 'dailySettings') {
+        } else if(selectedTab == DAILY + SETTINGS) {
             return dailySettings;
-        } else if(selectedTab == 'weeklySettings') {
+        } else if(selectedTab == WEEKLY + SETTINGS) {
             return weeklySettings;
         }
         return null;
@@ -106,7 +118,7 @@ var cronBuilder = cronBuilder || {};
 
     var _switchTab = (thisTab) => {
         var settingContainers = document.getElementsByClassName('settingsContainer');
-        if(_isNotNull(settingContainers)) {
+        if(settingContainers) {
             for(var i = 0; i < settingContainers.length; i++) {
                 var thisContainer = settingContainers[i];
                 if(thisContainer.id == selectedTab) {
@@ -119,26 +131,23 @@ var cronBuilder = cronBuilder || {};
     }
 
     builder.setFrequency = (frequency, name) => {
-        if(frequency == 'hourly') {
-            hourlySettings.RADIOGROUP = name;
-        } else if(frequency == 'daily') {
-            dailySettings.RADIOGROUP = name;
+        if(frequency == HOURLY) {
+            hourlySettings.FREQUENCY = name;
+        } else if(frequency == DAILY) {
+            dailySettings.FREQUENCY = name;
         }
     };
 
     var _generateCronExpression = () => {
         var setting = _getSelectedSetting();
-    	var cronExpression = '';
-    	if(setting == null) {
-    	    return cronExpression;
-        }
-        cronExpression = setting.generateCronExpression();
+    	console.assert(setting != null, 'Failed to automatically generate cron expression due to an internal error.');
+        var cronExpression = setting.generateCronExpression();
     	$copado('input[id$="cronExpressionInput"]').val(cronExpression);
     };
 
     builder.setCronExpressionAndSave = () => {
         var cronExpression = document.querySelector('.cronExpression');
-        if(_isNotNull(cronExpression)) {
+        if(cronExpression) {
             setCronExpressionValue(cronExpression.value);
         }
     };
@@ -146,21 +155,29 @@ var cronBuilder = cronBuilder || {};
     var _setControllerRadio = (thisInput) => {
         var radioId = $copado(thisInput).data('controller-element');
         var cronRadio = document.getElementById(radioId);
-        if(_isNotNull(cronRadio)) {
+        if(cronRadio) {
             cronRadio.click();
         }
     };
 
     $copado(document).ready(() => {
         $copado('input[type="radio"].cronRadio,input[type="number"].cronInput,input[type="checkbox"].dayCheckbox').on('click', function() {
-            if(this.type != 'radio') {
-                _setControllerRadio(this);
+            try {
+                if(this.type != 'radio') {
+                    _setControllerRadio(this);
+                }
+                _generateCronExpression();
+            } catch(error) {
+                console.error('error: ' + error);
             }
-            _generateCronExpression();
         });
         $copado('select.cronInput').on('change', function() {
-            _setControllerRadio(this);
-            _generateCronExpression();
+            try {
+                _setControllerRadio(this);
+                _generateCronExpression();
+            } catch(error) {
+                console.error('error: ' + error);
+            }
         });
     });
 })(cronBuilder);

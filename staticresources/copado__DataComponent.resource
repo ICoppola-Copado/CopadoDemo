@@ -64,7 +64,7 @@ dw.qb.startQueryBuilder = function(data, parsed) {
             });
         }
 
-                
+        $copado('#attachmentOptions').val(parsed.iao);
         //start get fields
         dw.qb.ui.getFields = $copado('#getFields');
         dw.qb.ui.testQuery = $copado('#testQuery');
@@ -73,13 +73,13 @@ dw.qb.startQueryBuilder = function(data, parsed) {
         dw.qb.ui.fieldsSelected =  $copado('#fields-selected');
 
         dw.qb.ui.fieldsEx =  $copado('#fieldsEx').on('change',dw.qb.selectFieldEx);
+        dw.qb.ui.attachmentOptions =  $copado('#attachmentOptions').on('change',dw.qb.iao);
         dw.qb.ui.matchOwner = $copado('#matchOwner').on('change', dw.qb.selectOwnerId);
         dw.qb.ui.matchRecordType = $copado('#matchRecordType').on('change', dw.qb.selectRecordType);
         dw.qb.ui.leftHidden = $copado("#fields-unselected");
         dw.qb.ui.rightHidden = $copado("#fields-selected");
 
         if(parsed){
-            dw.qb.ui.attachmentOptions = parsed.iao ? parsed.iao : 'none';
             dw.qb.ui.matchOwner.prop('checked',parsed && parsed.containsOwnerId ? parsed.containsOwnerId : false);
             dw.qb.ui.matchRecordType.prop('checked',parsed && parsed.containsRecordTypeId ? parsed.containsRecordTypeId : false);
         }
@@ -179,10 +179,11 @@ dw.qb.toogleFieldSelection = function(list,sel){
     if(!field){return;}
     
     $el.attr('selected',false);
-    
+
+
     if(!sel){
         //remove 
-        //only remove if not is the only one external 
+        //only remove if not is the only one external
         if($el.is('[ext]') && dw.qb.ui.fieldsSelected.find('option[ext]').length < 2){
             alert(labels.config.req_ext_id_label);
             return;
@@ -190,8 +191,7 @@ dw.qb.toogleFieldSelection = function(list,sel){
         var index = dw.qb.selectedFields.indexOf(field);
         dw.qb.selectedFields.splice(index, 1);
         dw.qb.ui.fields.append(el);
-    }
-    else{
+    } else{
         dw.qb.selectedFields.push(field);
         dw.qb.ui.fieldsSelected.append(el);
     }
@@ -216,13 +216,14 @@ dw.qb.selectFieldEx = function(){
     dw.qb.externalId = field;
     
     //select on fields
-    $copado('option[value="' + dw.qb.externalId + '"]',dw.qb.ui.fields).attr('selected','selected');
-    $copado('option[value="' + dw.qb.externalId + '"]', dw.qb.ui.fields).prop('disabled', 'disabled');
+    //$copado('option[value="'+dw.qb.externalId+'"]',dw.qb.ui.fields).click();
+    $copado('option[value="'+dw.qb.externalId+'"]',dw.qb.ui.fields).attr('selected','selected');
     dw.qb.ui.fields.change();
     
     dw.qb.selectRecordType(true);
     dw.qb.selectOwnerId(true);
     if(prev){ 
+        //$copado('option[value="'+prev+'"]',dw.qb.ui.fieldsSelected).click();
         $copado('option[value="'+prev+'"]',dw.qb.ui.fieldsSelected).attr('selected','selected');
         dw.qb.ui.fieldsSelected.change();
     }
@@ -306,7 +307,6 @@ dw.qb.getFields = function(){
             
             //preselect first external 
             !dw.qb.rebuilding && dw.qb.selectFieldEx();
-            !dw.qb.rebuilding && dw.qb.selectRecordId();
             
             //if rebuilding
             if(dw.qb.rebuilding){
@@ -393,14 +393,6 @@ dw.qb.selectRecordType = function(onlyOnchange) {
         }
     }
 };
-dw.qb.selectRecordId = function() {
-        $copado('option:selected', dw.qb.ui.fields).prop('selected', false);
-        $copado('option:selected', dw.qb.ui.fieldsSelected).prop('selected', false);
-        $copado('option[value="Id"]', dw.qb.ui.fields).prop('selected', 'selected');
-        moveSelectedOptions(dw.qb.ui.fields.attr('id'), dw.qb.ui.fieldsSelected.attr('id'), dw.qb.ui.rightHidden.attr('id'), dw.qb.ui.leftHidden.attr('id'));
-        $copado('option[value="Id"]', dw.qb.ui.fieldsSelected).prop('disabled', 'disabled');
-        $copado('option:selected', dw.qb.ui.fieldsSelected).prop('selected', false);
-};
 
 dw.qb.testQuery = function(e){
     e.preventDefault();
@@ -449,13 +441,6 @@ dw.qb.testQuery = function(e){
         showMessage('ERROR', labels.config.soql_hasnotext_error);
         return false;
     }
-
-    var idCount = queryFields.match(/\b(id)\b/gim);
-    if (!idCount) {
-        showMessage('ERROR', labels.config.req_id_label);
-        return false;
-    }
-
     
     $copado('#testQuery')
         .attr('disabled','disabled')

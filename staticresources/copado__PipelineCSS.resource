@@ -16,20 +16,6 @@ body .datePicker {
     z-index: 9999;
 }
 
-body .slds-form-element {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-body .lookupInput > a {
-    border: 1px solid rgb(221, 219, 218);
-    border-radius: .25rem;
-    transition: border .1s linear,background-color .1s linear;
-    padding: 0 1rem 0 .75rem;
-    line-height: 1.875rem;
-    min-height: calc(1.875rem + (1px * 2));
-}
-
 /* Container */
 .co-pipeline-container {
     padding: 0 1rem;
@@ -43,7 +29,7 @@ body .lookupInput > a {
 }
 
 .co-pipeline-container #pipelineContainer {
-    height: 84%;
+    height: calc(100% - 100px);
     width: 100%;
     overflow: hidden;
 
@@ -55,6 +41,16 @@ body .lookupInput > a {
     margin-right: 0;
 }
 
+.co-pipeline-container #headerPanel .pipeline-picklist {
+
+    border: none;
+    background: #F7F9FB;
+    width: 200px;
+}
+
+.co-pipeline-container #headerPanel button.diagramActionButton {
+    height:100%;
+}
 
 /* Content */
 .co-pipeline-container #pipelineContainer .wrapper {
@@ -63,13 +59,28 @@ body .lookupInput > a {
     z-index: 1;
 }
 
+.co-pipeline-container.classic-container #pipelineContainer .wrapper {
+    height: 94%;
+}
+
+.co-pipeline-container #pipelineContainer .filterOptionsMenu img.settings {
+    max-height: 14px;
+}
+
+.co-pipeline-container #pipelineContainer .filterOptionsMenu img.down-arrow {
+    max-height: 8px;
+}
+
 .co-pipeline-container #pipelineContainer .wrapper .pipeline {
     display: flex;
-    height: 97%;
-    margin: 5px;
+    height: 96%;
+    padding: 5px;
     overflow: auto;
 }
 
+.co-pipeline-container.classic-container #pipelineContainer .wrapper .pipeline {
+    height: 95%;
+}
 
 .co-pipeline-container #pipelineContainer .wrapper .pipeline .column {
     width: 310px;
@@ -128,7 +139,7 @@ body .lookupInput > a {
 }
 
 .co-pipeline-container .env-box .info .status {
-    padding: 3px 0 0 5px;
+    padding: 4px 0 0 6px;
 }
 
 .co-pipeline-container .env-box .info .data {
@@ -136,7 +147,7 @@ body .lookupInput > a {
     white-space: nowrap;
     overflow: hidden;
     margin-top: 5px;
-    padding-left: 10px;
+    padding-left: 8px;
 }
 
 .co-pipeline-container .env-box .info .data .org {
@@ -152,7 +163,7 @@ body .lookupInput > a {
 }
 
 .co-pipeline-container .env-box .info .data .branch span {
-   margin-left: 10px;
+   margin-left: 1px;
    color: #080707;
 }
 
@@ -176,9 +187,9 @@ body .lookupInput > a {
 }
 
 .co-pipeline-container .slds-dropdown_left {
-    transform: translate(71%, -55px);
+    transform: translate(67%, -55px);
+    width: 250px;
 }
-
 
 .co-pipeline-container .slds-dropdown_actions.actions {
     min-width:160px;
@@ -226,8 +237,8 @@ body .lookupInput > a {
     float: right;
     height: 100%;
     width: auto;
-    min-width: 59px;
-    margin-right: -65px;
+    min-width: 56px;
+    margin-right: -60px;
 }
 
 .co-pipeline-container .connection-info .connection-behaviour-override {
@@ -242,11 +253,6 @@ body .lookupInput > a {
     border:1px solid #ebebeb;
     border-radius:11px;
     background-color:white;
-}
-
-co-pipeline-container .connection-info .connection-behaviour-override .minipagelayout {
-    opacity: 0;
-    position:fixed;
 }
 
 .co-pipeline-container .connection-info .connection-behaviour-override.hide {
@@ -313,21 +319,21 @@ co-pipeline-container .connection-info .connection-behaviour-override .minipagel
 .co-pipeline-container .connection-info .commits {
     display: flex;
     justify-content: center;
-    height: 23px;
-    width: 46px;
+    height: 28px;
     margin-top: 19px;
     margin-left: 0px;
     position: relative;
     text-align: center;
     padding: 0;
     border: 1px solid #ebebeb;
-    border-radius: 11px;
+    border-radius: 14px;
     background-color: white;
 
 }
 
-.co-pipeline-container .connection-info .commits .icon {
-    margin-right: 2px;
+
+.co-pipeline-container .connection-info .commits .icon:first-of-type {
+    margin-right: 5px;
 }
 
 .co-pipeline-container .connection-info .commits .disabled {
@@ -335,9 +341,10 @@ co-pipeline-container .connection-info .connection-behaviour-override .minipagel
 }
 
 .co-pipeline-container .connection-info .commits .button-wrapper {
-    height: 12px;
+    height: 16px;
     display: flex;
     justify-content: center;
+    margin-top: 1px;
 }
 
 .co-pipeline-container .connection-info .commits .image-wrapper {
@@ -350,7 +357,7 @@ co-pipeline-container .connection-info .connection-behaviour-override .minipagel
     border: none;
     border-bottom-color: white;
     background: white;
-    font-size: 10px;
+    font-size: 12px;
     color: #1589EE;
 }
 
@@ -358,8 +365,6 @@ co-pipeline-container .connection-info .connection-behaviour-override .minipagel
     width: 11px;
     height: auto;
 }
-
-
 
 .co-pipeline-container .envActionMenuTrigger {
     float: right;
@@ -476,6 +481,7 @@ co-pipeline-container .connection-info .connection-behaviour-override .minipagel
 .co-pipeline-container #minimap {
     display: none;
     position: fixed;
+    overflow: hidden;
     width: 175px;
     height: 125px;
     bottom: 50px;
@@ -575,11 +581,20 @@ co-pipeline-container .connection-info .connection-behaviour-override .minipagel
     line-height: 20px;
 }
 
-.co-pipeline-container .filter-main-object  select {
+.co-pipeline-container .filter-main-object {
+    background-color: #FFF;
+}
+
+.co-pipeline-container .filter-main-object .filter-wrapper {
+    padding: .5rem .5rem 1rem .5rem;
+    margin: 0;
+}
+
+.co-pipeline-container .filter-main-object .filter-wrapper select {
     margin-top: 2px;
 }
 
-.co-pipeline-container .filter-main-object .sample-button {
+.co-pipeline-container .filter-main-object .filter-wrapper .sample-button {
     text-align: left;
     margin-bottom: 3rem;
 }
@@ -598,95 +613,96 @@ co-pipeline-container .connection-info .connection-behaviour-override .minipagel
 }
 
 
-/* Add container */
-/* TODO: Refactor this */
-        .lookupInput {
-            padding: 0 !important;
-            width: 100%;
-        }
+/*
+   This css are for multiselect picklist lookup fields.
+   In Salesforce lookup fields some fields can have multiple objects so
+   it breaks the html.
+*/
+.lookupInput {
+    padding: 0 !important;
+    width: 100%;
+}
 
-        .hideDropdown select {
-            display: none !important;
-        }
+.hideDropdown select {
+    display: none !important;
+}
 
-        .hideDropdown div {
-            border: none;
-            padding: 0px;
-        }
+.hideDropdown div {
+    border: none;
+    padding: 0px;
+}
 
-        .hideDropdown input {
-            width: 100%;
-            padding: 0px;
-        }
+.hideDropdown input {
+    width: 100%;
+    padding: 0px;
+}
 
-        .lookupInput a {
-            position: absolute;
-            height:22px !important;
-            width: 33px !important;
-            margin-left: -33px;
-            background-image: url(/img/setup/search-icon.png) !important;
-            background-repeat: no-repeat !important;
-            background-position: center !important;
-            display: inline-flex !important;
-        }
+.lookupInput a {
+    position: absolute;
+    height:22px !important;
+    width: 33px !important;
+    margin-left: -33px;
+    background-image: url(/img/setup/search-icon.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    display: inline-flex !important;
+}
 
-        .lookupInput a img, .lookupInput a svg{
-            display:none !important;
-        }
+.lookupInput a img, .lookupInput a svg{
+    display:none !important;
+}
 
-        .noDisplay {
-            display: none !important;
-        }
+.noDisplay {
+    display: none !important;
+}
 
-        .pillBackground {
-            background-color: #315575 !important;
-            padding: 5px !important;
-            margin: 3px;
-        }
+.pillBackground {
+    background-color: #315575 !important;
+    padding: 5px !important;
+    margin: 3px;
+}
 
-        .closeIconBackground {
-            background: none;
-            color: white;
-        }
+.closeIconBackground {
+    background: none;
+    color: white;
+}
 
-        .closeIconBackground2 {
-            background: none;
-        }
+.closeIconBackground2 {
+    background: none;
+}
 
-        .WarningColor {
-            background-color: #ffb75d !important;
-            border: 1px solid #ffb75d !important;
-        }
+.WarningColor {
+    background-color: #ffb75d !important;
+    border: 1px solid #ffb75d !important;
+}
 
-        input.toggle {
-            border-radius: 3px;
-            border: 1px solid #dddbda;
-        }
+input.toggle {
+    border-radius: 3px;
+    border: 1px solid #dddbda;
+}
 
-        .slds-dropdown__item > a[aria-disabled=true] {
-            color: rgb(221, 219, 218);
-            cursor: not-allowed;
-            pointer-events: none;
-        }
+.slds-dropdown__item > a[aria-disabled=true] {
+    color: rgb(221, 219, 218);
+    cursor: not-allowed;
+    pointer-events: none;
+}
 
-        .filterDropdown {
-            height: 30px;
-            display: flex;
-        }
+.filterDropdown {
+    height: 30px;
+    display: flex;
+}
 
-        .slds-modal__close > img {
-            max-height: 30px;
-            filter: invert(100%);
-            cursor: pointer;
-        }
+.slds-modal__close > img {
+    max-height: 30px;
+    filter: invert(100%);
+    cursor: pointer;
+}
 
-        .deleteIcon > img {
-            width: 30%;
-            filter: grayscale(100%) brightness(100%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
-            cursor: pointer;
-        }
-
-/*TODO: End section to review */
+.deleteIcon > img {
+    width: 30%;
+    filter: grayscale(100%) brightness(100%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+    cursor: pointer;
+}
 
 /* Modals */
 
@@ -724,4 +740,3 @@ co-pipeline-container .connection-info .connection-behaviour-override .minipagel
 #confirmDeletePopup>div {
     z-index: 9998;
 }
-

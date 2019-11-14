@@ -176,6 +176,12 @@
         <type>Lookup</type>
     </fields>
     <label>Metadata Group</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>Metadata Group Name</label>
         <type>Text</type>

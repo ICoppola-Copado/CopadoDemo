@@ -7580,20 +7580,19 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <fullName>copado__Add_Apex_Tests</fullName>
         <availability>online</availability>
         <displayType>button</displayType>
-        <encodingKey>UTF-8</encodingKey>
         <hasMenubar>false</hasMenubar>
         <hasScrollbars>true</hasScrollbars>
         <hasToolbar>false</hasToolbar>
         <height>600</height>
         <isResizable>true</isResizable>
-        <linkType>url</linkType>
+        <linkType>page</linkType>
         <masterLabel>Add Apex Tests</masterLabel>
         <openType>newWindow</openType>
+        <page>copado__AddTestClasses</page>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>/apex/{!IF($Setup.copado__Settings__c.copado__Namespace__c == &apos;none&apos;, &apos;&apos;, $Setup.copado__Settings__c.copado__Namespace__c)}metadataselector?id={!copado__User_Story__c.Id}&amp;mode=ApexTests</url>
     </webLinks>
     <webLinks>
         <fullName>copado__Add_Commits</fullName>

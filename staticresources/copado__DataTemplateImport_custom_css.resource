@@ -407,3 +407,7 @@ body {
 #modalUploadTemplate .slds-card .slds-grid .icon span {
     padding: 4px;
 }
+
+#modalUploadTemplate .lookupInput {
+    width: 50%;
+}
