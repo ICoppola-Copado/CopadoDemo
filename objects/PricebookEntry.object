@@ -61,7 +61,7 @@
         <searchResultsAdditionalFields>PRODUCT2.DESCRIPTION</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PRODUCT2.FAMILY_ENUM</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PRODUCT2.ACTIVE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Ivan_Search_Layout__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.Ivan_Search_Layout__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PRODUCT.ACTIVE</searchResultsAdditionalFields>
     </searchLayouts>
 </CustomObject>
