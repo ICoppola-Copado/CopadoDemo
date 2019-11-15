@@ -55,6 +55,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>Bio__c</fullName>
         <externalId>false</externalId>
@@ -111,6 +112,16 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Search_Layout__c</fullName>
+        <externalId>false</externalId>
+        <label>Search Layout</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <label>Speaker</label>
     <listViews>
         <fullName>All</fullName>
@@ -123,7 +134,12 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Speakers</pluralLabel>
-    <searchLayouts />
+    <searchLayouts>
+        <searchResultsAdditionalFields>Bio__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Dev1_Field__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Dev1_new_picklist__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Search_Layout__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
