@@ -16,6 +16,10 @@
     display: none;
 }
 
+.stage panelSlide {
+    background-color: white;
+}
+
 .slds-form-element {
     margin-bottom: 3rem;
 }
@@ -553,7 +557,7 @@
 .co-dw-container .error-image {
     display: flex;
     justify-content: center;
-    margin: 3rem auto 5em auto;
+    margin: 3rem auto 3em auto;
 }
 
 .co-dw-container .metadata-div {
@@ -721,8 +725,15 @@
     cursor: pointer;
 }
 /*icons*/
-.slds-scope img{
+.slds-scope img {
     height:18px !important;
     margin-right: 10px;
 }
+
+.slds-scope .deployment-img {
+    height:80px !important;
+    margin-right: 10px;
+}
+
+
 

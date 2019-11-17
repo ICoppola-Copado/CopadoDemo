@@ -64,7 +64,7 @@
         <name>copado__Story_Status_After_Deployment__c</name>
     </fields>
     <validationRules>
-        <errorMessage><!-- Batch Size needs to be between 1 and 2000 --></errorMessage>
+        <errorMessage><!-- Batch Size fields for Promotion or Back Promotion needs to be between 1 and 2000 --></errorMessage>
         <name>copado__Batch_Size_Valid_Interval</name>
     </validationRules>
 </CustomObjectTranslation>

@@ -16,6 +16,20 @@ body .datePicker {
     z-index: 9999;
 }
 
+body .slds-form-element {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+body .lookupInput > a {
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;
+    transition: border .1s linear,background-color .1s linear;
+    padding: 0 1rem 0 .75rem;
+    line-height: 1.875rem;
+    min-height: calc(1.875rem + (1px * 2));
+}
+
 /* Container */
 .co-pipeline-container {
     padding: 0 1rem;
@@ -160,6 +174,9 @@ body .datePicker {
     color: #828282;
     font-size: 12px;
     padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .co-pipeline-container .env-box .info .data .branch span {
@@ -402,6 +419,21 @@ body .datePicker {
     text-align: left;
     border-radius: 50px;
     padding-left: 4px;
+}
+
+.co-pipeline-container .noCreateEnv {
+    font-size: 20px !important;
+    width: 50px;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    border: none;
+    color:white !important;
+    background-color: #9ebfd8 !important;
+    text-align: left;
+    border-radius: 50px;
+    padding-left: 4px;
+    opacity: 70%;
 }
 
 .co-pipeline-container .createEnv:hover {
@@ -699,7 +731,7 @@ input.toggle {
 }
 
 .deleteIcon > img {
-    width: 30%;
+    width: 27%;
     filter: grayscale(100%) brightness(100%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
     cursor: pointer;
 }
@@ -740,3 +772,4 @@ input.toggle {
 #confirmDeletePopup>div {
     z-index: 9998;
 }
+

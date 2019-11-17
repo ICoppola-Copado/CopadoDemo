@@ -202,7 +202,16 @@ var ccdStoryStream = ccdStoryStream || {};
                          var environmentId = environmentBoxes[i].id.split('wrapper_')[1];
                          var storyCountAhead = environmentBoxes[i].querySelector(".storyCountAhead");
                          if(storyCountAhead && environmentId && (environmentId in userStoryCountMap)) {
-                             storyCountAhead.innerHTML = userStoryCountMap[environmentId];
+                             var count = userStoryCountMap[environmentId];
+                             if(count == 0) {
+                                $copado(storyCountAhead).addClass('disabled');
+                             } else {
+                                $copado(storyCountAhead).removeClass('disabled');
+                             }
+                             var storyCountAheadBtn = storyCountAhead.querySelector('.storyCountAheadBtn');
+                             if(storyCountAheadBtn) {
+                                 storyCountAheadBtn.innerHTML = count;
+                             }
                          }
                      }
                  }
@@ -216,7 +225,16 @@ var ccdStoryStream = ccdStoryStream || {};
                          var environmentId = environmentBoxes[i].id.split('wrapper_')[1];
                          var storyCountBehind = environmentBoxes[i].querySelector(".storyCountBehind");
                          if(storyCountBehind && environmentId && (environmentId in userStoryCountMap)) {
-                             storyCountBehind.innerHTML = userStoryCountMap[environmentId];
+                             var count = userStoryCountMap[environmentId];
+                             if(count == 0) {
+                                $copado(storyCountBehind).addClass('disabled');
+                             } else {
+                                $copado(storyCountBehind).removeClass('disabled');
+                             }
+                             var storyCountBehindBtn = storyCountBehind.querySelector('.storyCountBehindBtn');
+                             if(storyCountBehindBtn) {
+                                 storyCountBehindBtn.innerHTML = count;
+                             }
                          }
                      }
                  }

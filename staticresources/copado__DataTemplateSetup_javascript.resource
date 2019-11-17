@@ -164,15 +164,19 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         var info = {};
         var currentPage = 0;
         var searchInput = $copado(`#${tableId}_wrapper #${tableId}_filter`).find('input');
+        var sortOrderArray = [];
         var searchValue = searchInput.val();
 
         activePaginationSelected = $copado(`#${tableId}_length`).find('select').val();
 
         var table = $copado(`#${tableId}`).DataTable();
+        // dataTable is the oldschool dataTables constructur, which returns a jQuery object. This jQuery object is enriched with a set of API methods in hungarian notation format, such as fnFilter, fnDeleteRow and so on.
+        sortOrderArray = $copado(`#${tableId}`).dataTable().fnSettings().aaSorting;
         var tableData = {
             paginationSize: activePaginationSelected,
             currentPage: table.page.info().page,
-            searchValue: searchValue
+            searchValue: searchValue,
+            sortOrderArray: sortOrderArray
         };
         table.search( '' ).draw();
         $copado(`#${tableId}_length`).find('select').val(-1).trigger('change');
@@ -190,9 +194,10 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         var searchInput = $copado(`#${tableId}_wrapper #${tableId}_filter`).find('input');
 
         $copado(`#${tableId}_length`).find('select').val(tableIdPaginationObject[tableId].paginationSize).trigger('change');
-        table.page(tableIdPaginationObject[tableId].currentPage).draw(false);
+        // dataTable is the oldschool dataTables constructur, which returns a jQuery object. This jQuery object is enriched with a set of API methods in hungarian notation format, such as fnFilter, fnDeleteRow and so on.
+        $copado(`#${tableId}`).dataTable().fnSort( tableIdPaginationObject[tableId].sortOrderArray );
 
-        table.search( tableIdPaginationObject[tableId].searchValue ).draw();
+        table.page(tableIdPaginationObject[tableId].currentPage).search( tableIdPaginationObject[tableId].searchValue ).draw(false);
     };
 
     app.contractDataTables = () => {

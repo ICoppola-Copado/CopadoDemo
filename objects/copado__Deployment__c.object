@@ -609,11 +609,6 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>copado__Promotion__r.copado__Connection_Behavior__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
             <field>copado__Promotion__r.copado__Back_Promotion__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -776,10 +771,13 @@ copado__SUM_Deployed__c / copado__Deployment_Jobs_Count__c,
         <fullName>copado__Flag_Status__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <formula>CASE( copado__Status__c, &quot;Completed Successfully&quot;, &quot;/resource/SetupDashboardIcons/PipelineSvgIcons/pipeline-check.png&quot;, 
+        <formula>CASE( copado__Status__c, &quot;Completed Successfully&quot;, &quot;/resource/&quot; +  IF($Setup.copado__Settings__c.copado__Namespace__c != &quot;none&quot;, $Setup.copado__Settings__c.copado__Namespace__c, &quot;&quot;) 
+ + &quot;SetupDashboardIcons/PipelineSvgIcons/pipeline-check.png&quot;, 
 &quot;In progress&quot;, &quot;/img/loading.gif&quot;, 
-&quot;Completed with Errors&quot;, &quot;/resource/SetupDashboardIcons/PipelineSvgIcons/pipeline-cross.png&quot;, 
-&quot;/resource/SetupDashboardIcons/PipelineSvgIcons/pipeline-paused.png&quot;)</formula>
+&quot;Completed with Errors&quot;, &quot;/resource/&quot; +  IF($Setup.copado__Settings__c.copado__Namespace__c != &quot;none&quot;, $Setup.copado__Settings__c.copado__Namespace__c, &quot;&quot;)
+ + &quot;SetupDashboardIcons/PipelineSvgIcons/pipeline-cross.png&quot;, 
+&quot;/resource/&quot; +  IF($Setup.copado__Settings__c.copado__Namespace__c != &quot;none&quot;, $Setup.copado__Settings__c.copado__Namespace__c, &quot;&quot;)
+ + &quot;SetupDashboardIcons/PipelineSvgIcons/pipeline-paused.png&quot;)</formula>
         <label>Flag Status</label>
         <required>false</required>
         <trackHistory>false</trackHistory>

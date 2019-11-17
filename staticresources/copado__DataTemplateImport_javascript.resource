@@ -321,7 +321,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         var childRelationshipsResult = describeResult.childRelationships;
         var globalDescribe = JSON.parse(resultData.globalDescribe);
         var globalDescribeSobjects = globalDescribe.sobjects;
-        console.log('globalDescribeSobjects: ',globalDescribeSobjects);
+        console.log('globalDescribeSobjects: ', globalDescribeSobjects);
         var updatedDescribeFieldsResult = {};
         var updatedChildRelationshipResult = {};
         var currentField = {};
@@ -409,7 +409,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             });
 
             var objectLabel = {};
-            if(objectLabelName) {
+            if (objectLabelName) {
                 objectLabel[object.childSObject] = objectLabelName.label;
 
                 var childObjects = {
@@ -600,77 +600,86 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         dataTemplate[creationData.namespace + 'Active__c'] = activeTemplate;
         dataTemplate[creationData.namespace + 'Name'] = creationData.importedObj.dataTemplate.templateName;
 
-        var result = sforce.connection.create([dataTemplate]);
-        if (result[0].success) {
-            var dataId = result[0].id;
-            var attachmentData = {
-                parentId: dataId,
-                templateDetails: dataTemplate,
-                describeResult: creationData.describeResult,
-                globalDescribe: creationData.globalDescribe,
-                sourceOrgId: creationData.sourceOrgId,
-                importedObj: creationData.importedObj,
-                namespace: creationData.namespace
-            }
+        try {
+            var result = sforce.connection.create([dataTemplate]);
+            if (result[0].success) {
+                var dataId = result[0].id;
+                var attachmentData = {
+                    parentId: dataId,
+                    templateDetails: dataTemplate,
+                    describeResult: creationData.describeResult,
+                    globalDescribe: creationData.globalDescribe,
+                    sourceOrgId: creationData.sourceOrgId,
+                    importedObj: creationData.importedObj,
+                    namespace: creationData.namespace
+                }
 
-            var newTemplateDetails = {
-                templateUUId: creationData.templateUUId,
-                id: dataId,
-                name: dataTemplate.Name
-            };
-            realDataTemplateIdMap.push(newTemplateDetails);
-            createAttachments(attachmentData, cbOnEnd);
+                var newTemplateDetails = {
+                    templateUUId: creationData.templateUUId,
+                    id: dataId,
+                    name: dataTemplate.Name
+                };
+                realDataTemplateIdMap.push(newTemplateDetails);
+                createAttachments(attachmentData, cbOnEnd);
+            }
+        } catch (error) {
+            showError(error.message);
         }
     };
 
 
     // it is used to make object callout to get describe result from selected org
     // on validation step, it will end at this function
-    var objectCallout = (dataObject,cbOnEnd) => {
+    var objectCallout = (dataObject, cbOnEnd) => {
         var cleanUrl = dataObject.endpoint.replace('copado_objName', dataObject.name);
-        sforce.connection.remoteFunction({
-            url: cleanUrl,
-            requestHeaders: {
-                'userId': dataObject.userId,
-                'orgId': dataObject.organizationId,
-                'token': dataObject.token
-            },
-            method: 'GET',
-            onSuccess: (response) => {
-                var res = JSON.parse(response);
-                if(!res.success) {
-                    if(res.error) {
-                        showError(res.error);
+        try {
+            sforce.connection.remoteFunction({
+                url: cleanUrl,
+                requestHeaders: {
+                    'userId': dataObject.userId,
+                    'orgId': dataObject.organizationId,
+                    'token': dataObject.token
+                },
+                method: 'GET',
+                onSuccess: (response) => {
+                    var res = JSON.parse(response);
+                    if (!res.success) {
+                        if (res.error) {
+                            showError(res.error);
+                        } else {
+                            var imageId = dataObject.values.dataTemplate.templateName.replace(/[^a-zA-Z0-9]/g, '') + '_cross';
+                            $copado(`#${imageId}`).removeClass('cross-images');
+                            app.totalNotValidatedTemplate++;
+                            cbOnEnd && cbOnEnd();
+                        }
                     } else {
-                        var imageId = dataObject.values.dataTemplate.templateName.replace(/\s/g, '') + '_cross';
-                        $copado(`#${imageId}`).removeClass('cross-images');
-                        app.totalNotValidatedTemplate++;
-                        cbOnEnd && cbOnEnd();
+                        if (app.isValidated) {
+                            var creationData = {
+                                namespace: dataObject.namespace,
+                                sourceOrgId: dataObject.sourceOrgId,
+                                importedObj: dataObject.values,
+                                describeResult: response,
+                                globalDescribe: dataObject.globalDescribe,
+                                index: dataObject.index,
+                                templateUUId: dataObject.templateUUId
+                            };
+                            return createDataTemplate(creationData, cbOnEnd);
+                        } else {
+                            var imageId = dataObject.values.dataTemplate.templateName.replace(/[^a-zA-Z0-9]/g, '') + '_confirm';
+                            $copado(`#${imageId}`).removeClass('confirm-images');
+                            app.totalValidatedTemplate++;
+                            cbOnEnd && cbOnEnd();
+                        }
                     }
-                } else {
-                    if (app.isValidated) {
-                        var creationData = {
-                            namespace: dataObject.namespace,
-                            sourceOrgId: dataObject.sourceOrgId,
-                            importedObj: dataObject.values,
-                            describeResult: response,
-                            globalDescribe: dataObject.globalDescribe,
-                            index: dataObject.index,
-                            templateUUId: dataObject.templateUUId
-                        };
-                        return createDataTemplate(creationData, cbOnEnd);
-                    } else {
-                        var imageId = dataObject.values.dataTemplate.templateName.replace(/\s/g, '') + '_confirm';
-                        $copado(`#${imageId}`).removeClass('confirm-images');
-                        app.totalValidatedTemplate++;
-                        cbOnEnd && cbOnEnd();
-                    }
+                },
+                onFailure: (error) => {
+                    showError(error);
                 }
-            },
-            onFailure: (error) => {
-                showError(error);
-            }
-        });
+            });
+        } catch (error) {
+            showError(error.message);
+        }
+
     };
 
 
@@ -703,7 +712,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 globalDescribe: existingDataObject.globalDescribe,
                 namespace: existingDataObject.namespace ? existingDataObject.namespace : ''
             };
-            objectCallout(dataObject,deferred.resolve);
+            objectCallout(dataObject, deferred.resolve);
         });
 
         //waits for every callout in the for loop to be done via deferred pattern and then calls the final actions
@@ -716,7 +725,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 $copado('#validateButton').addClass('hide-buttons');
                 app.isValidated = true;
                 unlockScreen();
-            } else if(importedTemplateCount !== app.totalValidatedTemplate && importedTemplateCount === (app.totalValidatedTemplate + app.totalNotValidatedTemplate) && !app.isValidated) {
+            } else if (importedTemplateCount !== app.totalValidatedTemplate && importedTemplateCount === (app.totalValidatedTemplate + app.totalNotValidatedTemplate) && !app.isValidated) {
                 unlockScreen();
             }
         });
@@ -726,17 +735,21 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
     // it is used to check if global describe result is already exists in selected org credential,
     // If it is exists, we will use the existing attachment and not do callout
     var retrieveGlobalDescribeAttachment = (orgId, cbOnEnd) => {
-        sforce.connection.query('SELECT Id,Name,Body FROM Attachment WHERE ParentId=\'' + orgId + '\' AND Name =\'ADD_Describe_Global_Result\' LIMIT 1', {
-            onSuccess: (response) => {
-                if (response.records) {
-                    existingGlobalDescribeResult = sforce.Base64Binary.prototype.decode(response.records.Body);
+        try {
+            sforce.connection.query('SELECT Id,Name,Body FROM Attachment WHERE ParentId=\'' + orgId + '\' AND Name =\'ADD_Describe_Global_Result\' LIMIT 1', {
+                onSuccess: (response) => {
+                    if (response.records) {
+                        existingGlobalDescribeResult = sforce.Base64Binary.prototype.decode(response.records.Body);
+                    }
+                    cbOnEnd && cbOnEnd();
+                },
+                onFailure: (error) => {
+                    showError(error);
                 }
-                cbOnEnd && cbOnEnd();
-            },
-            onFailure: (error) => {
-                showError(error);
-            }
-        });
+            });
+        } catch (error) {
+            showError(error.message);
+        }
     };
 
     // the main function that is called from visualforce page to start validation and done
@@ -765,27 +778,31 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             };
 
             if (!existingGlobalDescribeResult) {
-                sforce.connection.remoteFunction({
-                    url: parsedData.orgCalloutEndpoint,
-                    requestHeaders: {
-                        'userId': parsedData.userId,
-                        'orgId': parsedData.organizationId,
-                        'token': parsedData.token
-                    },
-                    method: 'GET',
-                    onSuccess: (response) => {
-                        var res = JSON.parse(response);
-                        if(!res.success) {
-                            showError(res.error);
-                        } else {
-                            dataObject['globalDescribe'] = response;
-                            prepareObjectCallout(dataObject);
+                try {
+                    sforce.connection.remoteFunction({
+                        url: parsedData.orgCalloutEndpoint,
+                        requestHeaders: {
+                            'userId': parsedData.userId,
+                            'orgId': parsedData.organizationId,
+                            'token': parsedData.token
+                        },
+                        method: 'GET',
+                        onSuccess: (response) => {
+                            var res = JSON.parse(response);
+                            if (!res.success) {
+                                showError(res.error);
+                            } else {
+                                dataObject['globalDescribe'] = response;
+                                prepareObjectCallout(dataObject);
+                            }
+                        },
+                        onFailure: (error) => {
+                            showError(error);
                         }
-                    },
-                    onFailure: (error) => {
-                        showError(error);
-                    }
-                });
+                    });
+                } catch (error) {
+                    showError(error.message);
+                }
             } else {
                 dataObject['globalDescribe'] = existingGlobalDescribeResult;
                 prepareObjectCallout(dataObject);

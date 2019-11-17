@@ -7765,10 +7765,11 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
     <webLinks>
         <fullName>copado__Ready_for_Promotion</fullName>
         <availability>online</availability>
+        <description>Submits user story for Copado Continuous Delivery</description>
         <displayType>button</displayType>
         <height>600</height>
         <linkType>page</linkType>
-        <masterLabel>Ready for Promotion</masterLabel>
+        <masterLabel>Submit</masterLabel>
         <openType>sidebar</openType>
         <page>copado__UserStoryReadyForPromote</page>
         <protected>false</protected>

@@ -158,6 +158,7 @@
     <fields>
         <fullName>copado__Metadata_Group__c</fullName>
         <deprecated>false</deprecated>
+        <description>The parent metadata group this item belongs to</description>
         <externalId>false</externalId>
         <label>Parent Group</label>
         <referenceTo>copado__Metadata_Group__c</referenceTo>
@@ -172,6 +173,7 @@
     <fields>
         <fullName>copado__Operator__c</fullName>
         <deprecated>false</deprecated>
+        <description>Match &apos;All&apos; metadata of this type, or only metadata whose name matches a pattern?</description>
         <externalId>false</externalId>
         <label>Metadata Name</label>
         <required>true</required>
@@ -185,6 +187,7 @@
     <fields>
         <fullName>copado__Type__c</fullName>
         <deprecated>false</deprecated>
+        <description>The type of metadata</description>
         <externalId>false</externalId>
         <label>Metadata Type</label>
         <required>true</required>
@@ -198,6 +201,7 @@
     <fields>
         <fullName>copado__Value__c</fullName>
         <deprecated>false</deprecated>
+        <description>Match only metadata whose name matches this value (ignored if Metadata Name = &apos;All&apos; is selected)</description>
         <externalId>false</externalId>
         <label>Value</label>
         <length>255</length>

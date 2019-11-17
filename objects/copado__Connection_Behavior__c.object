@@ -381,13 +381,21 @@ TEXT(copado__Promotion_Behavior__c) == &apos;Scheduled&apos;, HYPERLINK(&quot;/a
     <validationRules>
         <fullName>copado__Batch_Size_Valid_Interval</fullName>
         <active>true</active>
-        <errorConditionFormula>If(
+        <errorConditionFormula>IF(
     OR(
-        OR( copado__Max_Scheduled_Promotion_Batch_Size__c &lt;= 0, copado__Max_Scheduled_Promotion_Batch_Size__c &gt; 2000),
-        OR(  copado__Max_Scheduled_Back_Promotion_Batch_Size__c  &lt;= 0, copado__Max_Scheduled_Promotion_Batch_Size__c &gt; 2000)
-        ),true,false
+        OR( 
+           copado__Max_Scheduled_Promotion_Batch_Size__c &lt;= 0, 
+           copado__Max_Scheduled_Promotion_Batch_Size__c &gt; 2000
+        ),
+        OR(
+           copado__Max_Scheduled_Back_Promotion_Batch_Size__c  &lt;= 0, 
+           copado__Max_Scheduled_Back_Promotion_Batch_Size__c  &gt; 2000
+        )
+    )
+,true,
+false
 )</errorConditionFormula>
-        <errorMessage>Batch Size needs to be between 1 and 2000</errorMessage>
+        <errorMessage>Batch Size fields for Promotion or Back Promotion needs to be between 1 and 2000</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
