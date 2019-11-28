@@ -495,7 +495,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
     var createDataTemplateAttachmentBody = (attachmentBodyData) => {
         var mainDataTemplate = {
             templateSourceOrg: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Template_Source_Org__c'],
-            templateName: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Name'],
+            templateName: attachmentBodyData.templateDetails['Name'],
             templateMatchRecordTypes: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Match_Record_Type__c'],
             templateMainObject: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Main_Object__c'],
             templateMatchOwners: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Match_Owners__c'],
@@ -598,7 +598,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         dataTemplate[creationData.namespace + 'Match_Record_Type__c'] = creationData.importedObj.dataTemplate.templateMatchRecordTypes;
         dataTemplate[creationData.namespace + 'Continue_on_Error__c'] = creationData.importedObj.dataTemplate.templateContinueOnError;
         dataTemplate[creationData.namespace + 'Active__c'] = activeTemplate;
-        dataTemplate[creationData.namespace + 'Name'] = creationData.importedObj.dataTemplate.templateName;
+        dataTemplate['Name'] = creationData.importedObj.dataTemplate.templateName;
 
         try {
             var result = sforce.connection.create([dataTemplate]);
@@ -623,7 +623,9 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 createAttachments(attachmentData, cbOnEnd);
             }
         } catch (error) {
-            showError(error.message);
+            var errorMessage = error.message ? error.message : error.faultstring ? error.faultstring : 'Unknown Error';
+            showError(errorMessage);
+            console.error(error);
         }
     };
 
@@ -677,7 +679,9 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 }
             });
         } catch (error) {
-            showError(error.message);
+            var errorMessage = error.message ? error.message : error.faultstring ? error.faultstring : 'Unknown Error';
+            showError(errorMessage);
+            console.error(error);
         }
 
     };
@@ -748,7 +752,9 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 }
             });
         } catch (error) {
-            showError(error.message);
+            var errorMessage = error.message ? error.message : error.faultstring ? error.faultstring : 'Unknown Error';
+            showError(errorMessage);
+            console.error(error);
         }
     };
 
@@ -801,7 +807,9 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                         }
                     });
                 } catch (error) {
-                    showError(error.message);
+                    var errorMessage = error.message ? error.message : error.faultstring ? error.faultstring : 'Unknown Error';
+                    showError(errorMessage);
+                    console.error(error);
                 }
             } else {
                 dataObject['globalDescribe'] = existingGlobalDescribeResult;

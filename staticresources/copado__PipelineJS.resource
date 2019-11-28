@@ -263,16 +263,16 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
 
         var belowPoint = startY > endY ? -1 : 1;
         delta = startY > endY ? absolute(delta) : delta;
-        if(absolute(startY - endY) > 5 ) {
-        path.attr('d', ' M' + startX + ' ' + startY +
-            ' H' + (startX + delta + offset) +
-            ' A' + delta + ' ' + delta + ' 0 0 ' + arc1 + ' ' + (offset + startX + 2 * delta) + ' ' + (startY + delta * belowPoint * signum(delta)) +
-            ' V' + (endY) +
-            ' H' + endX);
+        if (absolute(startY - endY) > 5) {
+            path.attr('d', ' M' + startX + ' ' + startY +
+                ' H' + (startX + delta + offset) +
+                ' A' + delta + ' ' + delta + ' 0 0 ' + arc1 + ' ' + (offset + startX + 2 * delta) + ' ' + (startY + delta * belowPoint * signum(delta)) +
+                ' V' + (endY) +
+                ' H' + endX);
         } else {
 
             path.attr('d', ' M' + startX + ' ' + startY +
-                        ' H' + endX);
+                ' H' + endX);
         }
     };
 
@@ -294,7 +294,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
 
         var startCoord = startElem.offset();
         var endCoord = endElem.offset();
-
 
         var startX = startCoord.left + startElem.outerWidth() - svgLeft;
         var startY = startCoord.top + 0.5 * startElem.outerHeight() - svgTop;
@@ -367,7 +366,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
 
             svg.attr('height', svgHeight + 20);
             svg.attr('width', svgWidth + 10);
-
         });
     };
 
@@ -420,7 +418,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         adjustSvgDimensions();
 
     };
-
 
     var formatConnections = (connectionsList) => {
         var convertedList = [];
@@ -485,84 +482,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         return finalConnectionList;
     };
 
-    var getConnectedEnvironments = (connectionList, index) => {
-
-        var currentColumn = parseInt(connectionList[index].column, 10);
-        var lastColumn;
-        var lastColumnElems;
-        var connectedEnv = [];
-        var data = {};
-        var connectionFound;
-
-        if (currentColumn > 1) {
-
-            lastColumn = (currentColumn - 1).toString();
-
-            lastColumnElems = connectionList.filter((connection) => {
-                return connection.column === lastColumn;
-
-            });
-
-            connectionList[index].connections.forEach((connection, index) => {
-
-                connectionFound = lastColumnElems.find((item) => {
-                    return item.target === connection;
-                });
-
-                data = {
-                    id: connection,
-                    isConnected: connectionFound && connection === connectionFound.target ? true : false
-                };
-
-                connectedEnv.push(data);
-            });
-
-            connectedEnv = connectedEnv.sort(function(x, y) {
-                return (x.isConnected === y.isConnected) ? 0 : x.isConnected ? -1 : 1;
-            });
-        }
-
-        return connectedEnv;
-    };
-
-
-    var hasPreviousConnection = (connectionList, elemConnection) => {
-
-        var currentColumn = parseInt(elemConnection.column, 10);
-        var lastColumn;
-        var lastColumnElems;
-        var isConnected = [];
-        var connectionFound, allConnected = false;
-
-        if (currentColumn > 1) {
-
-            lastColumn = (currentColumn - 1).toString();
-
-            lastColumnElems = connectionList.filter((connection) => {
-                return connection.column === lastColumn;
-            });
-
-            elemConnection.connections.forEach((connection, index) => {
-
-                connectionFound = lastColumnElems.find((item) => {
-                    return item.target === connection;
-                });
-
-                isConnected[index] = (connectionFound && connection === connectionFound.target) ? true : false;
-            });
-
-            allConnected = isConnected[0];
-            isConnected.forEach((item) => {
-                allConnected = allConnected && item;
-            });
-
-        } else {
-            allConnected = true;
-        }
-
-        return allConnected;
-    };
-
     var moveBoxes = (displaceHeightValue) => {
         var boxes = $copado(boxClassIdentifier);
         var currentOffset = 0;
@@ -575,171 +494,414 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         });
     };
 
+    var checkCollision = (group, env) => {
+        var haveCollisions = true;
+        var collisions = [];
+        var box = env;
 
-    var moveBoxesInColumn = ($column, offsetTopLimit, id) => {
+        groupedIds = group.join().replace(/"/, '').replace(/wrapper/g, '#wrapper');
+
+        collisions = $copado(groupedIds).not(box).map(function(i) {
+            return { id: $copado(this).attr('id'), collision: overlaps(box, this) };
+        });
+
+        collisions = collisions.filter((index, item) => item.collision === true);
+
+        return collisions;
+    };
+
+    var setPreviousConnectionPositions = (list, id, currentColumn) => {
+
+        var envs = getConnectedEnvironments(list, id, currentColumn);
+        var idTop = $copado(`#${id}`).position().top;
         var boxHeight = $copado(boxClassIdentifier).height() + 10;
+        var heightIncrease = 0;
 
-        $column.children().each(function(index) {
+        envs.forEach((boxId) => {
+            var height = $copado(`#${boxId}`).offset().top;
+            $copado(`#${boxId}`).offset({ top: height + heightIncrease });
+            heightIncrease += boxHeight;
+        });
+    };
 
-            var $box = $copado(this);
-            var boxOffsetTop = $box.offset().top;
-            var isCollided = true;
+    var handleCollisions = (nextColumnBoxes, box, list, currentColumn) => {
 
-            if (boxOffsetTop >= offsetTopLimit && $box.attr('id') === id) {
-                $box.offset({ top: boxOffsetTop + boxHeight });
+        var collisions = checkCollision(nextColumnBoxes, box);
+        var isCollided = true;
+        var collidedBox;
+        var found;
+        var collisionedEnv;
+
+        if (collisions.length > 0) {
+
+            collisions.toArray().forEach((collision) => {
+
+                isCollided = true;
+                collisionedEnv = $copado(`#${collision.id}`);
+
+                while (isCollided) {
+
+                    if (box.data('order') > collisionedEnv.data('order')) {
+                        collisionedEnv.offset({ top: collisionedEnv.offset().top - 10 });
+                    } else if (box.data('order') < collisionedEnv.data('order')) {
+                        collisionedEnv.offset({ top: collisionedEnv.offset().top + 10 });
+                    }
+
+                    collidedBox = checkCollision(nextColumnBoxes, collisionedEnv);
+                    found = collidedBox.toArray().find(item => item.id === box.attr('id'));
+
+                    if (!found) {
+                        isCollided = false;
+
+                        var column = currentColumn;
+                        var id = collision.id;
+                        var envs = [collision.id];
+
+                        if (hasPreviousConnection(list, collision.id, currentColumn)) {
+                             setPreviousConnectionPositions(list, collision.id, currentColumn);
+                        }
+                    }
+                }
+            });
+        }
+    };
+
+    var getConnectedEnvironments = (connectionList, id, currentColumn) => {
+
+        var columnGroups, groupElems;
+        var connectedEnv = [];
+        var list = JSON.parse(JSON.stringify(connectionList));
+
+        if (currentColumn > 1) {
+
+            lastColumn = (currentColumn - 1).toString();
+            columnGroups = list.filter(connection => parseInt(connection.column, 10) === currentColumn);
+            groupElems = columnGroups.find(group => group.target === id);
+
+            connectedEnv = groupElems.connections;
+        }
+
+        return connectedEnv;
+    };
+
+    var hasPreviousConnection = (connectionList, id, column) => {
+
+        var columnGroups, previousColumnGroup;
+        var isConnected = false;
+        var list = JSON.parse(JSON.stringify(connectionList));
+
+        if (column > 1) {
+
+            columnGroups = list.filter(connection => parseInt(connection.column, 10) === column);
+            previousColumnGroup = columnGroups.find(group => group.target === id);
+
+            if (previousColumnGroup && previousColumnGroup.connections.length > 0) {
+                isConnected = true;
+            }
+        }
+
+        return isConnected;
+    };
+
+    // convert to tree
+    var listToTree = (list) => {
+        var map = {};
+        var roots = [];
+        var node, i;
+
+        for (i = 0; i < list.length; i += 1) {
+            map[list[i].id] = i;   // initialize the map
+            list[i].children = []; // initialize the children
+        }
+
+        for (i = 0; i < list.length; i += 1) {
+            node = list[i];
+            if (node.parentId !== "0") {
+                // if you have dangling branches check that map[node.parentId] exists
+                list[map[node.parentId]].children.push(node);
+            } else {
+                roots.push(node);
+            }
+        }
+
+        return roots;
+    };
+
+    var createTree = (list) => {
+        var l = list.length;
+        var finalList = [];
+
+        while (l--) {
+            var n = list[l];
+
+            if (!finalList.length) {
+                finalList.push({ id: n.target, parentId: '0', level: n.column + 1, children: null });
+            }
+
+            for (var i = 0; i < n.connections.length; i++) {
+                var m = n.connections[i];
+                finalList.push({ id: m, parentId: n.target, level: n.column, children: null });
+            }
+        }
+
+        return finalList;
+    };
+
+    var addOrderToTreeNodes = (finalList) => {
+        var orderedList = [];
+        var tree = listToTree(finalList);
+
+        function listTree(node, order, i) {
+            node.order = order + '0' + i;
+            orderedList.push(node);
+            for (var j = 0; j < node.children.length; j++) {
+                i++;
+                listTree(node.children[j], node.order, j);
+            }
+        }
+
+        listTree(tree[0], 1, 1);
+
+        orderedList.sort((a, b) => {
+            return parseInt(a.order, 10) > parseInt(b.order, 10) ? -1 : 1;
+        });
+
+        orderedList.forEach((elem, index) => {
+            $copado(`#${elem.id}`).data('order', parseInt(elem.order, 10));
+        });
+    };
+
+    var reorganizeDOMBoxes = () => {
+        var $columns;
+
+        $columns = $copado('.pipeline').children();
+
+        $columns.each(function(index) {
+            var $column = $copado(this);
+            var columnBoxesNumber = $column.children().length;
+
+            if (index > 0 && columnBoxesNumber > 1) {
+
+                $column.append($column.find('.box-container').get().sort((a, b) => {
+                    return $copado(a).data('order') - $copado(b).data('order');
+                }));
             }
         });
     };
 
-    var handleCollisions = ($column, columnGroups) => {
-        var haveCollisions = true;
-        while (haveCollisions) {
-            $column.children().each(function(index) {
-                var box = $copado(this);
-                var offsetTop = 0;
-                var isCollided = true;
-                var collisionedEnv;
-                haveCollisions = true;
+    var reorderConnectionsArray = (formattedConnectionsList) => {
+        var currentColumnNumber = 0, lastColumn = 0
+        var currentColumn = [];
+        var formattedConnectionsListCopy = JSON.parse(JSON.stringify(formattedConnectionsList));
+        var orderedConnectionList = [];
+        var newColumn = false;
+        var orderedListColumn = [];
 
-                var collisions = $column.find(boxClassIdentifier).not(box).map(function(i) {
-                    return { id: $column.children()[i].id, collision: overlaps(box, this) };
+        formattedConnectionsList.forEach((item, index) => {
+            newColumn = false;
+            orderedListColumn = [];
+
+            currentColumnNumber = parseInt(item.column, 10);
+            currentColumn = formattedConnectionsListCopy.filter((connection) => parseInt(connection.column, 10) === currentColumnNumber);
+
+            if (currentColumnNumber !== lastColumn) {
+                lastColumn = currentColumnNumber;
+                newColumn = true;
+            } else {
+                newColumn = false;
+            }
+
+            if (newColumn) {
+                if (currentColumn.length > 1) {
+                    orderedListColumn = currentColumn.sort((a, b) => {
+                        return $copado(`#${a.connections[0]}`).data('order') < $copado(`#${b.connections[0]}`).data('order') ? -1 : 1;
+                    });
+
+                    orderedListColumn.forEach((group) => {
+                        orderedConnectionList.push(group);
+                    });
+                } else {
+                    orderedConnectionList.push(currentColumn[0]);
+                }
+            }
+        });
+
+        return orderedConnectionList;
+    };
+
+    var setPositions = (orderedConnectionList) => {
+
+        var boxHeight = $copado(boxClassIdentifier).height() + 10;
+        var classicHeaderHeight = $copado('#AppBodyHeader').height() + 3;
+        var currentColumnNumber = 0, lastColumn = 0, newColumn = false;
+        var nextColumnNumber = '';
+        var formattedConnectionsListCopy = JSON.parse(JSON.stringify(orderedConnectionList));
+        var nextColumnBoxes;
+        var lastPositionedBox;
+        var firstItemTop, lastItemTop;
+        var totalHeight = 0;
+        var targetIndex, aboveBoxes, bellowBoxes;
+
+        orderedConnectionList.forEach((item, index) => {
+            newColumn = false;
+            currentColumnNumber = parseInt(item.column, 10);
+            nextColumnNumber = (currentColumnNumber + 1).toString();
+            item.connections = item.connections.filter((v, i, a) => a.indexOf(v) === i); // remove repeated connections
+
+            nextColumn = formattedConnectionsListCopy.filter((connection) => {
+                return connection.column === nextColumnNumber;
+            });
+
+            nextColumnBoxes = nextColumn.map((item) => {
+                return item.connections;
+            });
+
+            nextColumnBoxes = [].concat.apply([], nextColumnBoxes); // Flatten array
+
+            if ($copado(`#${item.connections[0]}`).length > 0 && $copado(`#${item.connections[item.connections.length - 1]}`).length > 0) {
+                firstItemTop = $copado(`#${item.connections[0]}`).position().top;
+                lastItemTop = $copado(`#${item.connections[item.connections.length - 1]}`).position().top;
+                totalHeight = Math.floor((lastItemTop + firstItemTop) / 2);
+
+                if (pipelineConnector.data.isSalesforceClassic) {
+                    totalHeight += classicHeaderHeight;
+                }
+
+                $copado(`#${item.target}`).offset({ top: totalHeight });
+
+                var $box = $copado(`#${item.target}`);
+
+                handleCollisions(nextColumnBoxes, $box, formattedConnectionsListCopy, currentColumnNumber);
+            }
+
+            if (currentColumnNumber !== lastColumn) {
+                lastColumn = currentColumnNumber;
+                newColumn = true;
+            } else {
+                newColumn = false;
+            }
+
+            if (newColumn) {
+
+                targetIndex = nextColumnBoxes.findIndex(elem => elem === item.target);
+                aboveBoxes = nextColumnBoxes.slice(0, targetIndex);
+                aboveBoxes.reverse();
+                bellowBoxes = nextColumnBoxes.slice(targetIndex + 1, nextColumnBoxes.length);
+
+                lastPositionedBox = item.target;
+
+                aboveBoxes.forEach((id, index) => {
+                    var $box = $copado(`#${id}`);
+
+                    $box.offset({ top: $copado(`#${lastPositionedBox}`).offset().top - boxHeight });
+                    lastPositionedBox = id;
                 });
 
-                collisions = collisions.filter((index, item) => item.collision === true);
+                lastPositionedBox = item.target;
+                bellowBoxes.forEach((id, index) => {
+                    var $box = $copado(`#${id}`);
 
-                if (collisions.length > 0) {
-                    for (var i = 0; i < collisions.length; i++) {
-                        // console.log(box.attr('id') + ' has a collision with ' + collisions[i].id);
-                        offsetTop = box.offset().top;
+                    if ($box.offset().top < $copado(`#${lastPositionedBox}`).offset().top) {
 
-                        moveBoxesInColumn($column, offsetTop, box.attr('id'));
-
-                        isCollided = true;
-                        collisionedEnv = $copado(`#${collisions[i].id}`);
-
-                        while (isCollided) {
-
-                            collisionedEnv.offset({ top: collisionedEnv.offset().top - 20 });
-
-                            if (!overlaps(collisionedEnv, $copado(`#${box.attr('id')}`)) || collisions[i].id === box.attr('id')) {
-                                collisionedEnv.offset({ top: collisionedEnv.offset().top + 15 });
-                                isCollided = false;
-                            }
-                        }
+                        $box.offset({ top: $copado(`#${lastPositionedBox}`).offset().top + boxHeight });
+                        lastPositionedBox = id;
                     }
-                } else {
-                    haveCollisions = false;
+                });
+
+            } else {
+
+                targetIndex = nextColumnBoxes.findIndex(elem => elem === item.target);
+                aboveBoxes = nextColumnBoxes.slice(0, targetIndex);
+                aboveBoxes.reverse();
+                bellowBoxes = nextColumnBoxes.slice(targetIndex + 1, nextColumnBoxes.length);
+
+                if (($copado(`#${aboveBoxes[0]}`).offset().top > $copado(`#${item.target}`).offset().top)) {
+                    $copado(`#${item.target}`).offset({ top: $copado(`#${aboveBoxes[0]}`).offset().top + boxHeight });
                 }
-            });
-        }
+
+                lastPositionedBox = item.target;
+                aboveBoxes.forEach((id, index) => {
+                    var $box = $copado(`#${id}`);
+
+                    if (($box.offset().top > $copado(`#${lastPositionedBox}`).offset().top)) {
+                        $box.offset({ top: $copado(`#${lastPositionedBox}`).offset().top - boxHeight });
+                    }
+
+                    handleCollisions(nextColumnBoxes, $box, formattedConnectionsListCopy, currentColumnNumber);
+                    lastPositionedBox = id;
+                });
+
+                lastPositionedBox = item.target;
+                bellowBoxes.forEach((id, index) => {
+                    var $box = $copado(`#${id}`);
+
+                    if (($box.offset().top < $copado(`#${lastPositionedBox}`).offset().top)) {
+                        $box.offset({ top: $copado(`#${lastPositionedBox}`).offset().top + boxHeight });
+                    }
+
+                    handleCollisions(nextColumnBoxes, $box, formattedConnectionsListCopy, currentColumnNumber);
+                    lastPositionedBox = id;
+                });
+            }
+        });
+    };
+
+   /* var reviewCollisions = () => {
+
+    };*/
+
+    var displaceEnvironments = () => {
+        var boxes = $copado(boxClassIdentifier);
+        var $box;
+        var filterOffset = $copado('.filter-main-object').offset().top + $copado('.filter-main-object').height();
+
+        boxes.each(function(index) {
+            var $box = $copado(this);
+            var displaceHeightValue = 0;
+            var margin = 20;
+
+            if ($box.offset().top < filterOffset) {
+                displaceHeightValue = filterOffset - $box.offset().top + margin;
+                moveBoxes(displaceHeightValue);
+            }
+        });
     };
 
     var calculateSmartPositioning = () => {
 
-        if ($copado(boxClassIdentifier).length > 0) {
-            lockScreen();
+        var connectionsList = pipelineConnector.data.connectionsList;
+        var finalList = [];
+        var formattedConnectionsList = [];
+        var orderedConnectionList = [];
 
-            var firstItemTop, lastItemTop;
-            var totalHeight = 0;
-            var boxHeight = $copado(boxClassIdentifier).height() + 10;
-            var connectionsList = pipelineConnector.data.connectionsList;
-            var formattedConnectionsList = formatConnections(connectionsList);
-            var lastBoxPosition = 0;
-            var connectedEnv, connections;
-            var $columns, $box;
-            var lastPositionedBox;
-            var classicHeaderHeight = $copado('#AppBodyHeader').height() + 3;
-            var connectedElements, noConnectedElements;
+        if (Object.entries(connectionsList).length === 0 && connectionsList.constructor === Object) {
+            console.error('Empty connection list. Check your pipeline configuration');
 
-            formattedConnectionsList.forEach((item, index) => {
+        } else {
 
-                if (item.connections.length > 1 && !hasPreviousConnection(formattedConnectionsList, item)) {
+            formattedConnectionsList = formatConnections(connectionsList);
 
-                    connectedEnv = getConnectedEnvironments(formattedConnectionsList, index);
-                    connectedElements = connectedEnv.filter(element => element.isConnected);
-                    noConnectedElements = connectedEnv.filter(element => !element.isConnected);
-                    connectedEnv = noConnectedElements.concat(connectedElements);
-                    item.connections = connectedEnv.map(x => x.id);
+            // Create a tree from the list connections
+            finalList = createTree(formattedConnectionsList);
 
-                    lastPositionedBox = connectedEnv.find((item) => {
-                        return item.isConnected;
-                    });
+            // add order to nodes
+            addOrderToTreeNodes(finalList);
 
-                    if (lastPositionedBox) {
+            // Order DOM boxes according order
+            reorganizeDOMBoxes();
 
-                        connectedEnv.forEach((box, index) => {
+            // Order array according order
+            orderedConnectionList = reorderConnectionsArray(formattedConnectionsList);
 
-                            if (box.isConnected) {
+            // Environment positions calculation
+            setPositions(orderedConnectionList);
 
-                                firstItemTop = $copado(`#${connectedElements[0].id}`).position().top;
-                                lastItemTop = $copado(`#${connectedElements[connectedElements.length - 1].id}`).position().top;
-                                totalHeight = Math.floor((lastItemTop + firstItemTop) / 2);
-                                $copado(`#${item.target}`).offset({ top: totalHeight });
-
-                            } else {
-
-                                lastItemTop = $copado(`#${lastPositionedBox.id}`).offset().top;
-                                totalHeight = lastItemTop - boxHeight;
-                                $copado(`#${box.id}`).offset({ top: totalHeight });
-
-                            }
-
-                            lastPositionedBox = box;
-                        });
-
-                    } else {
-
-                        firstItemTop = $copado(`#${noConnectedElements[0].id}`).position().top;
-                        lastItemTop = $copado(`#${noConnectedElements[noConnectedElements.length - 1].id}`).position().top;
-                        totalHeight = Math.floor((lastItemTop + firstItemTop) / 2);
-                        $copado(`#${item.target}`).offset({ top: totalHeight });
-                    }
-
-                } else {
-
-                    firstItemTop = $copado(`#${item.connections[0]}`).position().top;
-                    lastItemTop = $copado(`#${item.connections[item.connections.length - 1]}`).position().top;
-                    totalHeight = Math.floor((lastItemTop + firstItemTop) / 2);
-
-                    if (pipelineConnector.data.isSalesforceClassic) {
-                        totalHeight += classicHeaderHeight;
-                    }
-
-                    $copado(`#${item.target}`).offset({ top: totalHeight });
-                }
-            });
+            // Review if every box is ot collided by column
+            // reviewCollisions();
 
             // Check if all box position calculations are inside the container and displace it if not
-            var boxes = $copado(boxClassIdentifier);
-            var filterOffset = $copado('.filter-main-object').offset().top + $copado('.filter-main-object').height();
-
-            boxes.each(function(index) {
-                var $box = $copado(this);
-                var displaceHeightValue = 0;
-                var margin = 20;
-
-                if ($box.offset().top < filterOffset) {
-                    displaceHeightValue = filterOffset - $box.offset().top + margin;
-                    moveBoxes(displaceHeightValue);
-                }
-            });
-
-            // Check collisions. If there are one between 2 boxes, put the box immediately bellow the other one, and move the rest of the boxes
-            $columns = $copado('.pipeline').children();
-
-            $columns.each(function(index) {
-                var $column = $copado(this);
-                var columnBoxesNumber = $column.children().length;
-                var columnGroups = formattedConnectionsList.filter((connection) => {
-                    return parseInt(connection.column, 10) === index + 1;
-                });
-                if (columnBoxesNumber > 1) {
-                    handleCollisions($column, columnGroups);
-                }
-            });
+            displaceEnvironments();
         }
-
-        unlockScreen();
     };
 
     var handleDropdownMenus = () => {
@@ -794,6 +956,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             if (!pipelineConnector.data.connectionsList) {
                 return;
             }
+
             calculateSmartPositioning();
             initLineConnections();
             setMinimap();

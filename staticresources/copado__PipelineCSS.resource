@@ -765,11 +765,28 @@ input.toggle {
     width: 20px;
 }
 
-#confirmDeletePopup>section {
+#filterModalDiv .dueling-picklist .multiSelectPicklistRow .slds-input.picklistArrowRight,
+#filterModalDiv .dueling-picklist .multiSelectPicklistRow .slds-input.picklistArrowLeft {
+    border: none;
+    border-radius: 0;
+    transition: none;
+    display: inline-block;
+    padding: 0;
+    line-height: 0;
+    min-height: 20px;
+    width: 20px;
+}
+
+#filterModalDiv .dueling-picklist .multiSelectPicklistRow td {
+    vertical-align: middle;
+}
+
+#confirmDeletePopup > section {
     z-index: 9999;
 }
 
-#confirmDeletePopup>div {
+#confirmDeletePopup > div {
     z-index: 9998;
 }
+
 
