@@ -1,0 +1,34 @@
+<apex:page standardController="Contact" sidebar="false" showHeader="false">
+  <apex:pageBlock >
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Name}"/>
+    <apex:detail relatedList="false"/>
+  </apex:pageBlock>
+<apex:pageBlock >
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Birthdate}"/>
+    <apex:detail relatedList="false"/>
+</apex:pageBlock>
+<apex:pageBlock >
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Description}"/>
+    <apex:detail relatedList="false"/>
+</apex:pageBlock>
+<apex:pageBlock >
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Email}"/>
+    <apex:detail relatedList="false"/>
+</apex:pageBlock>
+<apex:pageBlock >
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Fax}"/>
+    <apex:detail relatedList="false"/>
+</apex:pageBlock>
+<apex:pageBlock >
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.MobilePhone}"/>
+    <apex:detail relatedList="false"/>
+</apex:pageBlock>
+<apex:pageBlock >
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Phone}"/>
+    <apex:detail relatedList="false"/>
+</apex:pageBlock>
+<apex:pageBlock >
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Title}"/>
+    <apex:detail relatedList="false"/>
+</apex:pageBlock>
+</apex:page>
