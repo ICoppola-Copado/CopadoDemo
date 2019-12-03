@@ -1,6 +1,6 @@
 <apex:page standardController="Contact" sidebar="false" showHeader="false">
   <apex:pageBlock >
-    <apex:sectionHeader title="Contact" subtitle="{!Contact.Name}"/>
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Phone}"/>
     <apex:detail relatedList="false"/>
   </apex:pageBlock>
 <apex:pageBlock >
@@ -8,7 +8,7 @@
     <apex:detail relatedList="false"/>
 </apex:pageBlock>
 <apex:pageBlock >
-    <apex:sectionHeader title="Contact" subtitle="{!Contact.Description}"/>
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Title}"/>
     <apex:detail relatedList="false"/>
 </apex:pageBlock>
 <apex:pageBlock >
@@ -20,15 +20,19 @@
     <apex:detail relatedList="false"/>
 </apex:pageBlock>
 <apex:pageBlock >
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.LeadSource}"/>
+    <apex:detail relatedList="false"/>
+</apex:pageBlock>
+<apex:pageBlock >
     <apex:sectionHeader title="Contact" subtitle="{!Contact.MobilePhone}"/>
     <apex:detail relatedList="false"/>
 </apex:pageBlock>
 <apex:pageBlock >
-    <apex:sectionHeader title="Contact" subtitle="{!Contact.Phone}"/>
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Name}"/>
     <apex:detail relatedList="false"/>
 </apex:pageBlock>
 <apex:pageBlock >
-    <apex:sectionHeader title="Contact" subtitle="{!Contact.Title}"/>
+    <apex:sectionHeader title="Contact" subtitle="{!Contact.Description}"/>
     <apex:detail relatedList="false"/>
 </apex:pageBlock>
 </apex:page>
