@@ -337,7 +337,7 @@ var copadoApp = {
         ga('send', 'event', 'Deployment', 'result', 'render', res.length);
     },
 
-    createDataTemplateResultTable: function(res, $container) {
+    createDataTemplateResultTable: function(res, $container, sourceDomain, targetDomain) {
         var source2 = {
                 localdata: res,
                 datafields: [{
@@ -385,7 +385,7 @@ var copadoApp = {
             var templateId = $copado('.jqx-grid').jqxGrid('getCell', row, 'templateId').value;
             var templateName = $copado('.jqx-grid').jqxGrid('getCell', row, 'templateName').value;
             var element = $copado(defaultHtml);
-            var resultPageUrl = '/apex/' + _namespace + 'DataTemplateObjectResult?templateId=' + templateId + '&templateName=' + templateName + '&deploymentId=' + copadoApp.data.dep.Id + '&stepId=' + copadoApp.selectedStepId;
+            var resultPageUrl = '/apex/' + _namespace + 'DataTemplateObjectResult?templateId=' + templateId + '&templateName=' + templateName + '&deploymentId=' + copadoApp.data.dep.Id + '&stepId=' + copadoApp.selectedStepId + '&sourceDomain=' + sourceDomain + '&targetDomain=' + targetDomain;
             element.html('<a href="#" onClick="window.open(\'' + resultPageUrl + '\');">' + copadoLabels.VIEW_RESULTS + '</a>');
             return element[0].outerHTML;
         };
@@ -485,10 +485,14 @@ var copadoApp = {
             // transform and create result table
             res = Base64.decode(res.records.Body);
             res = $copado.parseJSON(res);
-            if (res[0] && res[0].m && (res[0].m.templateId || res[0].m.exception)) {
-                if (!res[0].m.exception) {
+            var records = res.results ? res.results : res;
+            var sourceDomain = res.sourceDomain ? res.sourceDomain : '';
+            var targetDomain = res.targetDomain ? res.targetDomain : '';
+
+            if (records[0] && records[0].m && (records[0].m.templateId || records[0].m.exception)) {
+                if (!records[0].m.exception) {
                     var newResultArray = [];
-                    res.forEach(function(element) {
+                    records.forEach(function(element) {
                         var newResult = {
                             'deployedRecords': element.m.deployedRecords,
                             'failedRecords': element.m.failedRecords,
@@ -500,12 +504,12 @@ var copadoApp = {
                         newResultArray.push(newResult);
                     });
 
-                    copadoApp.createDataTemplateResultTable(newResultArray, $container);
+                    copadoApp.createDataTemplateResultTable(newResultArray, $container, sourceDomain, targetDomain);
                 } else {
                     var newResult = [{
-                        'l': res[0].l,
-                        'm': res[0].m.exception,
-                        't': res[0].t
+                        'l': records[0].l,
+                        'm': records[0].m.exception,
+                        't': records[0].t
                     }];
                     copadoApp.createResultTable(newResult, $container);
                 }

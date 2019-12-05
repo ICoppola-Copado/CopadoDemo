@@ -119,20 +119,7 @@
             var heightFactor = 0;
 
             columnsNumber = firstColumnEnvNumber > secondColumnEnvNumber ? firstColumnEnvNumber : secondColumnEnvNumber;
-
-            if (columnsNumber <= 10) {
-                heightFactor = 0.5;
-            } else if (columnsNumber > 10 && columnsNumber <= 30) {
-                heightFactor = 0.6;
-            } else if (columnsNumber > 30 && columnsNumber <= 50) {
-                heightFactor = 0.7;
-            } else if (columnsNumber > 50 && columnsNumber <= 65) {
-                heightFactor = 0.8;
-            } else if (columnsNumber > 65 && columnsNumber <= 80) {
-                heightFactor = 0.9;
-            } else if (columnsNumber > 80) {
-                heightFactor = 1;
-            }
+            heightFactor = columnsNumber <= 10 ? 0.7 : 0.9;
 
             return heightFactor;
         }
@@ -166,9 +153,6 @@
                     top: Math.round(yM)
                 });
             });
-
-
-
         }
 
         init();
@@ -220,16 +204,19 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         return (x < 0) ? -1 : 1;
     };
 
+    // Get a entire positive value
     var absolute = (x) => {
         return (x < 0) ? -x : x;
     };
 
+    // Get data from Apex controller
     var getConnectionsList = () => {
         if (ccd.data.connections.length > 0) {
             pipelineConnector.data.connectionsList = JSON.parse(ccd.data.connections);
         }
     };
 
+    // Draw a SVG line between two points
     var drawPath = (svg, path, startX, startY, endX, endY) => {
         var stroke = parseFloat(path.css('stroke-width'));
         var offsetHeight = 20;
@@ -276,6 +263,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         }
     };
 
+    // Calculate the start and end point to draw a line
     var connectElements = (svg, path, startElem, endElem) => {
         var svgContainer = $copado('#svgContainer');
 
@@ -310,6 +298,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         drawPath(svg, path, startX - 10, startY, endX - 5, endY);
     };
 
+    // Paint an arrow at the end of each SVG line
     var getLineArrows = () => {
         var svgContainer = document.getElementById('svgContainer');
         var svgs = svgContainer.children;
@@ -354,8 +343,8 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         }
     };
 
+    // Expand svg a bit more to see arrows entirely
     var adjustSvgDimensions = () => {
-        // Expand svg more to see arrows
         var svgContainer = $copado('#svgContainer');
         var svg, svgHeight, svgWidth;
 
@@ -369,6 +358,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         });
     };
 
+    // Create SVG containers to paint each line
     var createSvgs = () => {
         var svgContainer = $copado('#svgContainer');
         var connectionsList = pipelineConnector.data.targetToSourceList;
@@ -383,6 +373,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         });
     };
 
+    // Public function to connect all elements.
     pipelineConnector.connectAll = () => {
         var connectionsList = pipelineConnector.data.targetToSourceList;
         if (!connectionsList) {
@@ -395,6 +386,16 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         });
     };
 
+    // Get an element top position
+    var getTop = (elem) => {
+            var eTop = elem.offset().top;
+            var wTop = $copado(window).scrollTop();
+            var top = eTop - wTop;
+
+            return top;
+    };
+
+    // Minimap configuration
     var setMinimap = () => {
         var myWrapper = $copado('.pipeline');
         var $minimap = $copado('#minimap');
@@ -408,8 +409,18 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             $minimap.show();
         }
 
+        $minimap.draggable({
+            handle: '#minimapHeader',
+            containment: '.wrapper',
+            stop: (event, ui) => {
+                var top = getTop(ui.helper);
+                ui.helper.css('position', 'fixed');
+                ui.helper.css('top', top + 'px');
+            }
+        });
     };
 
+    // Function to group all task needed to paint SVG lines
     var initLineConnections = () => {
 
         createSvgs();
@@ -419,6 +430,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
 
     };
 
+    // Format a data array from the data received of Apex controller
     var formatConnections = (connectionsList) => {
         var convertedList = [];
         var stage, fromEnvId, toEnvId, columnNumber;
@@ -482,6 +494,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         return finalConnectionList;
     };
 
+    // Move all the environments boxes down a given value
     var moveBoxes = (displaceHeightValue) => {
         var boxes = $copado(boxClassIdentifier);
         var currentOffset = 0;
@@ -494,7 +507,9 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         });
     };
 
+    // Check if an environment box have a collision with another one of its group
     var checkCollision = (group, env) => {
+
         var haveCollisions = true;
         var collisions = [];
         var box = env;
@@ -510,6 +525,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         return collisions;
     };
 
+    // Move environment boxes connected to a given box
     var setPreviousConnectionPositions = (list, id, currentColumn) => {
 
         var envs = getConnectedEnvironments(list, id, currentColumn);
@@ -524,6 +540,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         });
     };
 
+    // Handle the collisions between environment boxes and avoid it
     var handleCollisions = (nextColumnBoxes, box, list, currentColumn) => {
 
         var collisions = checkCollision(nextColumnBoxes, box);
@@ -553,10 +570,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
                     if (!found) {
                         isCollided = false;
 
-                        var column = currentColumn;
-                        var id = collision.id;
-                        var envs = [collision.id];
-
                         if (hasPreviousConnection(list, collision.id, currentColumn)) {
                              setPreviousConnectionPositions(list, collision.id, currentColumn);
                         }
@@ -566,6 +579,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         }
     };
 
+    // Get a list of the environment boxes that is connected to a given box
     var getConnectedEnvironments = (connectionList, id, currentColumn) => {
 
         var columnGroups, groupElems;
@@ -584,6 +598,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         return connectedEnv;
     };
 
+    // Check if a given box is connected to a previous box
     var hasPreviousConnection = (connectionList, id, column) => {
 
         var columnGroups, previousColumnGroup;
@@ -603,7 +618,28 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         return isConnected;
     };
 
-    // convert to tree
+    // Convert connectionsList array in a list prepared to create a tree structure
+    var createListForTree = (list) => {
+        var l = list.length;
+        var finalList = [];
+
+        while (l--) {
+            var n = list[l];
+
+            if (!finalList.length) {
+                finalList.push({ id: n.target, parentId: '0', level: n.column + 1, children: null });
+            }
+
+            for (var i = 0; i < n.connections.length; i++) {
+                var m = n.connections[i];
+                finalList.push({ id: m, parentId: n.target, level: n.column, children: null });
+            }
+        }
+
+        return finalList;
+    };
+
+    // Convert a list into tree data structure
     var listToTree = (list) => {
         var map = {};
         var roots = [];
@@ -627,26 +663,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         return roots;
     };
 
-    var createTree = (list) => {
-        var l = list.length;
-        var finalList = [];
-
-        while (l--) {
-            var n = list[l];
-
-            if (!finalList.length) {
-                finalList.push({ id: n.target, parentId: '0', level: n.column + 1, children: null });
-            }
-
-            for (var i = 0; i < n.connections.length; i++) {
-                var m = n.connections[i];
-                finalList.push({ id: m, parentId: n.target, level: n.column, children: null });
-            }
-        }
-
-        return finalList;
-    };
-
+    // Add order to nodes
     var addOrderToTreeNodes = (finalList) => {
         var orderedList = [];
         var tree = listToTree(finalList);
@@ -671,6 +688,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         });
     };
 
+    // Order DOM boxes according order attribute
     var reorganizeDOMBoxes = () => {
         var $columns;
 
@@ -682,13 +700,14 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
 
             if (index > 0 && columnBoxesNumber > 1) {
 
-                $column.append($column.find('.box-container').get().sort((a, b) => {
+                $column.append($column.find(boxClassIdentifier).get().sort((a, b) => {
                     return $copado(a).data('order') - $copado(b).data('order');
                 }));
             }
         });
     };
 
+    // Order array according order attribute
     var reorderConnectionsArray = (formattedConnectionsList) => {
         var currentColumnNumber = 0, lastColumn = 0
         var currentColumn = [];
@@ -729,6 +748,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         return orderedConnectionList;
     };
 
+    // Environment boxes positions calculation
     var setPositions = (orderedConnectionList) => {
 
         var boxHeight = $copado(boxClassIdentifier).height() + 10;
@@ -846,10 +866,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         });
     };
 
-   /* var reviewCollisions = () => {
-
-    };*/
-
+    // Check if all box position calculations are inside the container and displace it if not
     var displaceEnvironments = () => {
         var boxes = $copado(boxClassIdentifier);
         var $box;
@@ -867,6 +884,21 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         });
     };
 
+    // In case of after all calculations some environment is hidden or overlaped, it can be placed manually
+    var setBoxesDraggable = () => {
+            $copado(boxClassIdentifier).draggable({
+                axis: 'y',
+                handle: '.info',
+                containment: '.pipeline',
+            	drag: (event, ui) => {
+                },
+                stop: (event, ui) => {
+                    pipelineConnector.connectAll();
+                }
+            });
+        };
+
+    // Prepare the info from Apex controller and calculate positions for each environment box
     var calculateSmartPositioning = () => {
 
         var connectionsList = pipelineConnector.data.connectionsList;
@@ -880,30 +912,17 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         } else {
 
             formattedConnectionsList = formatConnections(connectionsList);
-
-            // Create a tree from the list connections
-            finalList = createTree(formattedConnectionsList);
-
-            // add order to nodes
+            finalList = createListForTree(formattedConnectionsList);
             addOrderToTreeNodes(finalList);
-
-            // Order DOM boxes according order
             reorganizeDOMBoxes();
-
-            // Order array according order
             orderedConnectionList = reorderConnectionsArray(formattedConnectionsList);
-
-            // Environment positions calculation
             setPositions(orderedConnectionList);
-
-            // Review if every box is ot collided by column
-            // reviewCollisions();
-
-            // Check if all box position calculations are inside the container and displace it if not
             displaceEnvironments();
+            setBoxesDraggable();
         }
     };
 
+    // Set rules for dropdown menus behaviour
     var handleDropdownMenus = () => {
         var envDropdowns = document.querySelectorAll('.box-container div.slds-dropdown');
         var diagramDropdown = document.querySelector('.diagramDropwdown');
@@ -950,6 +969,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         }
     };
 
+    // Public function to group all task needed to load the pipeline manager page
     pipelineConnector.loadPage = () => {
         try {
             getConnectionsList();
@@ -969,6 +989,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         }
     };
 
+    // Public function to update last deployment and set the properly icon
     pipelineConnector.updateLastDeployment = (envId, deploymentStatus) => {
 
         var statusMap = {
@@ -985,6 +1006,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         }
     };
 
+    // Public function to open an environment box dropdown
     pipelineConnector.openDropdownMenu = (currentButton) => {
         var box = currentButton.closest('.env-box');
         var dropdown = box.nextElementSibling;
@@ -998,10 +1020,12 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         }
     };
 
+    // Public function to create an org credential
     pipelineConnector.createOrg = (stepId, envId, envName, useStep) => {
         lockScreen();
         createOrgCredentials(stepId, envId, '', '', 'true', useStep);
     };
+
 
     pipelineConnector.isManagerRunning = (currentMode) => {
         if (currentMode === 'manager') {
@@ -1023,11 +1047,13 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         unlockScreen();
     };
 
+    // Public function to render again all the page
     pipelineConnector.reRenderFunction = () => {
         ccd.loadPage();
         renderPageMessage();
     };
 
+    // Public function to show and hide the connection behaviour depending if the mouse is over or not
     pipelineConnector.toggleNewConnectionIcon = (elem) => {
 
         var box = $copado(elem).find('.connection-behaviour-override');
@@ -1042,7 +1068,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         }
     };
 
-
+    // Get data from visual force page to be used here
     var definePipelineConnector = () => {
         pipelineConnector.data = pipelineConnector.data || {};
         pipelineConnector.config = pipelineConnector.config || {};

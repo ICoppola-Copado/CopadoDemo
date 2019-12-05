@@ -634,7 +634,24 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
     // on validation step, it will end at this function
     var objectCallout = (dataObject, cbOnEnd) => {
         var cleanUrl = dataObject.endpoint.replace('copado_objName', dataObject.name);
+        var duplicateNameDetected = false;
+
         try {
+            sforce.connection.query('SELECT Id,Name FROM ' + dataObject.namespace + 'Data_Template__c WHERE ' + dataObject.namespace + 'Main_Object__c=\'' + dataObject.name + '\'', {
+                onSuccess: (response) => {
+                    if (response.records) {
+                        response.records.forEach((existingTemplateRecords) => {
+                            if(existingTemplateRecords.Name == dataObject.values.dataTemplate.templateName) {
+                                duplicateNameDetected = true;
+                            }
+                        });
+                    }
+                },
+                onFailure: (error) => {
+                    showError(error);
+                }
+            });
+
             sforce.connection.remoteFunction({
                 url: cleanUrl,
                 requestHeaders: {
@@ -667,9 +684,15 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                             };
                             return createDataTemplate(creationData, cbOnEnd);
                         } else {
-                            var imageId = dataObject.values.dataTemplate.templateName.replace(/[^a-zA-Z0-9]/g, '') + '_confirm';
-                            $copado(`#${imageId}`).removeClass('confirm-images');
-                            app.totalValidatedTemplate++;
+                            if(duplicateNameDetected) {
+                                var imageId = dataObject.values.dataTemplate.templateName.replace(/[^a-zA-Z0-9]/g, '') + '_warning';
+                                $copado(`#${imageId}`).removeClass('warning-images');
+                                app.totalNotValidatedTemplate++;
+                            } else {
+                                var imageId = dataObject.values.dataTemplate.templateName.replace(/[^a-zA-Z0-9]/g, '') + '_confirm';
+                                $copado(`#${imageId}`).removeClass('confirm-images');
+                                app.totalValidatedTemplate++;
+                            }
                             cbOnEnd && cbOnEnd();
                         }
                     }
