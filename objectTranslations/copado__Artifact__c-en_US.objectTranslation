@@ -219,6 +219,18 @@
             <translation><!-- 44.0 --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>45.0</masterLabel>
+            <translation><!-- 45.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>46.0</masterLabel>
+            <translation><!-- 46.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>47.0</masterLabel>
+            <translation><!-- 47.0 --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>5.0</masterLabel>
             <translation><!-- 5.0 --></translation>
         </picklistValues>
