@@ -3919,6 +3919,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Speaker__c.Dev1_new_picklist__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Speaker__c.Dev2_Autonumber__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Speaker__c.Dev2_Field__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -7771,6 +7781,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>GoalLink-Goal Link Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Hola__c-Hola Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Idea-Idea Layout</layout>

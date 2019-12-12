@@ -17,6 +17,22 @@
         <name>Dev1_Field__c</name>
     </fields>
     <fields>
+        <label><!-- Dev1 new picklist --></label>
+        <name>Dev1_new_picklist__c</name>
+        <picklistValues>
+            <masterLabel>Test1</masterLabel>
+            <translation><!-- Test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test2</masterLabel>
+            <translation><!-- Test2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dev2 Autonumber --></label>
+        <name>Dev2_Autonumber__c</name>
+    </fields>
+    <fields>
         <label><!-- Dev2 Field --></label>
         <name>Dev2_Field__c</name>
     </fields>
