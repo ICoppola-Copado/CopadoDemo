@@ -48,12 +48,6 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             spriteType: 'utility-sprite'
         },
         {
-            svgButtonsClass: 'attachmentDocumentIcon',
-            styleClass: 'slds-button__icon slds-icon_large',
-            name: 'attachment',
-            spriteType: 'doctype-sprite'
-        },
-        {
             svgButtonsClass: 'approvalActionIcon',
             styleClass: 'slds-button__icon slds-icon slds-icon_x-small',
             name: 'approval',
@@ -64,6 +58,12 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             styleClass: 'slds-button__icon slds-icon slds-icon_x-small',
             name: 'close',
             spriteType: 'action-sprite'
+        },
+        {
+            svgButtonsClass: 'uploadIcon',
+            styleClass: 'slds-button__icon slds-icon_x-small',
+            name: 'upload',
+            spriteType: 'utility-sprite'
         }
     ];
 
@@ -182,11 +182,6 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
     };
 
 
-    app.openFileLoader = () => {
-        $copado('#fileUploadInput').trigger("click");
-    };
-
-
     app.changeEventFileUploader = () => {
         document.getElementById('fileUploadInput').addEventListener('change', app.bindFileReader);
     };
@@ -208,6 +203,54 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             }
         }, 100);
     };
+
+    app.dropFile = () => {
+        $copado('#jsonSelector').on(
+            'dragover',
+            (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+        );
+        $copado('#jsonSelector').on(
+            'dragenter',
+            (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                $copado('.slds-file-selector__dropzone').addClass('slds-has-drag-over');
+            }
+        );
+        $copado('#jsonSelector').on(
+            'dragleave',
+            (event) => {
+                $copado('.slds-file-selector__dropzone').removeClass('slds-has-drag-over');
+            }
+        );
+        $copado('#jsonSelector').on(
+            'drop',
+            (event) => {
+                if (event.originalEvent.dataTransfer) {
+                    if (event.originalEvent.dataTransfer.files.length) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        fileReader.readAsText(event.originalEvent.dataTransfer.files[0]);
+                        setTimeout(() => {
+                            if (fileReader.result) {
+                                parseImportedFiles(fileReader.result);
+                            }
+                        }, 100);
+                    }
+                }
+            }
+        );
+    };
+
+
+    app.sendErrorMessageToActionFunction = (error) => {
+        var errorMessage = error.message ? error.message : (error.faultstring ? error.faultstring : 'Unknown Error');
+        showError(errorMessage);
+        console.error(error);
+    }
 
 
     // it is used to retrieve inserted attachment to update relations in the body
@@ -268,7 +311,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 cbOnEnd && cbOnEnd();
             },
             onFailure: (error) => {
-                showError(error);
+                sendErrorMessageToActionFunction(error);
             }
         });
     };
@@ -623,9 +666,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 createAttachments(attachmentData, cbOnEnd);
             }
         } catch (error) {
-            var errorMessage = error.message ? error.message : error.faultstring ? error.faultstring : 'Unknown Error';
-            showError(errorMessage);
-            console.error(error);
+            sendErrorMessageToActionFunction(error);
         }
     };
 
@@ -648,7 +689,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                     }
                 },
                 onFailure: (error) => {
-                    showError(error);
+                    sendErrorMessageToActionFunction(error);
                 }
             });
 
@@ -698,13 +739,11 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                     }
                 },
                 onFailure: (error) => {
-                    showError(error);
+                    sendErrorMessageToActionFunction(error);
                 }
             });
         } catch (error) {
-            var errorMessage = error.message ? error.message : error.faultstring ? error.faultstring : 'Unknown Error';
-            showError(errorMessage);
-            console.error(error);
+            sendErrorMessageToActionFunction(error);
         }
 
     };
@@ -771,13 +810,11 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                     cbOnEnd && cbOnEnd();
                 },
                 onFailure: (error) => {
-                    showError(error);
+                    sendErrorMessageToActionFunction(error);
                 }
             });
         } catch (error) {
-            var errorMessage = error.message ? error.message : error.faultstring ? error.faultstring : 'Unknown Error';
-            showError(errorMessage);
-            console.error(error);
+            sendErrorMessageToActionFunction(error);
         }
     };
 
@@ -826,13 +863,11 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                             }
                         },
                         onFailure: (error) => {
-                            showError(error);
+                            sendErrorMessageToActionFunction(error);
                         }
                     });
                 } catch (error) {
-                    var errorMessage = error.message ? error.message : error.faultstring ? error.faultstring : 'Unknown Error';
-                    showError(errorMessage);
-                    console.error(error);
+                    sendErrorMessageToActionFunction(error);
                 }
             } else {
                 dataObject['globalDescribe'] = existingGlobalDescribeResult;
@@ -847,7 +882,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         app.applyRenderSVG();
         app.startDataTables();
         app.openModals('UploadTemplate');
-        app.openFileLoader();
+        app.dropFile();
         app.changeEventFileUploader();
     });
 

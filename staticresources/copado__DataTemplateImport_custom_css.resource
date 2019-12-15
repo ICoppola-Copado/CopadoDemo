@@ -365,6 +365,15 @@ body {
     margin-bottom: 20px;
 }
 
+#modalUploadTemplate .modal-content .file-uploader {
+    width: 25rem;
+    margin: 1rem auto;
+}
+
+#modalUploadTemplate .modal-content .file-uploader .upload-icon-title {
+    margin-left: 10px;
+}
+
 #modalUploadTemplate .slds-card__body .templates-list {
     margin-bottom: 20px;
     max-height: 160px;
