@@ -215,26 +215,21 @@ var conversionFunc = conversionFunc || {},
                 if (sPane) panes = sPane;
 
                 var offsetAmount = 120;
-                // Attachment name structure [US-Name MetadataTypeFolder/MetadataLabel.metadataExtension
-                //  if metadata label contains empty space parse logic fails. Thats why below regex block removes empty spaces from the metadata label
-
-                var dirtyToclearLabel;
-                var cleanAttachmentName = attach.Name.replace(/(-{1,1})/,'').replace(/(?<=[\/\-])(.+?)(?=\.)/g, function(match, p1) {
-                    dirtyToclearLabel = p1+'~'+p1.replace(/\s/g, '');
-                    return p1.replace(/\s/g, '');
-                });
-
-                attachmentInfo = !preFlag ? cleanAttachmentName.replace('AUTO ','').replace('RESOLVED ','').split(' ') : config.attachName.split('/');
-
+                attachmentInfo = !preFlag ? attach.Name.replace('AUTO ','').replace('RESOLVED ','').split(' ') : config.attachName.split('/');
+                //correction for the types which's label and name are not the same hence there might be empty spaces in the label exp:custom object, field, layout etc.
+                if(attachmentInfo.length > 2 && !preFlag){
+                    tempAttachments = attachmentInfo;
+                    attachmentInfo = [];
+                    attachmentInfo.push(tempAttachments[0]);
+                    attachmentInfo.push(tempAttachments.slice(1).join(' '));
+                }
+                console.log('attachmentInfo  ',attachmentInfo);
                 pMode = defineMode();
                 usName = attachmentInfo[0];
 
                 //$copado('.slds-modal__header:last').append('<center><span id="infoOnMerge"><strong style="font-size: medium;">'+attachmentInfo[1]+'</strong> ');
                 var fileName = preSource && preSource.length ? (preSource[0] > preTarget[0] ? preSource[1] : preTarget[1]) : '';
-                var parsedLabel = dirtyToclearLabel.split('~');
-
-                var displayName = parsedLabel.length == 2 ? attachmentInfo[1].replace(parsedLabel[1],parsedLabel[0]) : attachmentInfo[1]
-                $copado('.files-to-compare').text((preSource && preSource.length > 0) ? fileName : displayName);
+                $copado('.files-to-compare').text((preSource && preSource.length > 0) ? fileName : attachmentInfo[1]);
 
                 if (panes != 1) {
                     if (pMode.toLowerCase().indexOf('xml') > -1 && (!parseOperations.parseErrorExist(attach ? prapareValue(Base64.decode(attach.Body),format) : preSource[0]) || format)) {
@@ -315,6 +310,7 @@ var conversionFunc = conversionFunc || {},
     },
     defineMode = function() {
         //last clause(after : ) used to be (attachmentInfo.length > 1 ? attachmentInfo[1].split('.')[0].toLowerCase() : attachmentInfo[0])
+        //attachmentInfo.length > 2 is for bundles which is in use on SelectChanges page via compare link
         var aType = attachmentInfo.length > 2 ? attachmentInfo[2].split('.')[1].toLowerCase() : (preFlag ? attachmentInfo[0] : attachmentInfo[1].split('/')[0].toLowerCase());
         if (aType == 'apexclass' || aType == 'apextrigger' || aType == 'classes' || aType == 'triggers') {
             return 'text/x-java';
