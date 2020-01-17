@@ -462,7 +462,7 @@ BillingCountry)))</errorConditionFormula>
     <validationRules>
         <fullName>TESTVR</fullName>
         <active>false</active>
-        <errorConditionFormula>TRUE</errorConditionFormula>
+        <errorConditionFormula>IF(Name = &quot;A&quot;, TRUE, FALSE)</errorConditionFormula>
         <errorMessage>test</errorMessage>
     </validationRules>
     <webLinks>
