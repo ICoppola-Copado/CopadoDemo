@@ -148,12 +148,7 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Speakers</pluralLabel>
-    <searchLayouts>
-        <searchResultsAdditionalFields>Bio__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Dev1_Field__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Dev1_new_picklist__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Search_Layout__c</searchResultsAdditionalFields>
-    </searchLayouts>
+    <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
