@@ -24,6 +24,7 @@ MetadataGrid2.prototype._initGrid = function(conf, cb) {
     //console.assert(this.conf.data.orgId, "MetadataGrid2.init: config had no orgId"); MY: With DX orgId is not required.
 
     this.allMetaData = [];
+    this.types = [];
     this.selectedMetadata = []; // selected items, referencing this.allMetaData
     this.allMetaData_cachedDate = "";
 
@@ -693,6 +694,10 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
         ready: function(){
             console.log('MetadataGrid2.render() ready grid event');
             try{
+                //TS: This is for fixing big metadata filter not opening/rendering due to timing (or something like that) issue
+                if(that.conf.isScalable){
+                    that.eltMetaDataTypeFilter.jqxComboBox({source: ['']});
+                }
                 if(that.hasPreviousSelected)
                     that.addSelectedFilter(that.eltGrid);
                 if(cbAfterRender){
@@ -951,8 +956,12 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
             that._createCacheDeleteButton();
 
             // refresh the grid/filter, so the column type has filter values
-            if(!this.isTypeFilterable)
-                that.eltGrid.jqxGrid('updatebounddata');
+            if(!this.isTypeFilterable){
+                that.eltGrid.jqxGrid('updatebounddata');  
+                if(that.eltGrid){
+                    that.eltGrid.jqxGrid('setcolumnproperty', 't', 'filteritems',that.types.sort());
+                }
+            } 
 
             if(callbackFinished)
                 callbackFinished(cachedDate);
@@ -1030,7 +1039,7 @@ MetadataGrid2.prototype._matchSelectedItemsWithAllMetaData = function(allMetaDat
 };
 
 // changes the grid data, replacing whatever is in there now.
-MetadataGrid2.prototype._setGridData = function(allMetaData) {
+MetadataGrid2.prototype._setGridData = function(allMetaData) { 
     this._matchSelectedItemsWithAllMetaData(allMetaData);
 
     if( this.conf.gridMode === 'gitCommit') {
@@ -1046,11 +1055,23 @@ MetadataGrid2.prototype._setGridData = function(allMetaData) {
         idx_allItems = {};
         for(i=0 ; i < this.allMetaData.length ; i++ ) {
             e = this.allMetaData[i];
+            
+            if(!this.types.includes(e.t)){
+                this.types.push(e.t);
+            }
+            
             if( eltsWithRetrieveOnly.indexOf(e.t+' '+e.n)>-1) {
                 e.r = true;
             }
         }
     }else{
+        if(allMetaData){
+            for(i=0 ; i < allMetaData.length ; i++ ) {
+                if(!this.types.includes(allMetaData[i].t)){
+                    this.types.push(allMetaData[i].t);
+                }
+            }
+        }
         setWithoutRebinding(this.allMetaData, allMetaData);
     }
 

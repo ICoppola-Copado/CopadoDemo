@@ -33,6 +33,14 @@ var cacheDate;
         if(conf.gridMode === 'dxOperations') {
             rowSelectionMode = 'singlerow';
         }
+
+        var types = []; 
+        for (i =0; i<listOfBranches.length; i++){
+            if(!types.includes(listOfBranches[i].type) && listOfBranches[i].type){
+                types.push(listOfBranches[i].type);
+            }
+        }
+
         var branchGrid = $copado("#branchSelectorGrid").jqxGrid({
             width: '100%',
             height: '100%',
@@ -60,6 +68,7 @@ var cacheDate;
                 {
                     text: copadoLabels.type,
                     datafield: 'type',
+                    filterItems: types,
                     filterable: !conf.isPatch,
                     filtertype: 'checkedlist',
                     editable: false,

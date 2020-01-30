@@ -91,19 +91,18 @@ var gitCommitCommons = {};
         }
         app.previous;
         app.changeOperation = function(gitOperationType){
-            console.log('gitOperationType===> ',gitOperationType);
             app.conf.data.type = gitOperationType;
             app.conf.data.operationLabel = gitOperationType;
 
             if(app.selectDx == true) app.resetGrid();
-
             if(!app.conf.gitOperationCall || !app.grid) return;
 
             var operationDetails = JSON.parse(app.conf.gitOperationCall)[gitOperationType];
             !operationDetails.showGrid && app.grid.eltMain.hide();
             !operationDetails.showAdvancedSection && app.conf.elts.advanceButton.hide();
             app.operationDetails = operationDetails;
-            app.conf.attachmentName = app.operationDetails.attachmentName || 'MetaData';
+            // to load grid we should always use "MetaData" attachment from Org Credential
+            app.conf.attachmentName = 'MetaData';
 
             var currentMode = app.conf.gridMode;
             var gridMode = operationDetails.editGrid ? 'gitCommitEditable' : 'gitCommit';
@@ -118,7 +117,6 @@ var gitCommitCommons = {};
             }
             app.previous = operationDetails.gridMetadataTypes;
             operationDetails.showUserStorySelections && app.getRecommitSelection();
-
             if(app.conf.scalableGrid == "true"){
                 app.grid.loadMetaDataTypes(undefined,undefined,(operationDetails.gridMetadataTypes && operationDetails.gridMetadataTypes.length > 0) ? operationDetails.gridMetadataTypes.split(',') : undefined);
             }

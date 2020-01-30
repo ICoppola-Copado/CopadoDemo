@@ -478,7 +478,7 @@
         <columns>CREATED_DATE</columns>
         <columns>LAST_UPDATE</columns>
         <columns>copado__Compliance_Rule_Group__c</columns>
-        <columns>copado__Run_all_tests__c</columns>
+        <columns>copado__Promotion_Default_Credential__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

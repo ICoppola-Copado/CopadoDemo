@@ -2393,8 +2393,38 @@ var copadoGrid = {
             var params = copadoGrid.getBasicParams();
             params.source = copadoGrid.makeSource(type, data);
             params.columns = copadoGrid.getColumnsByType(type);
+            
             console.time('Grid created time');
             copadoGrid.$currentGrid = $grid.jqxGrid(params);
+            var countries = [],
+                profiles = [],
+                types = [];
+                console.debug('type==> ',type);
+                console.debug('types==> ',types);
+                console.debug('data==> ',data);
+            
+            for(var i = 0; i < data.length; i++){
+                if(!countries.includes(data[i].c)){
+                    countries.push(data[i].c);
+                }
+                if(!profiles.includes(data[i].p)){
+                    profiles.push(data[i].p);
+                }
+            }
+            if(countries.length > 0){
+                copadoGrid.$currentGrid.jqxGrid('setcolumnproperty', 'p', 'filteritems',profiles);
+                copadoGrid.$currentGrid.jqxGrid('setcolumnproperty', 'c', 'filteritems',countries);
+            }
+            
+            if(type == 'Full Profiles'){
+                types.push('Profile');
+            } else if(type == 'Full Permission Sets'){
+                types.push('PermissionSet');
+            }
+            if(types.length > 0){
+                copadoGrid.$currentGrid.jqxGrid('setcolumnproperty', 't', 'filteritems',types);
+            }
+            
             console.timeEnd('Grid created time');
         } catch (e) {
             console.error(e)

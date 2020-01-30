@@ -311,7 +311,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 cbOnEnd && cbOnEnd();
             },
             onFailure: (error) => {
-                sendErrorMessageToActionFunction(error);
+                app.sendErrorMessageToActionFunction(error);
             }
         });
     };
@@ -666,7 +666,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 createAttachments(attachmentData, cbOnEnd);
             }
         } catch (error) {
-            sendErrorMessageToActionFunction(error);
+            app.sendErrorMessageToActionFunction(error);
         }
     };
 
@@ -681,15 +681,21 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             sforce.connection.query('SELECT Id,Name FROM ' + dataObject.namespace + 'Data_Template__c WHERE ' + dataObject.namespace + 'Main_Object__c=\'' + dataObject.name + '\'', {
                 onSuccess: (response) => {
                     if (response.records) {
-                        response.records.forEach((existingTemplateRecords) => {
-                            if(existingTemplateRecords.Name == dataObject.values.dataTemplate.templateName) {
+                        if(response.records.length){
+                            response.records.forEach((existingTemplateRecords) => {
+                                if(existingTemplateRecords.Name == dataObject.values.dataTemplate.templateName) {
+                                    duplicateNameDetected = true;
+                                }
+                            });
+                        } else {
+                            if(response.records.Name == dataObject.values.dataTemplate.templateName) {
                                 duplicateNameDetected = true;
                             }
-                        });
+                        }
                     }
                 },
                 onFailure: (error) => {
-                    sendErrorMessageToActionFunction(error);
+                    app.sendErrorMessageToActionFunction(error);
                 }
             });
 
@@ -739,11 +745,11 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                     }
                 },
                 onFailure: (error) => {
-                    sendErrorMessageToActionFunction(error);
+                    app.sendErrorMessageToActionFunction(error);
                 }
             });
         } catch (error) {
-            sendErrorMessageToActionFunction(error);
+            app.sendErrorMessageToActionFunction(error);
         }
 
     };
@@ -759,6 +765,8 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         var dataTemplate = {};
         var deferredArray = [];
         var importedTemplateCount = fileReaderResult.length;
+        app.totalValidatedTemplate = 0;
+        app.totalNotValidatedTemplate = 0;
 
         fileReaderResult.forEach((importedTemplate, indexCounter) => {
             var deferred = new $copado.Deferred();
@@ -810,11 +818,11 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                     cbOnEnd && cbOnEnd();
                 },
                 onFailure: (error) => {
-                    sendErrorMessageToActionFunction(error);
+                    app.sendErrorMessageToActionFunction(error);
                 }
             });
         } catch (error) {
-            sendErrorMessageToActionFunction(error);
+            app.sendErrorMessageToActionFunction(error);
         }
     };
 
@@ -863,11 +871,11 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                             }
                         },
                         onFailure: (error) => {
-                            sendErrorMessageToActionFunction(error);
+                            app.sendErrorMessageToActionFunction(error);
                         }
                     });
                 } catch (error) {
-                    sendErrorMessageToActionFunction(error);
+                    app.sendErrorMessageToActionFunction(error);
                 }
             } else {
                 dataObject['globalDescribe'] = existingGlobalDescribeResult;
