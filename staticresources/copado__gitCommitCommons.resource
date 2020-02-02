@@ -5,6 +5,7 @@ function setWithoutRebinding(list, newList) {
         Array.prototype.push.apply(list, newList.splice(0,10000));
 }
 var gitCommitCommons = {};
+var operationTypeAttachmentName;
 (function(app){
         app.selectDx;
         app.init = function(conf, force) {
@@ -102,6 +103,7 @@ var gitCommitCommons = {};
             !operationDetails.showAdvancedSection && app.conf.elts.advanceButton.hide();
             app.operationDetails = operationDetails;
             // to load grid we should always use "MetaData" attachment from Org Credential
+            operationTypeAttachmentName = app.operationDetails.attachmentName || 'MetaData';
             app.conf.attachmentName = 'MetaData';
 
             var currentMode = app.conf.gridMode;
@@ -164,7 +166,7 @@ var gitCommitCommons = {};
             sel = sel || coGridHelper.getSelectedObj();
 
             // Attachment Name
-            var attachmentName = app.conf.attachmentName || 'MetaData';
+            var attachmentName = operationTypeAttachmentName || 'MetaData';
             app.conf.data.orgCommitId && coGridHelper.saveSelected(app.conf.data.orgCommitId , attachmentName, null, true, function(){
                 app.redirectToOperation(app.conf.data.orgCommitId);
             },sel);
