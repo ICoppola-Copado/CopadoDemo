@@ -5,7 +5,7 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Copado DX</label>
-    <logo>copado__Copado/copado__Copado_Logo.png</logo>
+    <logo>copado__Copado/New_Logo.png</logo>
     <tabs>copado__Copado_DX_Panel</tabs>
     <tabs>copado__Org__c</tabs>
     <tabs>copado__Git_Repository__c</tabs>

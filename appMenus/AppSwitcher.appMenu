@@ -69,10 +69,6 @@
         <type>ConnectedApp</type>
     </appMenuItems>
     <appMenuItems>
-        <name>copado__Copado</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>copado__Copado_Branch_Management</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -90,10 +86,6 @@
     </appMenuItems>
     <appMenuItems>
         <name>copado__Copado_DX</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>copado__Copado_Permissioner</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
@@ -150,6 +142,10 @@
     </appMenuItems>
     <appMenuItems>
         <name>copado__Copado_Console</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Copado_Release_Manager</name>
         <type>CustomApplication</type>
     </appMenuItems>
 </AppMenu>
