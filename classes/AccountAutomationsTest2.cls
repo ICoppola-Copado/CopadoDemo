@@ -39,7 +39,7 @@ private class AccountAutomationsTest2 {
     @isTest static void testDefaultURL(){
         Account acc = new Account(Name = 'My Test Account');
         insert acc;
-        acc = AccountAutomations.setDefaultURL(acc);
+        acc = AccountAutomations2.setDefaultURL(acc);
         System.assertEquals('www.copado.com', acc.Website, 'Default website is www.copado.com');
     }
 
