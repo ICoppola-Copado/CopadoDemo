@@ -228,4 +228,12 @@
         <tab>Planet__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChangeDashboardColors</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>TransferAnyCase</name>
+    </userPermissions>
 </PermissionSet>
