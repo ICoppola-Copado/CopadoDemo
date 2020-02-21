@@ -1274,6 +1274,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Planet__c.Galaxy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Product2.Description</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4496,10 +4501,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Metric-Metric Layout</layout>
-        <recordType>Metric.Progress</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Metric-Metric Layout</layout>
+        <recordType>Metric.Progress</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>MetricDataLink-Metric Data Link Layout</layout>
@@ -4515,6 +4520,17 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>OrderItem-Order Product Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Planet__c-Gas giants</layout>
+        <recordType>Planet__c.Gas_Giants</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Planet__c-Planet Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Planet__c-Planet Layout</layout>
+        <recordType>Planet__c.Terrestrial_Planets</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Pricebook2-Price Book Layout</layout>
@@ -5522,6 +5538,16 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Planet__c.Gas_Giants</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Planet__c.Terrestrial_Planets</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>true</default>
         <recordType>copado__Artifact__c.copado__Git_Artifact</recordType>
         <visible>true</visible>
@@ -6097,10 +6123,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManageQuotas</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ManageRecommendationStrategies</name>
     </userPermissions>
     <userPermissions>
@@ -6170,10 +6192,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>NewReportBuilder</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>OverrideForecasts</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -6286,10 +6304,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewAllData</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewAllForecasts</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
