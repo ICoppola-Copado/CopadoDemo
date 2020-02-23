@@ -14,4 +14,11 @@
         <shortDescription>Hello</shortDescription>
         <value>Hello</value>
     </labels>
+    <labels>
+        <fullName>Welcome</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Welcome</shortDescription>
+        <value>Hello</value>
+    </labels>
 </CustomLabels>
