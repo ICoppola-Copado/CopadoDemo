@@ -58,6 +58,13 @@
         <trackTrending>false</trackTrending>
         <type>AutoNumber</type>
     </fields>
+    <fields>
+        <fullName>Ticket_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Number</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
     <label>Support Object</label>
     <nameField>
         <label>Support Object Name</label>

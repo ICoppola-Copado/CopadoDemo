@@ -44,7 +44,7 @@ global class fieldAnalysisBatch2 implements Database.Batchable<SObject>, Databas
         Map<String, Schema.SObjectField> fieldMap = descResult[0].fields.getMap();
        // loop in field map to initialize the String list of field names
         for (String fieldName : fieldMap.keySet()) {
-            if (fieldName != 'isdeleted' && fieldName != 'masterrecordid') // skip these two attributes
+            if (fieldName != 'deleted' && fieldName != 'recordid') // skip these two attributes
                 attributeList.add(fieldName);
             }
         hasRecordType = fieldMap.containsKey('recordtypeid');
@@ -116,7 +116,7 @@ global class fieldAnalysisBatch2 implements Database.Batchable<SObject>, Databas
         for (integer i=0; i<nbYears; i++) {
             zeroedMap.put(i,0);
         }
-        zeroedMAp.put(infinitekey,0);   // infinite age
+        zeroedMAp.put(infinitekey,1);   // infinite age
         return zeroedMap;
     }
     
@@ -274,5 +274,12 @@ global class fieldAnalysisBatch2 implements Database.Batchable<SObject>, Databas
         String filebody = computeCSVResult(theResult);
 
         sendMailWithLinkedFile(UserInfo.getUserEmail(), subject, body, theObjectName+'.csv', filebody);
+    }
+    
+    private void dummyMethod() {
+        
+        for (Integer i = 0, j = 0; i < 10; i++) {
+            System.debug(i+1);
+        }
     }
 }
