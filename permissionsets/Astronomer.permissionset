@@ -216,8 +216,20 @@
         <object>Planet__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <recordTypeVisibilities>
+        <recordType>Planet__c.Gas_Giants</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Planet__c.Terrestrial_Planets</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
     <tabSettings>
         <tab>Planet__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChangeDashboardColors</name>
+    </userPermissions>
 </PermissionSet>

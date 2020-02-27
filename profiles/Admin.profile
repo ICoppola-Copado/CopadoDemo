@@ -3880,9 +3880,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Planet__c.Galaxy__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -7859,7 +7859,15 @@
         <layout>OrderItem-Order Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Planet__c-Gas giants</layout>
+        <recordType>Planet__c.Gas_Giants</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Planet__c-Planet Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Planet__c-Planet Layout</layout>
+        <recordType>Planet__c.Terrestrial_Planets</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Pricebook2-Price Book Layout</layout>
@@ -9845,6 +9853,16 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Planet__c.Gas_Giants</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Planet__c.Terrestrial_Planets</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>true</default>
         <recordType>copado__Artifact__c.copado__Git_Artifact</recordType>
         <visible>true</visible>
@@ -10250,7 +10268,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-DuplicateRecordSet</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Event</tab>
@@ -10792,6 +10810,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageSynonyms</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageTranslation</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

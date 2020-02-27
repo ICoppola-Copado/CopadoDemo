@@ -21,6 +21,11 @@
         <label>ApexTrigger</label>
     </customValue>
     <customValue>
+        <fullName>CustomField</fullName>
+        <default>false</default>
+        <label>CustomField</label>
+    </customValue>
+    <customValue>
         <fullName>CustomMetadata</fullName>
         <default>false</default>
         <label>CustomMetadata</label>
@@ -76,5 +81,5 @@
         <label>Workflow</label>
     </customValue>
     <masterLabel>Metadata Types</masterLabel>
-    <sorted>false</sorted>
+    <sorted>true</sorted>
 </GlobalValueSet>
