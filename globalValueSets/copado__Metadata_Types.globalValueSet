@@ -81,5 +81,5 @@
         <label>Workflow</label>
     </customValue>
     <masterLabel>Metadata Types</masterLabel>
-    <sorted>true</sorted>
+    <sorted>false</sorted>
 </GlobalValueSet>
