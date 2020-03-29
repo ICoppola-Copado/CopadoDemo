@@ -105,18 +105,14 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>ISCHANGED([copado__User_Story__c].copado__Status__c ) ||
-ISCHANGED([copado__User_Story__c].copado__User_Story_Title__c) ||
-ISCHANGED([copado__User_Story__c].copado__Functional_Specifications__c)</stringValue>
+                <stringValue>ISCHANGED([copado__User_Story__c].copado__Status__c )</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>
-        <expression>ISCHANGED({!myVariable_current.copado__Status__c} ) ||
-ISCHANGED({!myVariable_current.copado__User_Story_Title__c}) ||
-ISCHANGED({!myVariable_current.copado__Functional_Specifications__c})</expression>
+        <expression>ISCHANGED({!myVariable_current.copado__Status__c} )</expression>
     </formulas>
-    <interviewLabel>SendUpdatedValues2TP-7_InterviewLabel</interviewLabel>
+    <interviewLabel>SendUpdatedValues2TP-6_InterviewLabel</interviewLabel>
     <label>SendUpdatedValues2TP</label>
     <processMetadataValues>
         <name>ObjectType</name>

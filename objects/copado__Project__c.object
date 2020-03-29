@@ -352,6 +352,7 @@ Usage exp: issueType=Story and resolution=Duplicate</inlineHelpText>
         <columns>copado__Status__c</columns>
         <columns>copado__Deployment_Flow__c</columns>
         <columns>Project_External_Id__c</columns>
+        <columns>Workspace_Id__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

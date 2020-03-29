@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customApplications>
+        <label><!-- Copado Integrations --></label>
+        <name>Copado_Integrations</name>
+    </customApplications>
+    <customApplications>
         <label><!-- Copado Release Manager --></label>
         <name>Copado_Release_Manager</name>
     </customApplications>

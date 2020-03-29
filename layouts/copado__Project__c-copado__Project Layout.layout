@@ -25,6 +25,10 @@
                 <behavior>Edit</behavior>
                 <field>copado__Index_Metadata__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Copado_Integration_Setting__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -50,25 +54,21 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Project_External_Id__c</field>
+                <field>Enable_Logs__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>JQL_Extended_Filter__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Workspace_Id__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Copado_Integration_Setting__c</field>
+                <behavior>Edit</behavior>
+                <field>Project_External_Id__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Enable_Logs__c</field>
+                <field>Workspace_Id__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -125,18 +125,18 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
+            <actionName>Sync_External_User_Stories</actionName>
+            <actionType>CustomButton</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Delete</actionName>
+            <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Sync_External_User_Stories</actionName>
-            <actionType>CustomButton</actionType>
+            <actionName>Delete</actionName>
+            <actionType>StandardButton</actionType>
             <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
@@ -201,23 +201,25 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Salesforce_Field_Name__c</fields>
-        <fields>Third_Party_Field_Name__c</fields>
-        <fields>Target_Field_Type__c</fields>
-        <fields>Exclude_from_su__c</fields>
-        <fields>Exclude_from_tpu__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>UPDATEDBY_USER</fields>
-        <relatedList>Field_Mapping__c.Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
         <fields>copado__Status__c</fields>
         <fields>copado__Source_Environment__c</fields>
         <fields>copado__Source_Org_Credential__c</fields>
         <fields>copado__Destination_Environment__c</fields>
         <fields>copado__Destination_Org_Credential__c</fields>
         <relatedList>copado__Promotion__c.copado__Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Exclude_from_su__c</fields>
+        <fields>Exclude_from_tpu__c</fields>
+        <fields>Salesforce_Field_Name__c</fields>
+        <fields>Target_Field_Type__c</fields>
+        <fields>Third_Party_Field_Name__c</fields>
+        <relatedList>Field_Mapping__c.Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Callout_Log__c.Project__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
