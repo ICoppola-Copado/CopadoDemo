@@ -26,7 +26,7 @@
                 <field>copado__Index_Metadata__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Copado_Integration_Setting__c</field>
             </layoutItems>
         </layoutColumns>
@@ -189,14 +189,8 @@
         <customButtons>copado__Mass_Add_User_Stories</customButtons>
         <fields>NAME</fields>
         <fields>copado__User_Story_Title__c</fields>
-        <fields>copado__userStory_Role__c</fields>
-        <fields>copado__userStory_need__c</fields>
-        <fields>copado__userStory_reason__c</fields>
         <fields>copado__Status__c</fields>
-        <fields>copado__Story_Points_SFDC__c</fields>
-        <fields>copado__Story_Points_Other__c</fields>
-        <fields>copado__Parent_Epic_Title__c</fields>
-        <fields>copado__Promote_Change__c</fields>
+        <fields>copado__Priority__c</fields>
         <relatedList>copado__User_Story__c.copado__Project__c</relatedList>
     </relatedLists>
     <relatedLists>

@@ -6106,6 +6106,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Project__c.Copado_Integration_Setting__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Project__c.Enable_Logs__c</field>
         <readable>true</readable>
     </fieldPermissions>
