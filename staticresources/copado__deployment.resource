@@ -2936,6 +2936,9 @@ var copadoGitMetadataStep = {
             }, {
                 name: 't',
                 type: 'string'
+            },{
+                name: 'vk',
+                type: 'string'
             }],
             datatype: 'array',
             updaterow: function(rowid, rowdata, commit) {
@@ -3364,6 +3367,7 @@ rock.getSelectedObj = function() {
         data[len].s && rock.selectedNames.push({
             t: data[len].t,
             n: data[len].n,
+            vk: data[len].vk,
             s: true
         });
     }

@@ -210,6 +210,56 @@
         <label>Copado User Story Metadata Columns</label>
     </fieldSets>
     <fields>
+        <fullName>T__c</fullName>
+        <externalId>false</externalId>
+        <label>Test</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>TestFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+CONTAINS(copado__Metadata_API_Name__c,&quot;CustomField&quot;) &amp;&amp; 
+FIND(&quot;__c&quot;,copado__Metadata_API_Name__c)&gt;0,
+LEFT(
+        RIGHT(
+                RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12),
+                (
+                        LEN(RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12)) - 
+                        IF(
+                                FIND(&quot;__c.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12))&gt;0,
+                                FIND(&quot;__c.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12))+3,
+                                FIND(&quot;.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12)) 
+                        )
+                )
+        ),
+
+        LEN(
+                RIGHT(
+                        RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12),
+                        (
+                                LEN(RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c) - 12)) -
+                                IF(
+                                        FIND(&quot;__c.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12))&gt;0,
+                                        FIND(&quot;__c.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12))+3,
+                                        FIND(&quot;.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12)) 
+                                ) - 3
+                        )
+                )
+        ) 
+),
+&quot;N/A&quot;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Test Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Last_Commit_Date__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -324,6 +374,12 @@ TEXT(copado__Status__c)
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <label>User Story Metadata</label>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>NAME</columns>
+        <filterScope>Mine</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>User Story Metadata Name</label>
         <type>Text</type>
@@ -336,5 +392,45 @@ TEXT(copado__Status__c)
         <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Test</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+        CONTAINS(copado__Metadata_API_Name__c,&quot;CustomField&quot;) &amp;&amp; 
+        FIND(&quot;__c&quot;,copado__Metadata_API_Name__c)&gt;0,
+        CONTAINS(
+                LEFT(
+                        RIGHT(
+                                RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12),
+                                (
+                                        LEN(RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12)) - 
+                                        IF(
+                                                FIND(&quot;__c.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12))&gt;0,
+                                                FIND(&quot;__c.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12))+3,
+                                                FIND(&quot;.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12)) 
+                                        )
+                                )
+                        ),
+
+                        LEN(
+                                RIGHT(
+                                        RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12),
+                                        (
+                                                LEN(RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c) - 12)) -
+                                                IF(
+                                                        FIND(&quot;__c.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12))&gt;0,
+                                                        FIND(&quot;__c.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12))+3,
+                                                        FIND(&quot;.&quot;, RIGHT(copado__Metadata_API_Name__c,LEN(copado__Metadata_API_Name__c)-12)) 
+                                                ) - 3
+                                        )
+                                )
+                        ) 
+                ),
+                &quot;_&quot;
+        ),
+false
+)</errorConditionFormula>
+        <errorMessage>contains _</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

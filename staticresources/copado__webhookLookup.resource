@@ -164,8 +164,12 @@ webhookLookup.setUrl = function(templateUrl, recordId, skipValueSet){
 		JsRemoting.apiKey.createKey(ns,
 	        function(result){
 	            var url = webhookLookup.config.herokuServer;
-                for(var i = 0; i < webhookLookup.multiReferals.length; i++){
-                    templateUrl = templateUrl.replace('__RECORDID_'+i+'__', webhookLookup.referalMap[webhookLookup.multiReferals[i].toLowerCase().trim()]);
+                if(webhookLookup.multiReferals) {
+                    for(var i = 0; i < webhookLookup.multiReferals.length; i++){
+                        templateUrl = templateUrl.replace('__RECORDID_'+i+'__', webhookLookup.referalMap[webhookLookup.multiReferals[i].toLowerCase().trim()]);
+                    }
+                } else {
+                    templateUrl = templateUrl.replace('__RECORDID__', recordId);
                 }
                 url += templateUrl.replace('__APIKEY__', result);
                 if(url.substring(url.length-1) == '?') {

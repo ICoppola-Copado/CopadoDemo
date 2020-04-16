@@ -5,6 +5,14 @@
         <name>copado__Copado_User_Story_Metadata_Columns</name>
     </fieldSets>
     <fields>
+        <label><!-- Test --></label>
+        <name>T__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Formula --></label>
+        <name>TestFormula__c</name>
+    </fields>
+    <fields>
         <help><!-- The date when this component was last committed in the User Story. --></help>
         <label><!-- Last Commit Date --></label>
         <name>copado__Last_Commit_Date__c</name>
@@ -50,4 +58,8 @@
         <name>copado__User_Story__c</name>
         <relationshipLabel><!-- User Story Metadata --></relationshipLabel>
     </fields>
+    <validationRules>
+        <errorMessage><!-- contains _ --></errorMessage>
+        <name>Test</name>
+    </validationRules>
 </CustomObjectTranslation>

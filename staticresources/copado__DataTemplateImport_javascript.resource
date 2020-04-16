@@ -561,7 +561,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             templateQueryLimit: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Max_Record_Limit__c'],
             templateBatchSize: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Batch_Size__c'],
             templateFilterLogic: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Filter_Logic__c'],
-            templateAttachmentOptions: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Attachment_Options__c'],
+            templateAttachmentOption: attachmentBodyData.templateDetails[attachmentBodyData.namespace + 'Attachment_Options__c'],
         };
 
         var resultData = {
