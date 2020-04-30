@@ -128,16 +128,22 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Test_Script_Record_Page</content>
         <formFactor>Large</formFactor>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Test_Script_Record_Page</content>
         <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
@@ -147,7 +153,7 @@
     <description>The template test script.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
+    <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
@@ -161,6 +167,7 @@
         <externalId>false</externalId>
         <label>Expected Result</label>
         <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
@@ -171,6 +178,7 @@
         <externalId>false</externalId>
         <label>Introduction</label>
         <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
@@ -182,6 +190,7 @@
         <label>Org</label>
         <length>255</length>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -192,6 +201,7 @@
         <externalId>false</externalId>
         <label>Overall Outcome</label>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -225,6 +235,7 @@
         <relationshipLabel>Test Scripts</relationshipLabel>
         <relationshipName>Test_Scripts</relationshipName>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -234,6 +245,7 @@
         <externalId>false</externalId>
         <label>Prerequisites</label>
         <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
@@ -256,6 +268,7 @@
         <externalId>false</externalId>
         <label>Risk</label>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -297,6 +310,7 @@
         <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -326,6 +340,7 @@
         <externalId>false</externalId>
         <label>Test Description</label>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
     </fields>
@@ -336,6 +351,7 @@
         <label>Test Title</label>
         <length>255</length>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -350,6 +366,7 @@
         <relationshipLabel>Test Scripts (User Story)</relationshipLabel>
         <relationshipName>Test_Scripts_UserStory</relationshipName>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -368,6 +385,7 @@
     <nameField>
         <displayFormat>TS-{00000}</displayFormat>
         <label>Test Script Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Test Scripts</pluralLabel>

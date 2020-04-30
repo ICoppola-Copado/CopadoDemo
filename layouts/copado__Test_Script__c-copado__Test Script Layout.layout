@@ -87,7 +87,7 @@
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
-        <detailHeading>false</detailHeading>
+        <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>System Information</label>
         <layoutColumns>
@@ -124,11 +124,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
@@ -152,6 +147,16 @@
             <actionName>ChangeOwnerOne</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>5</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>6</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
