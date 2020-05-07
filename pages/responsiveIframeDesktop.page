@@ -1,0 +1,9 @@
+<apex:page showHeader="true" sidebar="false" standardStylesheets="true" docType="html-5.0">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <apex:iframe src="{!if(isnull($CurrentPage.parameters.iframeurl), 'https://www.cxense.com', $CurrentPage.parameters.iframeurl)}" id="iframe" width="100%" height="4000px"/>
+
+</apex:page>
