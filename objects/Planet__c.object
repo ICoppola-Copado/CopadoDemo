@@ -200,6 +200,48 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>Options__c</fullName>
+        <externalId>false</externalId>
+        <label>Options</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>value1</fullName>
+                    <default>false</default>
+                    <label>value1</label>
+                </value>
+                <value>
+                    <fullName>value3</fullName>
+                    <default>false</default>
+                    <label>value3</label>
+                </value>
+                <value>
+                    <fullName>value4</fullName>
+                    <default>false</default>
+                    <label>value4</label>
+                </value>
+                <value>
+                    <fullName>value2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>value2</label>
+                </value>
+                <value>
+                    <fullName>value5</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>value5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <label>Planet</label>
     <listViews>
         <fullName>All</fullName>
