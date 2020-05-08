@@ -227,11 +227,6 @@
                     <label>value1</label>
                 </value>
                 <value>
-                    <fullName>value2</fullName>
-                    <default>false</default>
-                    <label>value2</label>
-                </value>
-                <value>
                     <fullName>value3</fullName>
                     <default>false</default>
                     <label>value3</label>
@@ -242,8 +237,15 @@
                     <label>value4</label>
                 </value>
                 <value>
+                    <fullName>value2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>value2</label>
+                </value>
+                <value>
                     <fullName>value5</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>value5</label>
                 </value>
             </valueSetDefinition>
