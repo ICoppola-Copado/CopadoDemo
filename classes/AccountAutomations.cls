@@ -4,18 +4,20 @@ public class AccountAutomations {
         Else {
             a.Description = 'Default description';
             return a;
+            //test
+            //test2
         }
     }
     public static Account setDefaultBillingAddress(Account a){
-        a.billingstreet = 'Basauri, 6'; 
+        a.billingstreet = 'Comandante, 6'; 
         a.billingstate = 'Madrid'; 
-        a.billingpostalcode ='28023'; 
+        a.billingpostalcode ='99012'; 
         return a;
     }
     public static Account setDefaultShippingAddress(Account a){
         a.shippingstreet = 'Basauri, 6'; 
-        a.shippingstate = 'Madrid';
-        a.shippingpostalcode ='28023';
+        a.shippingstate = 'Barcelona';
+        a.shippingpostalcode ='32123';
         return a;
     }
     public static Account setDefaultPhone(Account a) {
