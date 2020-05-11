@@ -5,10 +5,11 @@ public class AccountAutomations {
             a.Description = 'Default description';
             return a;
             //test
+            //test2
         }
     }
     public static Account setDefaultBillingAddress(Account a){
-        a.billingstreet = 'Basauri, 6'; 
+        a.billingstreet = 'Comandante, 6'; 
         a.billingstate = 'Madrid'; 
         a.billingpostalcode ='99012'; 
         return a;
