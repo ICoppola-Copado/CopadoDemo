@@ -287,5 +287,11 @@
         <errorConditionFormula>true</errorConditionFormula>
         <errorMessage>test</errorMessage>
     </validationRules>
+    <validationRules>
+        <fullName>Name2</fullName>
+        <active>true</active>
+        <errorConditionFormula>true</errorConditionFormula>
+        <errorMessage>test</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
