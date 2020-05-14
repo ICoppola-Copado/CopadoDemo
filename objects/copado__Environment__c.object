@@ -472,6 +472,7 @@
     <listViews>
         <fullName>copado__All</fullName>
         <columns>NAME</columns>
+        <columns>copado__Maximum_SCA_Score__c</columns>
         <columns>copado__Type__c</columns>
         <columns>copado__Minimum_Apex_Test_Coverage__c</columns>
         <columns>copado__Org_ID__c</columns>
