@@ -8,6 +8,7 @@ public class AccountAutomations {
             //test2
             //test3
             //{!Environment.EnvironmentName}
+            //test4
         }
     }
     public static Account setDefaultBillingAddress(Account a){
