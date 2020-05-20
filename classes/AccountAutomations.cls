@@ -7,6 +7,7 @@ public class AccountAutomations {
             //test
             //test2
             //test3
+            //{!Environment.EnvironmentName}
         }
     }
     public static Account setDefaultBillingAddress(Account a){
@@ -22,12 +23,11 @@ public class AccountAutomations {
         return a;
     }
     public static Account setDefaultPhone(Account a) {
-        a.Phone='9999999';
+        a.Phone='688456789';
         return a;
     }
     public static Account setDefaultURL(Account a) {
-        a.website = 'www.copado.com'; 
+        a.website = 'www.copa.do'; 
         return a;
     }
-//test
 }
