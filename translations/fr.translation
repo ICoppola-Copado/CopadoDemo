@@ -21,6 +21,10 @@
         <name>TEST_Lightning</name>
     </customApplications>
     <customLabels>
+        <label><!-- Hello --></label>
+        <name>Hello</name>
+    </customLabels>
+    <customLabels>
         <label>Bonjour</label>
         <name>Welcome</name>
     </customLabels>
