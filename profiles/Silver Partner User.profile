@@ -9149,6 +9149,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>copado__Git_Commit__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>copado__Git_Repository__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>

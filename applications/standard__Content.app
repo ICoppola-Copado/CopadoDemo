@@ -8,4 +8,5 @@
     <tabs>standard-Workspace</tabs>
     <tabs>standard-ContentSearch</tabs>
     <tabs>standard-ContentSubscriptions</tabs>
+    <tabs>copado__Git_Commit__c</tabs>
 </CustomApplication>

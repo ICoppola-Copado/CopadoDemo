@@ -5,4 +5,5 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>TEST</label>
     <tabs>standard-Account</tabs>
+    <tabs>copado__Git_Commit__c</tabs>
 </CustomApplication>

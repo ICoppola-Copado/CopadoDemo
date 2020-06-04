@@ -7,5 +7,6 @@
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
     <tabs>standard-Account</tabs>
+    <tabs>copado__Git_Commit__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

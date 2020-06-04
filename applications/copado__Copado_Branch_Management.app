@@ -15,4 +15,5 @@
     <tabs>copado__Account_Summary</tabs>
     <tabs>copado__Scheduled_Job__c</tabs>
     <tabs>copado__Copado_DX_Panel</tabs>
+    <tabs>copado__Git_Commit__c</tabs>
 </CustomApplication>

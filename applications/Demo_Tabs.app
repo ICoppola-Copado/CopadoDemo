@@ -16,6 +16,7 @@
     <tabs>copado__Deployment_Flow__c</tabs>
     <tabs>copado__Compliance_Rule__c</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>copado__Git_Commit__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Demo_Tabs_UtilityBar</utilityBar>
 </CustomApplication>

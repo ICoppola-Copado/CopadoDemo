@@ -22,6 +22,7 @@
     <tabs>copado__Environment__c</tabs>
     <tabs>copado__Account_Summary</tabs>
     <tabs>copado__Copado_License_Manager</tabs>
+    <tabs>copado__Git_Commit__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Copado_Release_Manager_UtilityBar</utilityBar>
 </CustomApplication>

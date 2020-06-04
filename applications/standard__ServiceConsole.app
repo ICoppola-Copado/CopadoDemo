@@ -179,7 +179,11 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
+    <tabs>copado__Git_Commit__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>copado__Git_Commit__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>
