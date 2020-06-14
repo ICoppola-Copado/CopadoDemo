@@ -113,6 +113,30 @@
         <type>Default</type>
     </actionOverrides>
     <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>npsp__Engagement_Plan_Task__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engagement Plan Task</label>
+        <referenceTo>npsp__Engagement_Plan_Task__c</referenceTo>
+        <relationshipLabel>Tasks</relationshipLabel>
+        <relationshipName>Tasks</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>npsp__Engagement_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engagement Plan</label>
+        <referenceTo>npsp__Engagement_Plan__c</referenceTo>
+        <relationshipLabel>Tasks</relationshipLabel>
+        <relationshipName>Tasks</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
     <listViews>
         <fullName>AllActivities</fullName>
         <filterScope>Team</filterScope>

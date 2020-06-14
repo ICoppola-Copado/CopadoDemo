@@ -160,4 +160,8 @@
         <name>DEVHUB_eh0cudmhi1rfppupfidq</name>
         <type>ConnectedApp</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>npsp__Nonprofit_CRM</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>
