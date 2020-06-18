@@ -8029,6 +8029,14 @@
         <name>npsp__RD2_EnablementSimpleIntro</name>
     </customLabels>
     <customLabels>
+        <label><!-- Recurring Donation End Date must be valid. --></label>
+        <name>npsp__RD2_EndDateMustBeLaterThanCloseWonOpp</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Fixed Length Recurring Donation End Date must be valid --></label>
+        <name>npsp__RD2_EndDateMustBeValidForFixedLength</name>
+    </customLabels>
+    <customLabels>
         <label><!-- The job can only be executed when Enhanced RD is enabled in the org --></label>
         <name>npsp__RD2_ErrorDataMigrationJobCannotBeRun</name>
     </customLabels>
@@ -8417,6 +8425,10 @@
         <name>npsp__alloDefaultGAUMissing</name>
     </customLabels>
     <customLabels>
+        <label><!-- Error message when the Default General Accounting Unit is not active --></label>
+        <name>npsp__alloDefaultGAUNotActive</name>
+    </customLabels>
+    <customLabels>
         <label><!-- You must enable Default Allocations in order to allocate at the payment level. --></label>
         <name>npsp__alloDefaultNotEnabled</name>
     </customLabels>
@@ -8469,8 +8481,24 @@
         <name>npsp__alloObjectUnsupported</name>
     </customLabels>
     <customLabels>
+        <label><!-- Error message when a record’s Allocation total exceeds its Amount --></label>
+        <name>npsp__alloOverallocatedError</name>
+    </customLabels>
+    <customLabels>
         <label><!-- alloPaidPmtsExceedsOpp --></label>
         <name>npsp__alloPaidPmtsExceedsOpp</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message wrapper for a specific Allocation in a batch --></label>
+        <name>npsp__alloPaymentAllocationBatchAllocationError</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message wrapper for a batch when a specific Allocation can’t be identified --></label>
+        <name>npsp__alloPaymentAllocationBatchRecordError</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message when the Accounting Scheduled Job retry can’t process Allocations --></label>
+        <name>npsp__alloPaymentAllocationBatchRetriesExceeded</name>
     </customLabels>
     <customLabels>
         <label><!-- Payment-level allocations are not enabled. --></label>
@@ -8503,6 +8531,10 @@
     <customLabels>
         <label><!-- Each Allocation must have a single parent object: Pmt, Opp, Rec Donation, Camp. --></label>
         <name>npsp__alloSingleParent</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Success text added to Error Logs when retry successfully processes Allocations --></label>
+        <name>npsp__alloSuccessfulRecordRetry</name>
     </customLabels>
     <customLabels>
         <label><!-- Allocations cannot exceed the amount of the related Payment or Opportunity. --></label>
@@ -9377,6 +9409,14 @@
         <name>npsp__campaignMemberStatusResponded</name>
     </customLabels>
     <customLabels>
+        <label><!-- Page-level error message about permissions --></label>
+        <name>npsp__commonAdminPermissionErrorMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Page-level error title about permissions --></label>
+        <name>npsp__commonAdminPermissionErrorTitle</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Amount --></label>
         <name>npsp__commonAmount</name>
     </customLabels>
@@ -9403,6 +9443,10 @@
     <customLabels>
         <label><!-- Batches --></label>
         <name>npsp__commonBatches</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Common label for CVV code --></label>
+        <name>npsp__commonCVV</name>
     </customLabels>
     <customLabels>
         <label><!-- Cancel --></label>
@@ -9493,7 +9537,7 @@
         <name>npsp__commonOpen</name>
     </customLabels>
     <customLabels>
-        <label><!-- Common label for Payment Services --></label>
+        <label><!-- Common label for Elevate Payment Services --></label>
         <name>npsp__commonPaymentServices</name>
     </customLabels>
     <customLabels>
@@ -10277,7 +10321,7 @@
         <name>npsp__gePaymentProcessError</name>
     </customLabels>
     <customLabels>
-        <label><!-- Banner failure message for tokenization or purchase errors --></label>
+        <label><!-- Field Bundle banner failure message for tokenization or purchase errors --></label>
         <name>npsp__gePaymentProcessingErrorBanner</name>
     </customLabels>
     <customLabels>
@@ -10327,6 +10371,10 @@
     <customLabels>
         <label><!-- Text telling the user they&apos;re being taken to the Opportunity --></label>
         <name>npsp__geTextNavigateToOpportunity</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Notification user will process a payment and record donation when clicking Save --></label>
+        <name>npsp__geTextPaymentsSaveNotice</name>
     </customLabels>
     <customLabels>
         <label><!-- Text indicating the Data Import record is being processed --></label>

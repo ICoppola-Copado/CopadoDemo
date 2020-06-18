@@ -2675,6 +2675,66 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsDMLService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsDMLService_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsRecalculateService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsRecalculateService_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsRetrievalService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsRetrievalService_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsReviewService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsReviewService_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsService_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsSettings</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsSettings_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsUtil</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsUtil_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_AllocationsWrapper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>npsp__ALLO_Allocations_TDTM</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2721,6 +2781,10 @@
     <classAccesses>
         <apexClass>npsp__ALLO_Rollup_TEST</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__ALLO_UnitTestHelper_TEST</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>npsp__BDE_BatchDataEntry</apexClass>
@@ -11803,6 +11867,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>npe03__Recurring_Donation__c.npsp__EndDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>npe03__Recurring_Donation__c.npsp__InstallmentFrequency__c</field>
         <readable>true</readable>
@@ -13676,6 +13745,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SocialPost-Social Post Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Solution-Solution Layout</layout>

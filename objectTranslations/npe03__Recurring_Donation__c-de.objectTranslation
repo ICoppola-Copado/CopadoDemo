@@ -332,6 +332,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <help><!-- After this date, NPSP no longer creates installments for this Recurring Donation and updates Status to Closed. --></help>
+        <label><!-- End Date --></label>
+        <name>npsp__EndDate__c</name>
+    </fields>
+    <fields>
         <help>Die Häufigkeit der Ratenzahlung definiert zusammen mit der Ratenlaufzeit den Ratenplan für diese wiederkehrende Spende. Wenn z. B. die Ratenlaufzeit als monatlich und die Häufigkeit als 3 festgelegt ist, definiert sich der Ratenplan als &quot;alle 3 Monate&quot;.</help>
         <label><!-- Installment Frequency --></label>
         <name>npsp__InstallmentFrequency__c</name>
