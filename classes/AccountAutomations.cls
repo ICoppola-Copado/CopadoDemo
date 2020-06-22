@@ -5,6 +5,7 @@ public class AccountAutomations {
             a.Description = 'Default description';
             return a;
         }
+        //Test22-6
     }
     public static Account setDefaultBillingAddress(Account a){
         a.billingstreet = 'Basauri, 6'; 
