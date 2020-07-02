@@ -12453,6 +12453,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>npsp__DataImportBatch__c.npsp__Batch_Table_Columns__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>npsp__DataImportBatch__c.npsp__Contact_Custom_Unique_ID__c</field>
         <readable>true</readable>

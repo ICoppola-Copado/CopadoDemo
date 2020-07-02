@@ -9849,6 +9849,14 @@
         <name>npsp__geBodyBatchHeaderWarning</name>
     </customLabels>
     <customLabels>
+        <label><!-- Description for Batch Table Columns, part 1 --></label>
+        <name>npsp__geBodyBatchTableColumnsPart1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Description for Batch Table Columns, part 2 --></label>
+        <name>npsp__geBodyBatchTableColumnsPart2</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Body for illustration card when a form section is empty --></label>
         <name>npsp__geBodyEmptyFormSection</name>
     </customLabels>
@@ -9929,7 +9937,7 @@
         <name>npsp__geButtonBuilderNavBackTemplateInfo</name>
     </customLabels>
     <customLabels>
-        <label><!-- Button to continue and configure the batch header --></label>
+        <label><!-- Button to continue and configure the batch settings --></label>
         <name>npsp__geButtonBuilderNavBatchHeader</name>
     </customLabels>
     <customLabels>
@@ -9947,6 +9955,14 @@
     <customLabels>
         <label><!-- Button to collapse all --></label>
         <name>npsp__geButtonFormFieldsCollapseAll</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Radial label for the Collapse section option --></label>
+        <name>npsp__geButtonFormFieldsDisplayOptionCollapsed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Radial label for the Expand section option --></label>
+        <name>npsp__geButtonFormFieldsDisplayOptionExpanded</name>
     </customLabels>
     <customLabels>
         <label><!-- Button to expand all --></label>
@@ -10009,11 +10025,11 @@
         <name>npsp__geDisableGiftEntryInfo</name>
     </customLabels>
     <customLabels>
-        <label><!-- Label for column in batch gift entry table that links to the matched Gift. --></label>
+        <label><!-- Label for batch gift table column that links to gift (Opportunity or Payment) --></label>
         <name>npsp__geDonationColumnLabel</name>
     </customLabels>
     <customLabels>
-        <label><!-- Label for column in batch gift entry table that links to the Account or Contact. --></label>
+        <label><!-- Label for batch gift table column that links to the Account or Contact. --></label>
         <name>npsp__geDonorColumnLabel</name>
     </customLabels>
     <customLabels>
@@ -10051,6 +10067,10 @@
     <customLabels>
         <label><!-- Field-level error message when template name is not unique --></label>
         <name>npsp__geErrorExistingTemplateName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Additional information about why a user can&apos;t update batch table columns --></label>
+        <name>npsp__geErrorFLSBatchTableColumns</name>
     </customLabels>
     <customLabels>
         <label><!-- Body of full page error when insufficient field access to what&apos;s on the form --></label>
@@ -10177,6 +10197,10 @@
         <name>npsp__geHeaderFormFieldsModalDeleteSection</name>
     </customLabels>
     <customLabels>
+        <label><!-- Header for section display options --></label>
+        <name>npsp__geHeaderFormFieldsModalDisplayOptionsSection</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Header for renaming section in settings modal --></label>
         <name>npsp__geHeaderFormFieldsModalRenameSection</name>
     </customLabels>
@@ -10301,6 +10325,10 @@
         <name>npsp__geLabelCustomTableSourceFields</name>
     </customLabels>
     <customLabels>
+        <label><!-- Setting text for how to display sections --></label>
+        <name>npsp__geLabelDisplaySections</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Label for the Section Name field --></label>
         <name>npsp__geLabelSectionName</name>
     </customLabels>
@@ -10339,6 +10367,14 @@
     <customLabels>
         <label><!-- Label for Batch Header navigation subtab --></label>
         <name>npsp__geTabBatchHeader</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label for Batch Settings tab --></label>
+        <name>npsp__geTabBatchSettings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label for Batch Table Columns --></label>
+        <name>npsp__geTabBatchTableColumns</name>
     </customLabels>
     <customLabels>
         <label><!-- Label for Form Fields navigation subtab --></label>

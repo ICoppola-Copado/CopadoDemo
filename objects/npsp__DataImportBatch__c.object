@@ -262,6 +262,19 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>npsp__Batch_Table_Columns__c</fullName>
+        <deprecated>false</deprecated>
+        <description>List of API names for fields included in the batch gift table. Stored as JSON.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of API names for fields included in the batch gift table. Stored as JSON.</inlineHelpText>
+        <label>Batch Table Columns</label>
+        <length>55000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
         <fullName>npsp__Contact_Custom_Unique_ID__c</fullName>
         <deprecated>false</deprecated>
         <description>An optional Unique Id field to use for Contact matching</description>
