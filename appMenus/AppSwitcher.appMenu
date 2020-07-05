@@ -164,4 +164,8 @@
         <name>npsp__Nonprofit_CRM</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>Dreamhouse</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>
