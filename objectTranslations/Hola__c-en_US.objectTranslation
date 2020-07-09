@@ -8,5 +8,10 @@
         <plural>true</plural>
         <value>Holas</value>
     </caseValues>
+    <fields>
+        <label><!-- Broker --></label>
+        <name>Broker__c</name>
+        <relationshipLabel><!-- Holas --></relationshipLabel>
+    </fields>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

@@ -153,6 +153,18 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Broker__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Broker</label>
+        <referenceTo>Broker__c</referenceTo>
+        <relationshipLabel>Holas</relationshipLabel>
+        <relationshipName>Holas</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
     <label>Hola</label>
     <nameField>
         <label>Hola Name</label>
