@@ -20,6 +20,10 @@
         <plural>true</plural>
         <value><!-- הRecurring Donation --></value>
     </caseValues>
+    <fieldSets>
+        <label><!-- Recurring Donations Entry Form Custom Fields --></label>
+        <name>npsp__RD2_Entry_Form_Custom_Fields</name>
+    </fieldSets>
     <fields>
         <help><!-- The amount for each installment Opportunity. --></help>
         <label><!-- Amount --></label>

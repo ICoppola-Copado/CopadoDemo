@@ -4158,6 +4158,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>npsp__RD2_EntryFormController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__RD2_EntryFormController_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>npsp__RD2_NamingService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4578,6 +4586,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>npsp__STG_PanelPaymentMapping_CTRL_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>npsp__STG_PanelPrimaryContactRoleMerge_CTRL</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4610,12 +4622,24 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>npsp__STG_PanelRelAuto_CTRL_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>npsp__STG_PanelRelReciprocal_CTRL</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>npsp__STG_PanelRelReciprocal_CTRL_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>npsp__STG_PanelRel_CTRL</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__STG_PanelRel_CTRL_TEST</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>npsp__STG_PanelRenameHouseholds_CTRL</apexClass>

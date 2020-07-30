@@ -169,6 +169,11 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>npsp__RD2_Entry_Form_Custom_Fields</fullName>
+        <description>Fields to be displayed on Enhanced Recurring Donations Entry Form in the Custom Fields section</description>
+        <label>Recurring Donations Entry Form Custom Fields</label>
+    </fieldSets>
     <fields>
         <fullName>npe03__Amount__c</fullName>
         <deprecated>false</deprecated>

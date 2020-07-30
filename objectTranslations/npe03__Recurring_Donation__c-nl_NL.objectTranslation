@@ -8,6 +8,10 @@
         <plural>true</plural>
         <value>Terugkerende donaties</value>
     </caseValues>
+    <fieldSets>
+        <label><!-- Recurring Donations Entry Form Custom Fields --></label>
+        <name>npsp__RD2_Entry_Form_Custom_Fields</name>
+    </fieldSets>
     <fields>
         <help>Het bedrag voor de Opportunity van elke termijn.</help>
         <label><!-- Amount --></label>

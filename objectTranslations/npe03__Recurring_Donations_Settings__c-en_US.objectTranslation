@@ -86,6 +86,11 @@
         <name>npsp__InstallmentOppAutoCreateOption__c</name>
     </fields>
     <fields>
+        <help><!-- Specifies how NPSP will create the first installment Opportunity for Recurring Donations. The default is Synchronous. --></help>
+        <label><!-- Installment Opportunity Async Behavior --></label>
+        <name>npsp__InstallmentOppFirstCreateMode__c</name>
+    </fields>
+    <fields>
         <help><!-- The Opportunity Stage that NPSP applies to each new installment Opportunity when you create a Recurring Donation. --></help>
         <label><!-- Stage Name for Installment Opportunities --></label>
         <name>npsp__InstallmentOppStageName__c</name>
@@ -99,6 +104,11 @@
         <help><!-- The number of days before or after the Next Donation Date that NPSP won&apos;t create a new installment Opportunity if the next open Opportunity&apos;s Close Date is changed. Applies only to Recurring Donations where Installment Period is Monthly. --></help>
         <label><!-- Next Donation Date Match Range --></label>
         <name>npsp__NextDonationDateMatchRangeDays__c</name>
+    </fields>
+    <fields>
+        <help><!-- The format to use for Recurring Donation naming. --></help>
+        <label><!-- Recurring Donation Name Format --></label>
+        <name>npsp__RecurringDonationNameFormat__c</name>
     </fields>
     <fields>
         <help><!-- Contains Enhanced Recurring Donation enablement confirmations and state. --></help>

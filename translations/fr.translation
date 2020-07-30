@@ -7937,6 +7937,10 @@
         <name>npsp__RD2_EnablementEnableWarning</name>
     </customLabels>
     <customLabels>
+        <label><!-- Enhanced Recurring Donations enablement incomplete --></label>
+        <name>npsp__RD2_EnablementIncomplete</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Enablement page introduction and guidelines --></label>
         <name>npsp__RD2_EnablementIntro</name>
     </customLabels>
@@ -8035,6 +8039,82 @@
     <customLabels>
         <label><!-- Fixed Length Recurring Donation End Date must be valid --></label>
         <name>npsp__RD2_EndDateMustBeValidForFixedLength</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Entry Form Custom Field section header --></label>
+        <name>npsp__RD2_EntryFormCustomFieldsSectionHeader</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Entry Form Donation Information section header --></label>
+        <name>npsp__RD2_EntryFormDonationSectionHeader</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Entry Form Donor Information section header --></label>
+        <name>npsp__RD2_EntryFormDonorSectionHeader</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Inline HelpText for the Donor Type picklist --></label>
+        <name>npsp__RD2_EntryFormDonorTypeHelpText</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Label for the Donor Type picklist --></label>
+        <name>npsp__RD2_EntryFormDonorTypeLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Entry Form header --></label>
+        <name>npsp__RD2_EntryFormHeader</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Entry Form message when record is inserted --></label>
+        <name>npsp__RD2_EntryFormInsertSuccessMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Entry Form Field Permissions Error --></label>
+        <name>npsp__RD2_EntryFormMissingPermissions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Entry Form Other Information section header --></label>
+        <name>npsp__RD2_EntryFormOtherSectionHeader</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Picklist value for the RD2 Entry Form custom period picklist --></label>
+        <name>npsp__RD2_EntryFormPeriodAdvanced</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Inline Help Text for the Monthly and Advanced Picklist --></label>
+        <name>npsp__RD2_EntryFormPeriodHelpText</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Custom Label for the Monthly and Advanced Picklist --></label>
+        <name>npsp__RD2_EntryFormPeriodLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Plural Picklist substitute for Daily --></label>
+        <name>npsp__RD2_EntryFormPeriodPluralDaily</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Plural Picklist substitute for Monthly --></label>
+        <name>npsp__RD2_EntryFormPeriodPluralMonthly</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Plural Picklist substitute for Weekly --></label>
+        <name>npsp__RD2_EntryFormPeriodPluralWeekly</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Plural Picklist substitute for Yearly --></label>
+        <name>npsp__RD2_EntryFormPeriodPluralYearly</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label to show as Every --></label>
+        <name>npsp__RD2_EntryFormScheduleEveryLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Entry Form Status Information section header --></label>
+        <name>npsp__RD2_EntryFormStatusSectionHeader</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Entry Form message when record is updated --></label>
+        <name>npsp__RD2_EntryFormUpdateSuccessMessage</name>
     </customLabels>
     <customLabels>
         <label><!-- The job can only be executed when Enhanced RD is enabled in the org --></label>
@@ -8335,6 +8415,14 @@
     <customLabels>
         <label><!-- SmartyStreets Help Test --></label>
         <name>npsp__SmartyStreets_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Alt Text for the Date Picker icon --></label>
+        <name>npsp__UTIL_InputFormFormFieldAltLabelDate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Alt Text for the Lookup icon --></label>
+        <name>npsp__UTIL_InputFormFormFieldAltLabelLookup</name>
     </customLabels>
     <customLabels>
         <label><!-- Zip Not Found --></label>
@@ -9545,6 +9633,10 @@
         <name>npsp__commonPercent</name>
     </customLabels>
     <customLabels>
+        <label><!-- Page-level error for database-level security check --></label>
+        <name>npsp__commonPermissionErrorMessage</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Read More --></label>
         <name>npsp__commonReadMore</name>
     </customLabels>
@@ -10361,6 +10453,10 @@
         <name>npsp__geSearchPlaceholder</name>
     </customLabels>
     <customLabels>
+        <label><!-- Link to select batch table columns --></label>
+        <name>npsp__geSelectBatchTableColumns</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Placeholder text for a picklist field --></label>
         <name>npsp__geSelectPlaceholder</name>
     </customLabels>
@@ -11045,6 +11141,14 @@
         <name>npsp__isARequiredField</name>
     </customLabels>
     <customLabels>
+        <label><!-- Translatable label for False --></label>
+        <name>npsp__labelBooleanFalse</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Translatable label for True --></label>
+        <name>npsp__labelBooleanTrue</name>
+    </customLabels>
+    <customLabels>
         <label><!-- label for First link in list view --></label>
         <name>npsp__labelListViewFirst</name>
     </customLabels>
@@ -11099,6 +11203,10 @@
     <customLabels>
         <label><!-- lblCountry --></label>
         <name>npsp__lblCountry</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Override CurrencyIsoCode label --></label>
+        <name>npsp__lblCurrency</name>
     </customLabels>
     <customLabels>
         <label><!-- caption of Remove Contact popup --></label>
@@ -13023,6 +13131,14 @@
     <customLabels>
         <label><!-- stgPowerOfUsHub --></label>
         <name>npsp__stgPowerOfUsHub</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Auto Naming Description --></label>
+        <name>npsp__stgRDNamingDescription</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Auto Naming disable option --></label>
+        <name>npsp__stgRDNamingDisable</name>
     </customLabels>
     <customLabels>
         <label><!-- stgReset --></label>

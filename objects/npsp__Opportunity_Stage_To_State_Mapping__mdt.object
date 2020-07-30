@@ -42,6 +42,14 @@
         </valueSet>
     </fields>
     <label>Opportunity Stage To State Mapping</label>
+    <listViews>
+        <fullName>npsp__All</fullName>
+        <columns>MasterLabel</columns>
+        <columns>npsp__Opportunity_Stage__c</columns>
+        <columns>npsp__Opportunity_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <pluralLabel>Opportunity Stage To State Mappings</pluralLabel>
     <visibility>Public</visibility>
 </CustomObject>

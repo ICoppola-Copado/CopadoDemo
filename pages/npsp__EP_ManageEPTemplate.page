@@ -58,7 +58,7 @@
                             <div class="slds-form-element__control">
                                 <label class="slds-checkbox">
                                     <apex:inputCheckbox id="idSkipWeekends" value="{!template.npsp__Skip_Weekends__c}" html-aria-describedby="{!$Component.skipWeekendsHelpText}">
-                                        <apex:actionSupport event="onchange" immediate="false" reRender="templateForm" status="statusLoad"/>
+                                        <apex:actionSupport event="onchange" immediate="false" reRender="templateForm" status="statusLoad" focus="idSkipWeekends"/>
                                     </apex:inputCheckbox>
                                     <span class="slds-checkbox_faux"></span>
                                     <apex:outputPanel styleClass="slds-form-element__label">{!$ObjectType.npsp__Engagement_Plan_Template__c.Fields.npsp__Skip_Weekends__c.Label}</apex:outputPanel>

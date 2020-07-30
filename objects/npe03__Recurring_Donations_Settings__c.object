@@ -215,6 +215,19 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>npsp__InstallmentOppFirstCreateMode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specifies the asynchronous processing behavior NPSP will use to create the first installment Opportunity for Recurring Donations. The default is Synchronous. Other options are Asynchronous and Asynchronous_When_Bulk.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifies how NPSP will create the first installment Opportunity for Recurring Donations. The default is Synchronous.</inlineHelpText>
+        <label>Installment Opportunity Async Behavior</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>npsp__InstallmentOppStageName__c</fullName>
         <deprecated>false</deprecated>
         <description>The Opportunity Stage that NPSP applies to each new installment Opportunity when you create a Recurring Donation.</description>
@@ -251,6 +264,19 @@
         <scale>0</scale>
         <trackTrending>false</trackTrending>
         <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>npsp__RecurringDonationNameFormat__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The format to use for Recurring Donation naming.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The format to use for Recurring Donation naming.</inlineHelpText>
+        <label>Recurring Donation Name Format</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
