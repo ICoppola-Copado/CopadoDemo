@@ -45,6 +45,6 @@
         <label><!-- Full Error Message --></label>
         <name>npe4__Full_Error_Message__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Relationship Error Name --></nameFieldLabel>
 </CustomObjectTranslation>

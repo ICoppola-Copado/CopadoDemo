@@ -16,6 +16,6 @@
         <label><!-- Deleted --></label>
         <name>npsp__Is_Deleted__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <startsWith><!-- Consonant --></startsWith>
 </CustomObjectTranslation>

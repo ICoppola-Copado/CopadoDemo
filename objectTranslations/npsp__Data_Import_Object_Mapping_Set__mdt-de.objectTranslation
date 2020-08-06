@@ -40,5 +40,5 @@
         <plural>true</plural>
         <value><!-- Data Import Object Mapping Set --></value>
     </caseValues>
-    <gender><!-- Neuter --></gender>
+    
 </CustomObjectTranslation>

@@ -126,6 +126,6 @@
             <translation>אחר</translation>
         </picklistValues>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Subject --></nameFieldLabel>
 </CustomObjectTranslation>

@@ -60,6 +60,6 @@
             <translation><!-- LOI --></translation>
         </picklistValues>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Deliverable Name --></nameFieldLabel>
 </CustomObjectTranslation>

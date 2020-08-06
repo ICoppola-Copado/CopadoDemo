@@ -78,7 +78,7 @@
             <translation>איש קשר</translation>
         </picklistValues>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Level Name --></nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Target is a required field on Level.  Please specify the Target object for this Level. --></errorMessage>

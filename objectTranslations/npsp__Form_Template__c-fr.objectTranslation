@@ -23,7 +23,7 @@
         <label><!-- Template JSON --></label>
         <name>npsp__Template_JSON__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Form Template Name --></nameFieldLabel>
     <startsWith><!-- Consonant --></startsWith>
 </CustomObjectTranslation>

@@ -382,7 +382,7 @@
             <translation><!-- Lapsed --></translation>
         </picklistValues>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Recurring Donation Name --></nameFieldLabel>
     <webLinks>
         <label><!-- New_Recurring_Acct_Donation --></label>

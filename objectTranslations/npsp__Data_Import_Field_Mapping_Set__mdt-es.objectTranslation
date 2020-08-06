@@ -14,5 +14,5 @@
         <name>npsp__Data_Import_Object_Mapping_Set__c</name>
         <relationshipLabel><!-- Data Import Field Mapping Sets --></relationshipLabel>
     </fields>
-    <gender><!-- Feminine --></gender>
+    
 </CustomObjectTranslation>

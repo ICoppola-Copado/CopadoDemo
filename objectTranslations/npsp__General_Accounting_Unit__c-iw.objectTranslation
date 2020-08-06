@@ -105,7 +105,7 @@
         <label><!-- Total Number of Allocations --></label>
         <name>npsp__Total_Number_of_Allocations__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- General Accounting Unit Name --></nameFieldLabel>
     <webLinks>
         <label><!-- Recalculate_Rollups --></label>

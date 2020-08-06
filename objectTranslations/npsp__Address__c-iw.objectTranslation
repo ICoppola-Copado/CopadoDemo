@@ -532,7 +532,7 @@
         <label><!-- Verified --></label>
         <name>npsp__Verified__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Address ID --></nameFieldLabel>
     <webLinks>
         <label><!-- Verify_Address --></label>

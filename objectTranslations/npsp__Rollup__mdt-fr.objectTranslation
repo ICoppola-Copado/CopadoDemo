@@ -129,6 +129,6 @@
         <label><!-- Use Fiscal Year --></label>
         <name>npsp__Use_Fiscal_Year__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <startsWith><!-- Consonant --></startsWith>
 </CustomObjectTranslation>

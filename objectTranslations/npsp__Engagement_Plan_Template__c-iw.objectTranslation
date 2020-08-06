@@ -72,7 +72,7 @@
         <label><!-- Total Tasks --></label>
         <name>npsp__Total_Tasks__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Engagement Plan Template Name --></nameFieldLabel>
     <webLinks>
         <label><!-- Manage_Template --></label>

@@ -64,7 +64,7 @@
         <name>npsp__Recurring_Donation__c</name>
         <relationshipLabel><!-- GAU Allocations --></relationshipLabel>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- GAU Allocation Name --></nameFieldLabel>
     <webLinks>
         <label><!-- Manage_Allocations --></label>

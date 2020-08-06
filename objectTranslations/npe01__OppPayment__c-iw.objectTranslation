@@ -175,7 +175,7 @@
         <label><!-- Type --></label>
         <name>npsp__Type__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Payment Number --></nameFieldLabel>
     <webLinks>
         <label><!-- Schedule_Payments --></label>

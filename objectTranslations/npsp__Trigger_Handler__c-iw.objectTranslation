@@ -88,6 +88,6 @@
         <label><!-- Usernames to Exclude --></label>
         <name>npsp__Usernames_to_Exclude__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Trigger Handler Name --></nameFieldLabel>
 </CustomObjectTranslation>

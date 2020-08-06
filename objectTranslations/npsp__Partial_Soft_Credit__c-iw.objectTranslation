@@ -52,7 +52,7 @@
         <label><!-- Role Name --></label>
         <name>npsp__Role_Name__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Partial Soft Credit Name --></nameFieldLabel>
     <webLinks>
         <label><!-- Manage_Soft_Credits --></label>

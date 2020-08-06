@@ -23,6 +23,6 @@
         <label><!-- Template JSON --></label>
         <name>npsp__Template_JSON__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
+    
     <nameFieldLabel><!-- Form Template Name --></nameFieldLabel>
 </CustomObjectTranslation>

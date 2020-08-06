@@ -8,6 +8,6 @@
         <plural>true</plural>
         <value><!-- Data Import Object Mapping Set --></value>
     </caseValues>
-    <gender><!-- Masculine --></gender>
+    
     <startsWith><!-- Consonant --></startsWith>
 </CustomObjectTranslation>

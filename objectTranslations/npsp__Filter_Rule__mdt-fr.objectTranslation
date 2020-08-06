@@ -85,6 +85,6 @@
             <translation>Commence par</translation>
         </picklistValues>
     </fields>
-    <gender><!-- Feminine --></gender>
+    
     <startsWith><!-- Consonant --></startsWith>
 </CustomObjectTranslation>

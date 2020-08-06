@@ -60,6 +60,6 @@
         <label><!-- Last Time Run --></label>
         <name>npsp__Last_Time_Run__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Job Name --></nameFieldLabel>
 </CustomObjectTranslation>

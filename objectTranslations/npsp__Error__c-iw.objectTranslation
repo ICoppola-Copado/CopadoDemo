@@ -75,6 +75,6 @@
         <label><!-- Stack Trace --></label>
         <name>npsp__Stack_Trace__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Error Number --></nameFieldLabel>
 </CustomObjectTranslation>

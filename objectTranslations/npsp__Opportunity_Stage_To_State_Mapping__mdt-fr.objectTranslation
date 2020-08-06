@@ -26,6 +26,6 @@
             <translation>Finalisée</translation>
         </picklistValues>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <startsWith><!-- Consonant --></startsWith>
 </CustomObjectTranslation>

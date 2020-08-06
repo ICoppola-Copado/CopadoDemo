@@ -20,5 +20,5 @@
         <label><!-- Status --></label>
         <name>npsp__Status__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
+    
 </CustomObjectTranslation>

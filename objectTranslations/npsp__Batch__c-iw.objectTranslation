@@ -49,6 +49,6 @@
         <label><!-- Object Name --></label>
         <name>npsp__Object_Name__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Batch Name --></nameFieldLabel>
 </CustomObjectTranslation>

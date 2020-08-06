@@ -76,6 +76,6 @@
             <translation><!-- Solicitor --></translation>
         </picklistValues>
     </fields>
-    <gender><!-- Masculine --></gender>
+    
     <nameFieldLabel><!-- Affiliation Name --></nameFieldLabel>
 </CustomObjectTranslation>
