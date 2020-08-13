@@ -9549,6 +9549,10 @@
         <name>npsp__commonClone</name>
     </customLabels>
     <customLabels>
+        <label><!-- Error when a batch job is executed while the same batch job is already running. --></label>
+        <name>npsp__commonConcurrentBatchError</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Common label for credit card number --></label>
         <name>npsp__commonCreditNumber</name>
     </customLabels>

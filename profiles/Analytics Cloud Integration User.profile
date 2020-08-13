@@ -2862,12 +2862,20 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>npsp__BDI_DataImportBatchStatus_TDTM</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>npsp__BDI_DataImportBatch_SCHED</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>npsp__BDI_DataImportBatch_SEL</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__BDI_DataImportBatch_TDTM</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>npsp__BDI_DataImportBatch_TEST</apexClass>
@@ -5775,6 +5783,56 @@
         <editable>false</editable>
         <field>Broker__c.Title__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.AvailableCredit</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.BuyerStatus</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.CommerceType</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.CreditLimit</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.CreditStatus</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.CurrentBalance</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.MaximumOrderLimit</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.MinimumOrderLimit</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.PayerId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BuyerAccount.SendToId</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -12763,6 +12821,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>npsp__DataImportBatch__c.npsp__Batch_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>npsp__DataImportBatch__c.npsp__Batch_Table_Columns__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -14182,6 +14245,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Broker__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>BuyerAccount</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
