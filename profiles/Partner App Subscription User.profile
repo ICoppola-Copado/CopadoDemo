@@ -5785,56 +5785,6 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.AvailableCredit</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.BuyerStatus</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.CommerceType</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.CreditLimit</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.CreditStatus</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.CurrentBalance</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.MaximumOrderLimit</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.MinimumOrderLimit</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.PayerId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.SendToId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Callout_Log__c.Project__c</field>
         <readable>false</readable>
@@ -13967,9 +13917,6 @@
         <layout>AssetRelationship-Asset Relationship Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>BuyerAccount-Buyer Account Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Callout_Log__c-Callout Log Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -14022,9 +13969,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>DandBCompany-D%26B Company Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>DelegatedAccount-External Managed Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>DigitalWallet-Digital Wallet Layout</layout>
@@ -15948,10 +15892,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-BuyerGroup</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Campaign</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -15986,10 +15926,6 @@
     <tabVisibilities>
         <tab>standard-CommSubscriptionTiming</tab>
         <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-CommerceEntitlementPolicy</tab>
-        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ConsumptionSchedule</tab>
@@ -16030,10 +15966,6 @@
     <tabVisibilities>
         <tab>standard-DataUsePurpose</tab>
         <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-DelegatedAccount</tab>
-        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-DigitalWallet</tab>
@@ -16125,14 +16057,6 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Product2</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ProductCatalog</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ProductCategory</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

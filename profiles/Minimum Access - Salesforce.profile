@@ -5785,56 +5785,6 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.AvailableCredit</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.BuyerStatus</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.CommerceType</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.CreditLimit</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.CreditStatus</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.CurrentBalance</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.MaximumOrderLimit</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.MinimumOrderLimit</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.PayerId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>BuyerAccount.SendToId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Callout_Log__c.Project__c</field>
         <readable>false</readable>
@@ -13950,13 +13900,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>BuyerAccount-Buyer Account Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>CardPaymentMethod-Card Payment Method Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>DelegatedAccount-External Managed Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>DigitalWallet-Digital Wallet Layout</layout>
@@ -15606,10 +15550,6 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-DelegatedAccount</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-DigitalWallet</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -15687,14 +15627,6 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Product2</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ProductCatalog</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ProductCategory</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

@@ -56,12 +56,4 @@
         <name>LightningInstrumentation</name>
         <type>StandardAppMenuItem</type>
     </appMenuItems>
-    <appMenuItems>
-        <name>ProductCatalog</name>
-        <type>StandardAppMenuItem</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>ProductCategory</name>
-        <type>StandardAppMenuItem</type>
-    </appMenuItems>
 </AppMenu>
