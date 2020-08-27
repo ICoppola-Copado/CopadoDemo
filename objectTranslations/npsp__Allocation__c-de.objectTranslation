@@ -85,7 +85,7 @@
         <relationshipLabel><!-- GAU Allocations --></relationshipLabel>
     </fields>
     <gender>Feminine</gender>
-    <nameFieldLabel>Name der Zuordnung zur allgemeinen Verre</nameFieldLabel>
+    <nameFieldLabel>Name der Verwendungszweck-Zuweisung</nameFieldLabel>
     <webLinks>
         <label><!-- Manage_Allocations --></label>
         <name>npsp__Manage_Allocations</name>

@@ -2,14 +2,14 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Recurring Donation Status Mapping --></value>
+        <value><!-- Mappage du statut de dons récurrents --></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Recurring Donation Status Mapping --></value>
+        <value><!-- Mappages du statut de dons récurrents --></value>
     </caseValues>
     <fields>
-        <help><!-- Valid entries are Active, Lapsed, and Closed. --></help>
+        <help>Les entrées valides sont Actif, Écoulé et Fermé.</help>
         <label><!-- Recurring Donation State --></label>
         <name>npsp__State__c</name>
         <picklistValues>
@@ -26,7 +26,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- API name of the Recurring Donation Status that is mapped to a State. --></help>
+        <help>Le nom d’API du Statut du don récurrent qui est mappé à un État.</help>
         <label><!-- Recurring Donation Status --></label>
         <name>npsp__Status__c</name>
     </fields>

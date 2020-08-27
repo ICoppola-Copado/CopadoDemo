@@ -43,19 +43,19 @@
         <name>npsp__Batch_Status__c</name>
         <picklistValues>
             <masterLabel>Completed</masterLabel>
-            <translation><!-- Completed --></translation>
+            <translation>完了</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Failed - Needs Review</masterLabel>
-            <translation><!-- Failed - Needs Review --></translation>
+            <translation>失敗 - レビューが必要</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Open</masterLabel>
-            <translation><!-- Open --></translation>
+            <translation>オープン</translation>
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- List of API names for fields included in the batch gift table. Stored as JSON. --></help>
+        <help>バッチギフトテーブルに含まれる項目の API 参照名のリスト。JSON として保存されます。</help>
         <label><!-- Batch Table Columns --></label>
         <name>npsp__Batch_Table_Columns__c</name>
     </fields>

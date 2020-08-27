@@ -192,7 +192,7 @@
         <name>npsp__Closed_Lost_Reason__c</name>
     </fields>
     <fields>
-        <help><!-- External identifier for Salesforce.org payment service integration. --></help>
+        <help>Identificador externo para la integración del servicio de pagos de Salesforce.org.</help>
         <label><!-- Elevate Recurring Id --></label>
         <name>npsp__CommitmentId__c</name>
     </fields>

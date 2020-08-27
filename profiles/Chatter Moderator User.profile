@@ -4214,6 +4214,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>npsp__RD2_PauseForm_CTRL</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>npsp__RD2_PauseForm_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>npsp__RD2_QueueableService</apexClass>
         <enabled>false</enabled>
     </classAccesses>

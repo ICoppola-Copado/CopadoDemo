@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Form Template --></value>
+        <value>Modèle de formulaire</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Form Template --></value>
+        <value>Modèles de formulaire</value>
     </caseValues>
     <fields>
         <help>La courte description que les utilisateurs saisissent pour un modèle.</help>
@@ -23,7 +23,7 @@
         <label><!-- Template JSON --></label>
         <name>npsp__Template_JSON__c</name>
     </fields>
-    
-    <nameFieldLabel><!-- Form Template Name --></nameFieldLabel>
-    <startsWith><!-- Consonant --></startsWith>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nom du modèle de formulaire</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

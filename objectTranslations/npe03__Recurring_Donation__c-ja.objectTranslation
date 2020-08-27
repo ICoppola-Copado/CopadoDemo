@@ -161,7 +161,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- External identifier for Salesforce.org payment service integration. --></help>
+        <help>Salesforce.org 支払サービスインテグレーションの外部識別子。</help>
         <label><!-- Elevate Recurring Id --></label>
         <name>npsp__CommitmentId__c</name>
     </fields>
@@ -300,7 +300,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- After this date, NPSP no longer creates installments for this Recurring Donation and updates Status to Closed. --></help>
+        <help>この日付以降、NPSP はこの継続支援の割賦を作成しなくなり、[状況] を [クローズ] に更新します。</help>
         <label><!-- End Date --></label>
         <name>npsp__EndDate__c</name>
     </fields>

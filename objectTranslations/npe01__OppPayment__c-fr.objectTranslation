@@ -62,77 +62,77 @@
         <name>npe01__Written_Off__c</name>
     </fields>
     <fields>
-        <help><!-- The date and time the transaction was authorized. --></help>
+        <help>La date et l’heure auxquelles la transaction a été autorisée.</help>
         <label><!-- Authorized Date --></label>
         <name>npsp__Authorized_Date__c</name>
     </fields>
     <fields>
-        <help><!-- The exact date and time (down to the millisecond) from the payment gateway that this transaction was successfully authorized. --></help>
+        <help>La date et l’heure exactes (jusqu’à la milliseconde) de la passerelle de paiement auxquelles cette transaction a été autorisée.</help>
         <label><!-- Authorized UTC Timestamp --></label>
         <name>npsp__Authorized_UTC_Timestamp__c</name>
     </fields>
     <fields>
-        <help><!-- The expiration month of the card used for this transaction. --></help>
+        <help>Le mois d’expiration de la carte utilisée pour cette transaction.</help>
         <label><!-- Card Expiration Month --></label>
         <name>npsp__Card_Expiration_Month__c</name>
     </fields>
     <fields>
-        <help><!-- The expiration year of the card used for this transaction. --></help>
+        <help>L’année d’expiration de la carte utilisée pour cette transaction.</help>
         <label><!-- Card Expiration Year --></label>
         <name>npsp__Card_Expiration_Year__c</name>
     </fields>
     <fields>
-        <help><!-- The last four digits of the card used for this transaction. --></help>
+        <help>Les quatre derniers chiffres de la carte utilisée pour cette transaction.</help>
         <label><!-- Card Last 4 --></label>
         <name>npsp__Card_Last_4__c</name>
     </fields>
     <fields>
-        <help><!-- The card network of the card used for this transaction. --></help>
+        <help>Le réseau de carte de la carte utilisée pour cette transaction.</help>
         <label><!-- Card Network --></label>
         <name>npsp__Card_Network__c</name>
     </fields>
     <fields>
-        <help><!-- For refunds only. Shows the ID of the original payment transaction from Elevate. --></help>
+        <help>Uniquement pour les remboursements. Affiche l’ID de la transaction de paiement d’origine d’Elevate.</help>
         <label><!-- Elevate Original Payment ID --></label>
         <name>npsp__Elevate_Original_Payment_ID__c</name>
     </fields>
     <fields>
-        <help><!-- The date and time the transaction was created. --></help>
+        <help>La date et l’heure auxquelles la transaction a été créée.</help>
         <label><!-- Elevate Payment Created Date --></label>
         <name>npsp__Elevate_Payment_Created_Date__c</name>
     </fields>
     <fields>
-        <help><!-- The exact date and time (down to the millisecond) from Elevate that the transaction was created. --></help>
+        <help>La date et l’heure exactes (jusqu’à la milliseconde) d’Elevate auxquelles la transaction a été créée.</help>
         <label><!-- Elevate Payment Created  UTC Timestamp --></label>
         <name>npsp__Elevate_Payment_Created_UTC_Timestamp__c</name>
     </fields>
     <fields>
-        <help><!-- The unique ID for this transaction from Elevate. --></help>
+        <help>L’ID unique pour cette transaction d’Elevate.</help>
         <label><!-- Elevate Payment ID --></label>
         <name>npsp__Elevate_Payment_ID__c</name>
     </fields>
     <fields>
-        <help><!-- The ID of the payment gateway that processed this transaction. --></help>
+        <help>L’ID de la passerelle de paiement qui a traité cette transaction.</help>
         <label><!-- Gateway ID --></label>
         <name>npsp__Gateway_ID__c</name>
     </fields>
     <fields>
-        <help><!-- The unique ID for this transaction from the payment gateway. --></help>
+        <help>L’ID unique pour cette transaction de la passerelle de paiement.</help>
         <label><!-- Gateway Payment ID --></label>
         <name>npsp__Gateway_Payment_ID__c</name>
     </fields>
     <fields>
-        <help><!-- The ID for the system where the transaction was initiated. --></help>
+        <help>L’ID du système sur lequel la transaction a été initiée.</help>
         <label><!-- Origin ID --></label>
         <name>npsp__Origin_ID__c</name>
     </fields>
     <fields>
-        <help><!-- The name of the system where the transaction was initiated. --></help>
+        <help>Le nom du système sur lequel la transaction a été initiée.</help>
         <label><!-- Origin Name --></label>
         <name>npsp__Origin_Name__c</name>
     </fields>
     <fields>
-        <help><!-- The type of system used to initiate the transaction. Available values include Engagement Hub, Giving Page, Payments API, Salesforce. --></help>
+        <help>Le type de système utilisé pour initier la transaction. Les valeurs disponibles incluent Engagement Hub, Page de dons, API de paiement, Salesforce.</help>
         <label><!-- Origin Type --></label>
         <name>npsp__Origin_Type__c</name>
     </fields>
@@ -159,7 +159,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Indicates the type of transaction. --></help>
+        <help>Indique le type de transaction.</help>
         <label><!-- Type --></label>
         <name>npsp__Type__c</name>
     </fields>

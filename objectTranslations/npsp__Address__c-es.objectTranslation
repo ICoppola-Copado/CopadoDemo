@@ -59,7 +59,7 @@
         <name>npsp__Default_Address__c</name>
     </fields>
     <fields>
-        <help><!-- If selected, this address won&apos;t be included in address updates from the NCOA or address verification vendor. --></help>
+        <help>si se selecciona, esta dirección no se incluirá en las actualizaciones de direcciones de NCOA o el proveedor de verificación de direcciones.</help>
         <label><!-- Exclude from Updates --></label>
         <name>npsp__Exclude_from_Updates__c</name>
     </fields>
@@ -117,12 +117,12 @@
         <name>npsp__MailingStreet__c</name>
     </fields>
     <fields>
-        <help><!-- The most recent date and time the address was evaluated by the NCOA vendor. --></help>
+        <help>La fecha y la hora más recientes en que la dirección se evaluó por parte del proveedor de NCOA.</help>
         <label><!-- NCOA Evaluation Date --></label>
         <name>npsp__NCOA_Evaluation_Date__c</name>
     </fields>
     <fields>
-        <help><!-- The result code form the NCOA vendor. --></help>
+        <help>El código de resultado del proveedor de NCOA.</help>
         <label><!-- NCOA Result Code --></label>
         <name>npsp__NCOA_Result_Code__c</name>
     </fields>
@@ -511,7 +511,7 @@
         <name>npsp__Verification_Status__c</name>
     </fields>
     <fields>
-        <help><!-- The most recent date and time the address was verified. --></help>
+        <help>La fecha y la hora más recientes en que la dirección se verificó la dirección.</help>
         <label><!-- Verified Date --></label>
         <name>npsp__Verified_Date__c</name>
     </fields>

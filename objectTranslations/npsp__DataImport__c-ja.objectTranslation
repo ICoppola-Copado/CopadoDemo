@@ -136,12 +136,12 @@
         <name>npsp__Contact1_Birthdate__c</name>
     </fields>
     <fields>
-        <help><!-- Provides details on what the Contact opted in to. --></help>
+        <help>何に取引先責任者がオプトインしたかについての詳細を提供します。</help>
         <label><!-- Contact1 Consent Message --></label>
         <name>npsp__Contact1_Consent_Message__c</name>
     </fields>
     <fields>
-        <help><!-- Determines if a Contact consented to opt in. --></help>
+        <help>取引先責任者がオプトインに同意したかどうかを決定します。</help>
         <label><!-- Contact1 Consent Opt-In --></label>
         <name>npsp__Contact1_Consent_Opt_In__c</name>
     </fields>
@@ -392,7 +392,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- The external, unique ID of the Recurring Donation in Elevate that this donation Opportunity is linked to. --></help>
+        <help>この支援商談のリンク先である、Elevate 内の継続支援の一意の外部 ID。</help>
         <label><!-- Donation Elevate Recurring ID --></label>
         <name>npsp__Donation_Elevate_Recurring_ID__c</name>
     </fields>
@@ -595,37 +595,37 @@
         <relationshipLabel><!-- NPSP Data Imports --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Authorization token for a transaction. --></help>
+        <help>トランザクションの承認トークン。</help>
         <label><!-- Payment Authorization Token --></label>
         <name>npsp__Payment_Authorization_Token__c</name>
     </fields>
     <fields>
-        <help><!-- The date and time the transaction was authorized. --></help>
+        <help>トランザクションが承認された日時。</help>
         <label><!-- Payment Authorized Date --></label>
         <name>npsp__Payment_Authorized_Date__c</name>
     </fields>
     <fields>
-        <help><!-- The exact date and time (down to the millisecond) from the payment gateway that this transaction was successfully authorized. --></help>
+        <help>支払ゲートウェイから取得した、このトランザクションが正常に承認された正確な日時 (ミリ秒単位まで)。</help>
         <label><!-- Payment Authorized UTC Timestamp --></label>
         <name>npsp__Payment_Authorized_UTC_Timestamp__c</name>
     </fields>
     <fields>
-        <help><!-- The expiration month of the card used for this transaction. --></help>
+        <help>このトランザクションで使用されたカードの有効期限 (月)。</help>
         <label><!-- Payment Card Expiration Month --></label>
         <name>npsp__Payment_Card_Expiration_Month__c</name>
     </fields>
     <fields>
-        <help><!-- The expiration year of the card used for this transaction. --></help>
+        <help>このトランザクションで使用されたカードの有効期限 (年)。</help>
         <label><!-- Payment Card Expiration Year --></label>
         <name>npsp__Payment_Card_Expiration_Year__c</name>
     </fields>
     <fields>
-        <help><!-- The last four digits of the card used for this transaction. --></help>
+        <help>このトランザクションで使用されたカードの最後の 4 桁。</help>
         <label><!-- Payment Card Last 4 --></label>
         <name>npsp__Payment_Card_Last_4__c</name>
     </fields>
     <fields>
-        <help><!-- The card network of the card used for this transaction. --></help>
+        <help>このトランザクションで使用されたカードのカードネットワーク。</help>
         <label><!-- Payment Card Network --></label>
         <name>npsp__Payment_Card_Network__c</name>
     </fields>
@@ -635,37 +635,37 @@
         <name>npsp__Payment_Check_Reference_Number__c</name>
     </fields>
     <fields>
-        <help><!-- Provides detail about why a transaction was declined. --></help>
+        <help>トランザクションが却下された理由に関する詳細を提供します。</help>
         <label><!-- Payment Declined Reason --></label>
         <name>npsp__Payment_Declined_Reason__c</name>
     </fields>
     <fields>
-        <help><!-- The date and time the transaction was created. --></help>
+        <help>トランザクションが作成された日時。</help>
         <label><!-- Payment Elevate Created Date --></label>
         <name>npsp__Payment_Elevate_Created_Date__c</name>
     </fields>
     <fields>
-        <help><!-- The exact date and time (down to the millisecond) from Elevate that the transaction was created. --></help>
+        <help>Elevate から取得した、トランザクションが作成された正確な日時 (ミリ秒単位まで)。</help>
         <label><!-- Payment Elevate Created UTC  Timestamp --></label>
         <name>npsp__Payment_Elevate_Created_UTC_Timestamp__c</name>
     </fields>
     <fields>
-        <help><!-- The unique ID for this transaction from Elevate. --></help>
+        <help>Elevate から取得した、このトランザクションの一意の ID。</help>
         <label><!-- Payment Elevate ID --></label>
         <name>npsp__Payment_Elevate_ID__c</name>
     </fields>
     <fields>
-        <help><!-- For refunds only. Shows the ID of the original payment transaction from Elevate. --></help>
+        <help>返金の場合のみ。Elevate から取得した、元の支払トランザクションの ID を表示します。</help>
         <label><!-- Payment Elevate Original Payment ID --></label>
         <name>npsp__Payment_Elevate_Original_Payment_ID__c</name>
     </fields>
     <fields>
-        <help><!-- The ID of the payment gateway that processed this transaction. --></help>
+        <help>このトランザクションを処理した支払ゲートウェイの ID。</help>
         <label><!-- Payment Gateway ID --></label>
         <name>npsp__Payment_Gateway_ID__c</name>
     </fields>
     <fields>
-        <help><!-- The unique ID for this transaction from the payment gateway. --></help>
+        <help>支払ゲートウェイから取得した、このトランザクションの一意の ID。</help>
         <label><!-- Payment Gateway Payment ID --></label>
         <name>npsp__Payment_Gateway_Payment_ID__c</name>
     </fields>
@@ -675,17 +675,17 @@
         <name>npsp__Payment_Method__c</name>
     </fields>
     <fields>
-        <help><!-- The ID for the system where the transaction was initiated. --></help>
+        <help>トランザクションが開始されたシステムの ID。</help>
         <label><!-- Payment Origin ID --></label>
         <name>npsp__Payment_Origin_ID__c</name>
     </fields>
     <fields>
-        <help><!-- The name of the system where the transaction was initiated. --></help>
+        <help>トランザクションが開始されたシステムの名前。</help>
         <label><!-- Payment Origin Name --></label>
         <name>npsp__Payment_Origin_Name__c</name>
     </fields>
     <fields>
-        <help><!-- The type of system used to initiate the transaction. Available values include Engagement Hub, Giving Page, Payments API, Salesforce. --></help>
+        <help>トランザクションの開始に使用されたシステムの種別。使用可能な値には、[エンゲージメントハブ]、[贈与ページ]、[支払 API]、[Salesforce] が含まれます。</help>
         <label><!-- Payment Origin Type --></label>
         <name>npsp__Payment_Origin_Type__c</name>
     </fields>
@@ -695,12 +695,12 @@
         <name>npsp__Payment_Possible_Matches__c</name>
     </fields>
     <fields>
-        <help><!-- The API status of the transaction from Elevate. --></help>
+        <help>Elevate から取得した、トランザクションの API 状況。</help>
         <label><!-- Payment Status --></label>
         <name>npsp__Payment_Status__c</name>
     </fields>
     <fields>
-        <help><!-- Indicates the type of transaction. --></help>
+        <help>トランザクションの種別を示します。</help>
         <label><!-- Payment Type --></label>
         <name>npsp__Payment_Type__c</name>
     </fields>
@@ -726,7 +726,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Ready to Process</masterLabel>
-            <translation><!-- Ready to Process --></translation>
+            <translation>処理可能</translation>
         </picklistValues>
     </fields>
     <nameFieldLabel>データインポート ID</nameFieldLabel>

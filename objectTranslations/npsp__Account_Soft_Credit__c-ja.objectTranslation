@@ -38,5 +38,5 @@
             <translation>マッチ</translation>
         </picklistValues>
     </fields>
-    <nameFieldLabel>団体ソフトクレジット名</nameFieldLabel>
+    <nameFieldLabel>取引先ソフトクレジット名</nameFieldLabel>
 </CustomObjectTranslation>

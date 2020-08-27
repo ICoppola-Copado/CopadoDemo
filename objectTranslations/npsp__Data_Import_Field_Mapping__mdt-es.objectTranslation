@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Data Import Field Mapping --></value>
+        <value><!-- Asignación de campo de importación de datos --></value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Data Import Field Mapping --></value>
+        <value><!-- Asignaciones de campos de importaciones de datos --></value>
     </caseValues>
     <fields>
         <help>El conjunto de asignaciones de campos de importación de datos que contiene esta asignación de campos.</help>

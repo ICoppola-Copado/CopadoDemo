@@ -79,19 +79,19 @@
         <name>npsp__Batch_Status__c</name>
         <picklistValues>
             <masterLabel>Completed</masterLabel>
-            <translation><!-- Completed --></translation>
+            <translation>Abgeschlossen</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Failed - Needs Review</masterLabel>
-            <translation><!-- Failed - Needs Review --></translation>
+            <translation>Fehler – Überprüfung erforderlich</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Open</masterLabel>
-            <translation><!-- Open --></translation>
+            <translation>Offen</translation>
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- List of API names for fields included in the batch gift table. Stored as JSON. --></help>
+        <help>Liste der API-Namen für die in der Schenkungs-Batchtabelle enthaltenen Felder. Als JSON gespeichert.</help>
         <label><!-- Batch Table Columns --></label>
         <name>npsp__Batch_Table_Columns__c</name>
     </fields>

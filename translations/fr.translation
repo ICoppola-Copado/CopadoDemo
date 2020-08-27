@@ -7861,6 +7861,10 @@
         <name>npsp__RD2_DisableCustomizableRollupWarning</name>
     </customLabels>
     <customLabels>
+        <label><!-- Error when the functionality is not supported for Elevate Recurring Donation. --></label>
+        <name>npsp__RD2_ElevateNotSupported</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Error when user does not have a permission to change an RD originated in Elevate --></label>
         <name>npsp__RD2_ElevatePermissionRequired</name>
     </customLabels>
@@ -8133,6 +8137,10 @@
         <name>npsp__RD2_InstallmentPeriodMustBeValid</name>
     </customLabels>
     <customLabels>
+        <label><!-- Status of an installment that is skipped --></label>
+        <name>npsp__RD2_InstallmentStatusSkipped</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Validate Planned Installments field is greater than number of Paid Installments --></label>
         <name>npsp__RD2_NumberInstallmentsCannotBeLessThanPaid</name>
     </customLabels>
@@ -8151,6 +8159,50 @@
     <customLabels>
         <label><!-- Message displayed indicating data is not available when enhanced RDs are enabled --></label>
         <name>npsp__RD2_PageNotAvailableMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cannot change specific fields causing schedule change when a pause exists --></label>
+        <name>npsp__RD2_PauseCannotExistOnScheduleChange</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message when trying to pause Closed Recurring Donation. --></label>
+        <name>npsp__RD2_PauseClosedRDErrorMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contains message indicating a pause has been removed successfully --></label>
+        <name>npsp__RD2_PauseDeactivationSuccessMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recurring Donation Pause description --></label>
+        <name>npsp__RD2_PauseDescription</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RD2 Pause first donation date after the pause --></label>
+        <name>npsp__RD2_PauseFirstDonationDateDynamicText</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RD2 Pause Header containing the Recurring Donation name --></label>
+        <name>npsp__RD2_PauseHeader</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- User does not have a permission to edit or create Recurring Donations --></label>
+        <name>npsp__RD2_PausePermissionRequired</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contains message indicating a pause has been saved successfully --></label>
+        <name>npsp__RD2_PauseSaveSuccessMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contains message indicating multiple installments have been selected to skip --></label>
+        <name>npsp__RD2_PauseSelectedInstallmentTextPlural</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contains message indicating one installment has been selected to skip --></label>
+        <name>npsp__RD2_PauseSelectedInstallmentTextSingular</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Paused Reason field label on the Recurring Donation Pause page --></label>
+        <name>npsp__RD2_PausedReasonLabel</name>
     </customLabels>
     <customLabels>
         <label><!-- Every installment Opportunity should have matching RD Schedule installment --></label>
@@ -9593,6 +9645,10 @@
         <name>npsp__commonGeneralAccountUnit</name>
     </customLabels>
     <customLabels>
+        <label><!-- Indicates user does not have permissions for the action --></label>
+        <name>npsp__commonInsufficientPermissions</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Failure message if an invalid key was provided --></label>
         <name>npsp__commonJWTInvalidKey</name>
     </customLabels>
@@ -9659,6 +9715,10 @@
     <customLabels>
         <label><!-- Save and Close --></label>
         <name>npsp__commonSaveAndClose</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contains value for a placeholder on a dropdown field --></label>
+        <name>npsp__commonSelectOptionPlaceholder</name>
     </customLabels>
     <customLabels>
         <label><!-- Template --></label>
