@@ -162,6 +162,36 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Salesforce Commerce Cloud</fullName>
+                    <default>false</default>
+                    <label>Salesforce Commerce Cloud</label>
+                </value>
+                <value>
+                    <fullName>Mulesoft</fullName>
+                    <default>false</default>
+                    <label>Mulesoft</label>
+                </value>
+                <value>
+                    <fullName>Marketing Cloud</fullName>
+                    <default>false</default>
+                    <label>Marketing Cloud</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Active__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>

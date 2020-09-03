@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Marketing Cloud</masterLabel>
+            <translation><!-- Marketing Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mulesoft</masterLabel>
+            <translation><!-- Mulesoft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Commerce Cloud</masterLabel>
+            <translation><!-- Salesforce Commerce Cloud --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <help><!-- If checked, all Branch Management features will be enabled in the Deployment Flow. --></help>
         <label><!-- Active --></label>
         <name>copado__Active__c</name>
