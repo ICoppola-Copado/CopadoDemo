@@ -23,6 +23,15 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
+    <fields>
+        <fullName>npsp__Viewed_Retirement_Alert__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Viewed Retirement Alert</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
     <label>Batch Data Entry Settings</label>
     <visibility>Public</visibility>
 </CustomObject>

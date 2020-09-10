@@ -15,6 +15,17 @@
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>npsp__DisableRecordDataHealthChecks__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether record data related health checks are disabled</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, Health Check only checks your NPSP configuration settings for problems. Select this option if your organization has a large volume of records and Health Check is having problems completing.</inlineHelpText>
+        <label>Disable Record Data Health Checks</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>npsp__Disable_Error_Handling__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>

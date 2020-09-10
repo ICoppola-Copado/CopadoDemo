@@ -10,4 +10,8 @@
         <label><!-- Opportunity Naming --></label>
         <name>npsp__Opportunity_Naming__c</name>
     </fields>
+    <fields>
+        <label><!-- Viewed Retirement Alert --></label>
+        <name>npsp__Viewed_Retirement_Alert__c</name>
+    </fields>
 </CustomObjectTranslation>

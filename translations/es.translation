@@ -8689,6 +8689,14 @@
         <name>npsp__alloUnallocated</name>
     </customLabels>
     <customLabels>
+        <label><!-- Explanation of Batch Data Entry retirement &amp; recommendations --></label>
+        <name>npsp__bdeRetirementWarningBody</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Header for warning about Batch Data Entry retiring --></label>
+        <name>npsp__bdeRetirementWarningHeader</name>
+    </customLabels>
+    <customLabels>
         <label><!-- bdiAccountCustomIdError --></label>
         <name>npsp__bdiAccountCustomIdError</name>
     </customLabels>
@@ -9681,6 +9689,10 @@
         <name>npsp__commonNoItems</name>
     </customLabels>
     <customLabels>
+        <label><!-- Okay --></label>
+        <name>npsp__commonOkay</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Open --></label>
         <name>npsp__commonOpen</name>
     </customLabels>
@@ -9913,6 +9925,14 @@
         <name>npsp__geAssistiveBatchHeaderRemoveField</name>
     </customLabels>
     <customLabels>
+        <label><!-- Alt text: indicates a form field is optional --></label>
+        <name>npsp__geAssistiveDescriptionFieldOptional</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Alt text: indicates a form field has been set as required --></label>
+        <name>npsp__geAssistiveDescriptionFieldRequired</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Alt text: Arrow button to move field down --></label>
         <name>npsp__geAssistiveFieldDown</name>
     </customLabels>
@@ -9943,6 +9963,10 @@
     <customLabels>
         <label><!-- Alt Text: Button to remove selected option --></label>
         <name>npsp__geAssistiveRemoveSelectedOption</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Alt text: explains the function of the required checkbox --></label>
+        <name>npsp__geAssistiveRequireField</name>
     </customLabels>
     <customLabels>
         <label><!-- Alt text: Arrow button to move section down --></label>
@@ -10895,6 +10919,18 @@
     <customLabels>
         <label><!-- healthLabelContactData --></label>
         <name>npsp__healthLabelContactData</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message when Data Health Check does not run --></label>
+        <name>npsp__healthLabelDataBatchNotRun</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Custom Setting label to disable Sobject batch --></label>
+        <name>npsp__healthLabelDisableRecordBatch</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Description for Disable Health Check Record Batch Setting --></label>
+        <name>npsp__healthLabelDisableRecordBatchDescription</name>
     </customLabels>
     <customLabels>
         <label><!-- healthLabelErrorRecipientValid --></label>

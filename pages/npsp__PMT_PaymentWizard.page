@@ -1,5 +1,9 @@
-<apex:page controller="npsp.PMT_PaymentWizard_CTRL" title="{!IF(isWriteoffWizard,$Label.npsp__pmtwizardsectionwriteoff,$Label.npsp__pmtwizardsubtitle)}"
-           tabStyle="Opportunity" standardStylesheets="true" docType="html-5.0">
+<apex:page controller="npsp.PMT_PaymentWizard_CTRL"
+    title="{!IF(isWriteoffWizard,$Label.npsp__pmtwizardsectionwriteoff,$Label.npsp__pmtwizardsubtitle)}"
+    tabStyle="Opportunity"
+    standardStylesheets="true"
+    lightningStylesheets="true"
+    docType="html-5.0">
 
     <apex:slds />
     <apex:stylesheet value="{!URLFOR($Resource.npsp__CumulusStaticResources, '/npsp-slds/npsp-common.css')}" />
