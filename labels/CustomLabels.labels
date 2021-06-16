@@ -10,7 +10,7 @@
     <labels>
         <fullName>Hello</fullName>
         <language>en_US</language>
-        <protected>true</protected>
+        <protected>false</protected>
         <shortDescription>Hello</shortDescription>
         <value>Hello</value>
     </labels>
