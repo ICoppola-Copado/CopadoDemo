@@ -4,7 +4,7 @@ public class AccountOperations {
         return a;
     }
     public static Account setDefaultPhone(Account a) {//Dev01
-        a.Phone = '9879879877';
+        a.Phone = '98798798771';
         return a;
     }
     public static Account setDefaultURL(Account a) {//DEV2
@@ -12,7 +12,7 @@ public class AccountOperations {
         return a;
     }
     public static Account setDefaultName(Account a) {
-        a.name = 'Test Account';
+        a.name = 'Test Account CLI';
         return a;
     }
 }

@@ -78,6 +78,7 @@
     </fields>
     <fields>
         <fullName>Active__c</fullName>
+        <description>Test</description>
         <externalId>false</externalId>
         <label>Active</label>
         <required>false</required>
@@ -170,6 +171,14 @@
         <fullName>Industry</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_ERP_Account__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is ERP Account?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Jigsaw</fullName>
@@ -457,6 +466,12 @@ CONTAINS(
 BillingCountry)))</errorConditionFormula>
         <errorDisplayField>BillingCity</errorDisplayField>
         <errorMessage>Billing Country should be one of the specified values</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TESTVR</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF(Name = &quot;pepe&quot;, TRUE, FALSE)</errorConditionFormula>
+        <errorMessage>test</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Billing</fullName>

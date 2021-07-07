@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Adios</label>
+        <name>Goodbye</name>
+    </customLabels>
+    <customLabels>
+        <label>Hola</label>
+        <name>Welcome</name>
+    </customLabels>
+</Translations>

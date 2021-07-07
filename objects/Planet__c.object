@@ -200,6 +200,57 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>Has_a_Ring_System__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Has a Ring System?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Options__c</fullName>
+        <externalId>false</externalId>
+        <label>Options</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>value1</fullName>
+                    <default>false</default>
+                    <label>value1</label>
+                </value>
+                <value>
+                    <fullName>value3</fullName>
+                    <default>false</default>
+                    <label>value3</label>
+                </value>
+                <value>
+                    <fullName>value4</fullName>
+                    <default>false</default>
+                    <label>value4</label>
+                </value>
+                <value>
+                    <fullName>value2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>value2</label>
+                </value>
+                <value>
+                    <fullName>value5</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>value5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <label>Planet</label>
     <listViews>
         <fullName>All</fullName>
@@ -212,22 +263,6 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Planets</pluralLabel>
-    <recordTypes>
-        <fullName>Gas_Giants</fullName>
-        <active>true</active>
-        <label>Gas Giants</label>
-        <picklistValues>
-            <picklist>Galaxy__c</picklist>
-            <values>
-                <fullName>Andromeda Galaxy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Cigar Galaxy</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
     <recordTypes>
         <fullName>Terrestrial_Planets</fullName>
         <active>true</active>
@@ -246,5 +281,17 @@
     </recordTypes>
     <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Name1</fullName>
+        <active>true</active>
+        <errorConditionFormula>true</errorConditionFormula>
+        <errorMessage>test</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Name2</fullName>
+        <active>true</active>
+        <errorConditionFormula>true</errorConditionFormula>
+        <errorMessage>test</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

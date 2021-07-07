@@ -55,6 +55,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>Bio__c</fullName>
         <externalId>false</externalId>
@@ -97,23 +98,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Dev2_Autonumber__c</fullName>
-        <externalId>false</externalId>
-        <label>Dev2 Autonumber</label>
-        <trackTrending>false</trackTrending>
-        <type>AutoNumber</type>
-    </fields>
-    <fields>
-        <fullName>Dev2_Field__c</fullName>
-        <externalId>false</externalId>
-        <label>Dev2 Field</label>
-        <length>10</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Email__c</fullName>
         <externalId>false</externalId>
         <label>Email</label>
@@ -137,6 +121,16 @@
         <externalId>false</externalId>
         <label>Last Name</label>
         <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Search_Layout__c</fullName>
+        <externalId>false</externalId>
+        <label>Search Layout</label>
+        <length>20</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

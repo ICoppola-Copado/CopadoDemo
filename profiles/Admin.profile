@@ -154,6 +154,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Is_ERP_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Jigsaw</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1345,16 +1350,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Speaker__c.Dev1_new_picklist__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Speaker__c.Dev2_Autonumber__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Speaker__c.Dev2_Field__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4511,10 +4506,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Metric-Metric Layout</layout>
+        <recordType>Metric.Progress</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Metric-Metric Layout</layout>
-        <recordType>Metric.Progress</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>MetricDataLink-Metric Data Link Layout</layout>
