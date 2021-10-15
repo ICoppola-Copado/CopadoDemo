@@ -1,6 +1,6 @@
 public class AccountName {
     public static Account setSite(Account a) {
-        a.Name = 'TestName1';
+        a.Name = 'TestName';
         return a;
     }
 }

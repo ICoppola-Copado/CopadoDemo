@@ -4,4 +4,8 @@
         <label>Adios</label>
         <name>Goodbye</name>
     </customLabels>
+    <customLabels>
+        <label>Hola</label>
+        <name>Welcome</name>
+    </customLabels>
 </Translations>

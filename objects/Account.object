@@ -78,6 +78,7 @@
     </fields>
     <fields>
         <fullName>Active__c</fullName>
+        <description>Test</description>
         <externalId>false</externalId>
         <label>Active</label>
         <required>false</required>
@@ -182,6 +183,35 @@
     <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>NaicsCode</fullName>
@@ -413,7 +443,7 @@
         <fullName>Billing_Validation</fullName>
         <active>true</active>
         <errorConditionFormula>OR(
-LEN(BillingCountry) = 2,
+LEN(BillingCountry) = 1,
 NOT(
 CONTAINS(
 &quot;AF:AX:AL:DZ:AS:AD:AO:AI:AQ:AG:AR:AM:&quot; &amp;
@@ -428,13 +458,14 @@ CONTAINS(
 &quot;MG:MW:MY:MV:ML:MT:MH:MQ:MR:MU:YT:MX:FM:MD:MC:&quot; &amp;
 &quot;MC:MN:ME:MS:MA:MZ:MM:MA:NR:NP:NL:AN:NC:NZ:NI:&quot; &amp;
 &quot;NE:NG:NU:NF:MP:NO:OM:PK:PW:PS:PA:PG:PY:PE:PH:&quot; &amp;
-&quot;PN:PL:PT:PR:QA:RE:RO:RZ:RW:SH:KN:LC:PM:VC:WS:&quot; &amp;
+&quot;PN:PL:PT:PR:QA:RE:RO:RU:RW:SH:KN:LC:PM:VC:WS:&quot; &amp;
 &quot;SM:ST:SA:SN:RS:SC:SL:SG:SK:SI:SB:SO:ZA:GS:ES:&quot; &amp;
 &quot;LK:SD:SR:SJ:SZ:SE:CH:SY:TW:TJ:TZ:TH:TL:TG:TK:&quot; &amp;
 &quot;TO:TT:TN:TR:TM:TC:TV:UG:UA:AE:GB:US:UM:UY:UZ:&quot; &amp;
 &quot;VU:VE:VN:VG:VI:WF:EH:YE:ZM:ZW&quot;,
 BillingCountry)))</errorConditionFormula>
-        <errorMessage>Billing Country should be length 1 or at least one of the specified values</errorMessage>
+        <errorDisplayField>BillingCity</errorDisplayField>
+        <errorMessage>Billing Country should be one of the specified values</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Billing</fullName>
